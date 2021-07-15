@@ -19,7 +19,7 @@ async def on_ready():
     channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。')
     channel = bot.get_channel(Channel_ID2)
-    embed = discord.Embed(title='注意ユーザーリスト',description='<@482484875794972692>/n<@621546963963346956>',color=0xff0000)
+    embed = discord.Embed(title='注意ユーザーリスト',description='<@482484875794972692>\n<@621546963963346956>',color=0xff0000)
     await channel.send(embed=embed)
 
 @bot.event
