@@ -9,12 +9,12 @@ bot = commands.Bot(
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-Channel_ID = 864848975139700736
+Channel_ID1 = 864848975139700736
 
 @bot.event
 async def on_ready():
     print('起動しました')
-    channel = bot.get_channel(Channel_ID)
+    channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。')
 
 @bot.event
