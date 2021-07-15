@@ -9,7 +9,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 @bot.event
 async def on_ready():
     print('起動しました')
-    
+    await channel.message.send('')
 
 @bot.event
 async def on_command_error(ctx, error):
