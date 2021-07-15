@@ -19,7 +19,10 @@ async def on_ready():
     channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。')
     channel = bot.get_channel(Channel_ID2)
-    embed = discord.Embed(title='注意ユーザーリスト',description='<@482484875794972692>\n<@621546963963346956>',color=0xff0000)
+    embed = discord.Embed(title='注意ユーザーリスト',color=0xff0000)
+    embed.add_field(name='<@482484875794972692>',value='サーバーに参加して「助けて」「人間関係の修復を手伝って欲しい」などの文言を連投。\n「自分では力になれそうにない」「どこか別のサーバーを探した方が良い」と助言しても「探すのが面倒臭い」という旨の主張をし、サーバーに居座り続ける。\n2サーバー以上の被害報告を確認。
+いずれも言動に特に変わりがない為、荒らしと判断。')
+    embed.add_field(name='<@621546963963346956>',value='招待リンク及び怪しいURLのスパム。')
     await channel.send(embed=embed)
 
 @bot.event
