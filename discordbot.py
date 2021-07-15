@@ -6,10 +6,13 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
+Channel_ID = 864848975139700736
+
 @bot.event
 async def on_ready():
     print('起動しました')
-    await channel.message.send('D.I.C.O.起動しました。')
+    channel = client.get_channel(Channel_ID)
+    await channel.send('D.I.C.O.起動しました。')
 
 @bot.event
 async def on_command_error(ctx, error):
