@@ -2,7 +2,7 @@ from discord.ext import commands
 import os
 import traceback
 
-sprit_after_prefix = True
+strip_after_prefix = True
 bot = commands.Bot(command_prefix='#d')
 token = os.environ['DISCORD_BOT_TOKEN']
 
