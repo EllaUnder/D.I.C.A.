@@ -3,8 +3,8 @@ import os
 import traceback
 
 bot = commands.Bot(
-    command_prefix='#d'
-    strip_after_prefix = True
+    command_prefix='#d',
+    strip_after_prefix = True,
 )
 token = os.environ['DISCORD_BOT_TOKEN']
 
