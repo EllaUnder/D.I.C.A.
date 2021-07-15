@@ -1,4 +1,3 @@
-import discord
 from discord.ext import commands
 import os
 import traceback
@@ -7,14 +6,12 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-client = discord.Client()
-
 Channel_ID = 864848975139700736
 
 @bot.event
 async def on_ready():
     print('起動しました')
-    channel = client.get_channel(Channel_ID)
+    channel = bot.get_channel(Channel_ID)
     await channel.send('D.I.C.O.起動しました。')
 
 @bot.event
