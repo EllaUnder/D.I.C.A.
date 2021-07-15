@@ -11,14 +11,16 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 
 Channel_ID1 = 864848975139700736
+Channel_ID2 = 864846769351294976
 
 @bot.event
 async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。')
+    channel = bot.get_channel(Channel_ID2)
     embed = discord.Embed(title='注意ユーザーリスト',description='<@482484875794972692>/n<@621546963963346956>',color=0xff0000)
-    await cxt.send(embed=embed)
+    await channel.send(embed=embed)
 
 @bot.event
 async def on_command_error(ctx, error):
