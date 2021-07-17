@@ -25,7 +25,7 @@ async def on_ready():
     await channel.send(embed=embed)
     channel = bot.get_channel(Channel_ID3)
     await channel.purge()
-    member.count = len(guild.members)
+    member.count = len(discord.guild.members)
     embed = discord.Embed(title='サーバーステータス')
     embed.add_field(name='メンバー数',value=f'{member.count}人')
     await channel.send(embed=embed)
