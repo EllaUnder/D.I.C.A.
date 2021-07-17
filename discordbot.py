@@ -10,8 +10,9 @@ bot = commands.Bot(
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-Channel_ID1 = 864848975139700736
-Channel_ID2 = 864846769351294976
+Channel_ID1 = 864848975139700736 #ログ
+Channel_ID2 = 864846769351294976 #注意ユーザーリスト
+Channel_ID3 = 865917109123809291 #サーバーステータス
 
 @bot.event
 async def on_ready():
@@ -21,6 +22,11 @@ async def on_ready():
     channel = bot.get_channel(Channel_ID2)
     await channel.purge()
     embed = discord.Embed(title='注意ユーザーリスト',color=0xff0000)
+    await channel.send(embed=embed)
+    channel = bot.get_channel(Channel_ID3)
+    await channel.purge()
+    embed = discord.Embed(title='サーバーステータス',color=7fffd4)
+    embed.add_field(name='メンバー数',value=f'{message.guild.members}人')
     await channel.send(embed=embed)
 
 @bot.event
