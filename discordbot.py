@@ -23,12 +23,6 @@ async def on_ready():
     await channel.purge()
     embed = discord.Embed(title='注意ユーザーリスト',color=0xff0000)
     await channel.send(embed=embed)
-    channel = bot.get_channel(Channel_ID3)
-    await channel.purge()
-    member.count = len(discord.guild.members)
-    embed = discord.Embed(title='サーバーステータス')
-    embed.add_field(name='メンバー数',value=f'{member.count}人')
-    await channel.send(embed=embed)
 
 @bot.event
 async def on_command_error(ctx, error):
