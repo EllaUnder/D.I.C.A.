@@ -24,7 +24,7 @@ async def on_ready():
     channel = bot.get_channel(Channel_ID2)
     await channel.purge()
     embed = discord.Embed(title='⚠️警戒ユーザーリスト',color=ffff00)
-    embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、警戒Lv1に分類する。'
+    embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、警戒度Lv1に分類する。'
     await channel.send(embed=embed)
     #注意ユーザーリスト更新
     channel = bot.get_channel(Channel_ID3)
