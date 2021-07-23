@@ -32,6 +32,9 @@ async def on_ready():
     embed = discord.Embed(title='⛔️警戒ユーザーリスト',color=0xff0000)
     embed.add_field(name='<@759520152655757374>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759336641265674/image0.png)')
     embed.add_field(name='<@724918305948827689>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759953283514368/image0.png)')
+    embed.add_field(name='<@864016640143523850>',value='サーバー招待リンクのスパム。')
+    embed.add_field(name='<@482484875794972692>',value='サーバー招待リンクのスパム。')
+    embed.add_field(name='<@621546963963346956>',value='スパム行為による荒らし。')
     await channel.send(embed=embed)
 
 @bot.event
