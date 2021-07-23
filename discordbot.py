@@ -30,8 +30,8 @@ async def on_ready():
     channel = bot.get_channel(Channel_ID3)
     await channel.purge()
     embed = discord.Embed(title='⛔️警戒ユーザーリスト',color=0xff0000)
-    embed.add_field(name='<@759520152655757374>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n https://cdn.discordapp.com/attachments/864846073050431498/867759336641265674/image0.png')
-    embed.add_field(name='<@724918305948827689>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n https://cdn.discordapp.com/attachments/864846073050431498/867759953283514368/image0.png')
+    embed.add_field(name='<@759520152655757374>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759336641265674/image0.png)')
+    embed.add_field(name='<@724918305948827689>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759953283514368/image0.png)')
     await channel.send(embed=embed)
 
 @bot.event
