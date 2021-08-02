@@ -13,7 +13,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 Channel_ID1 = 864848975139700736 #ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
-Channel_ID4 = 865917109123809291 #サーバーステータス
+Channel_ID4 = 871581378234433586 #IDコピー
 
 @bot.event
 async def on_ready():
@@ -56,6 +56,19 @@ async def ping(ctx):
 async def give(ctx):
     embed = discord.Embed(description='[このチャンネルの上部へ](https://discord.com/channels/864768192399278110/864831620208656394/869026188805439488)')
     await ctx.send(embed=embed)
-
-
+    
+@bot.command()
+async def sign(ctx):
+    channel = bot.get_channel(Channel_ID4)
+    await channel.purge()
+    await ctx.send('<@759520152655757374>')
+    await ctx.send('<@724918305948827689>')
+    await ctx.send('<@864016640143523850>')
+    await ctx.send('<@482484875794972692>')
+    await ctx.send('<@621546963963346956>')
+    await ctx.send('<@839856314414137354>')
+    await ctx.send('<@716212058445709362>')
+    await ctx.send('<@371687418346340352>')
+    await ctx.send('<@871053537193386064>')
+    
 bot.run(token)
