@@ -57,7 +57,7 @@ async def give(ctx):
     embed = discord.Embed(description='[このチャンネルの上部へ](https://discord.com/channels/864768192399278110/864831620208656394/869026188805439488)')
     await ctx.send(embed=embed)
 
-@bot.command
+@bot.command()
 async def sign(ctx):
     channel = bot.get_channel(Channel_ID4)
     await channel.purge()
