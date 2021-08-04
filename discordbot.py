@@ -59,7 +59,7 @@ async def give(ctx):
     
 @bot.command()
 async def top(ctx):
-    text = message.content.replace('#d top', '')
+    text = ctx.content.replace('#d top', '')
     embed = discord.Embed(description=f'[このチャンネルの1番上へ]({text})')
     await ctx.send(embed=embed)
 
