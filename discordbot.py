@@ -50,7 +50,7 @@ async def on_command_error(ctx, error):
 
 #コマンド
 @bot.command()
-async def top(ctx,arg1,arg2):
+async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
 
