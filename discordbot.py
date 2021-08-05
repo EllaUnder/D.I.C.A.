@@ -66,11 +66,5 @@ async def sign(ctx):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-        
-#テスト
-@bot.command()
-async def test(ctx,arg1,arg2):
-    await ctx.send(arg1)
-    await ctx.send(arg2)
     
 bot.run(token)
