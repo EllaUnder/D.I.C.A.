@@ -50,11 +50,13 @@ async def on_command_error(ctx, error):
 
 #コマンド
 @bot.command()
+@commands.has_role(864846474399711253)
 async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
 
 @bot.command()
+@commands.has_role(864846474399711253)
 async def sign(ctx):
     channel = bot.get_channel(Channel_ID4)
     await channel.purge()
