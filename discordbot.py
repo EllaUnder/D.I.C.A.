@@ -71,5 +71,11 @@ async def sign(ctx):
     list = ['<@759520152655757374>','<@724918305948827689>','<@864016640143523850>','<@482484875794972692>','<@621546963963346956>','<@839856314414137354>','<@716212058445709362>','<@371687418346340352>','<@871053537193386064>']
     for UID in list:
         await ctx.send(UID)
+        
+#テスト
+@bot.command()
+async def test(ctx,arg1,arg2):
+    await ctx.send(arg1)
+    await ctx.send(arg2)
     
 bot.run(token)
