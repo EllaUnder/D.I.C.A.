@@ -48,20 +48,10 @@ async def on_command_error(ctx, error):
     channel = bot.get_channel(Channel_ID1)
     await channel.send(error_msg)
 
-
+#コマンド
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-    
-@bot.command()
-async def give(ctx):
-    embed = discord.Embed(description='[このチャンネルの1番上へ](https://discord.com/channels/864768192399278110/864831620208656394/869026188805439488)')
-    await ctx.send(embed=embed)
-    
-@bot.command()
-async def top(ctx):
-    text = ctx.message.content.replace('#d top', '')
-    embed = discord.Embed(description=f'[このチャンネルの1番上へ]({text})')
+async def top(ctx,arg1,arg2):
+    embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
 
 @bot.command()
@@ -71,6 +61,11 @@ async def sign(ctx):
     list = ['<@759520152655757374>','<@724918305948827689>','<@864016640143523850>','<@482484875794972692>','<@621546963963346956>','<@839856314414137354>','<@716212058445709362>','<@371687418346340352>','<@871053537193386064>']
     for UID in list:
         await ctx.send(UID)
+        
+        
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
         
 #テスト
 @bot.command()
