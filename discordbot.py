@@ -66,7 +66,7 @@ async def regin(ctx):
         embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
         await channel.send(embed=embed)
         datetime = datetime.datetime.now()
-        await channel.send(f'更新日時　{dt_now.strftime('%Y年%m月%d日 %H:%M:%S')}')
+        await channel.send(f'更新日時　{datetime.strftime('%Y年%m月%d日 %H:%M:%S')}')
 
         
 @bot.command()
