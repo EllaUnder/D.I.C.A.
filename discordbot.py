@@ -61,6 +61,7 @@ async def Elink(ctx,arg1,arg2):
 @commands.has_role(864846474399711253)
 async def regin(ctx):
     if ctx.channel.id == 867042310180962315:
+        channel = bot.get_channel(Channel_ID2)
         await channel.purge()
         embed = discord.Embed(title='⚠️注意ユーザーリスト',color=0xffff00)
         embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
