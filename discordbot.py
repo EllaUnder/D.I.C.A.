@@ -20,12 +20,6 @@ async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。')
-    #注意ユーザーリスト更新
-    channel = bot.get_channel(Channel_ID2)
-    await channel.purge()
-    embed = discord.Embed(title='⚠️注意ユーザーリスト',color=0xffff00)
-    embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
-    await channel.send(embed=embed)
     #警戒ユーザーリスト更新
     channel = bot.get_channel(Channel_ID3)
     await channel.purge()
@@ -63,6 +57,18 @@ async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
 
+bot.command()
+@commands.has_role(864846474399711253)
+async def regin(ctx):
+    if message.channel.id == 867042310180962315:
+        await channel.purge()
+        embed = discord.Embed(title='⚠️注意ユーザーリスト',color=0xffff00)
+        embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
+        await channel.send(embed=embed)
+        datetime = datetime.datetime.now()
+        await channel.send(f'更新日時　{dt_now.strftime('%Y年%m月%d日 %H:%M:%S')}')
+
+        
 @bot.command()
 @commands.has_role(864846474399711253)
 async def sign(ctx):
@@ -71,7 +77,7 @@ async def sign(ctx):
     list = ['<@759520152655757374>','<@724918305948827689>','<@864016640143523850>','<@482484875794972692>','<@621546963963346956>','<@839856314414137354>','<@716212058445709362>','<@371687418346340352>','<@871053537193386064>','<@874639558564786238>','<@496981175038902273>','<@714065245181575230>','<@715213698125529138>','<@876669921185132636>','<@877854246442254336>','<@841568928571850752>','<@878582493127794739>','<@856857024155615253>','<@347647394550251521>']
     for UID in list:
         await ctx.send(UID)
-        
+
         
 @bot.command()
 async def ping(ctx):
