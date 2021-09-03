@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import traceback
-import datetime
+import datetime,timezone
 
 bot = commands.Bot(
     command_prefix='#d',
