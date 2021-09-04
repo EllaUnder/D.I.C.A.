@@ -97,4 +97,6 @@ async def loop():
 async def ping(ctx):
     await ctx.send('pong')
     
+loop.start()
+    
 bot.run(token)
