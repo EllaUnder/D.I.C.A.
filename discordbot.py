@@ -86,6 +86,7 @@ async def regin(ctx):
     else:
         return
     
+#時報
 @tasks.loop(seconds=43200)
 async def loop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
