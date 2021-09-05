@@ -91,18 +91,10 @@ async def regin(ctx):
 @tasks.loop(seconds=60)
 async def timeloop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
-    now = datetime.datetime.now().strftime('%H:%M')
-    if now == '09:00':
-        await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
-        
-@tasks.loop(seconds=60)
-async def timeloop():
-    channel = bot.get_channel(Channel_ID1)
     JST = timezone(timedelta(hours=+9),'JST')
     now = datetime.datetime.now(JST).strftime('%H:%M')
-    if now == '18:55':
-        await channel.send('06:55時報の実行を確認しました。\nコードに不備はありません。')
-
+    if now == '09:00':
+        await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
     
 @bot.command()
 async def ping(ctx):
