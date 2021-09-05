@@ -91,7 +91,7 @@ async def regin(ctx):
 async def loop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
     now = datetime.datetime.now().strftime('%H:%M')
-    if now == '9:00':
+    if now == '09:00':
         await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
     
 @bot.command()
