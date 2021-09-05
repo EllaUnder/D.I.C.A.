@@ -85,7 +85,7 @@ async def regin(ctx):
             await ctx.send(UID)
     else:
         return
-    
+   
 #時報
 @tasks.loop(seconds=43200)
 async def loop():
