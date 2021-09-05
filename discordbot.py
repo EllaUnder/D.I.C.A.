@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands,tasks
 import os
 import traceback
+import random
 import datetime
 from datetime import timedelta,timezone
 
@@ -91,10 +92,12 @@ async def regin(ctx):
 @tasks.loop(seconds=60)
 async def timeloop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
+    Greeting_List = ['今日も一日頑張りましょう。','オペレーターの皆さん、おはようございます。']
     JST = timezone(timedelta(hours=+9),'JST')
     now = datetime.datetime.now(JST).strftime('%H:%M')
     if now == '09:00':
-        await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
+        Today_Greeting = random.choice(Greeting_List)
+        await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
     
 @bot.command()
 async def ping(ctx):
