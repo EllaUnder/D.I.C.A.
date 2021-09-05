@@ -96,11 +96,11 @@ async def timeloop():
         await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
         
 @tasks.loop(seconds=60)
-async def loop():
+async def timeloop():
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now().strftime('%H:%M')
-    if now == '13:10':
-        await channel.send('01:10時報の実行を確認しました。\nコードに不備はありません')
+    if now == '16:45':
+        await channel.send('04:45時報の実行を確認しました。\nコードに不備はありません。')
 
     
 @bot.command()
