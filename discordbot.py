@@ -98,8 +98,8 @@ async def loop():
 async def loop():
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now().strftime('%H:%M')
-    if now == '12:30':
-        await channel.send('12:30時報の実行を確認しました。\nコードに不備はありません')
+    if now == '13:00':
+        await channel.send('01:00時報の実行を確認しました。\nコードに不備はありません')
 
     
 @bot.command()
