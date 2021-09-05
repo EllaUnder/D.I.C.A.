@@ -87,19 +87,19 @@ async def regin(ctx):
         return
    
 #時報
-@tasks.loop(seconds=43200)
+@tasks.loop(seconds=60)
 async def loop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
     now = datetime.datetime.now().strftime('%H:%M')
     if now == '09:00':
         await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
         
-@tasks.loop(seconds=600)
+@tasks.loop(seconds=60)
 async def loop():
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now().strftime('%H:%M')
-    if now == '13:00':
-        await channel.send('01:00時報の実行を確認しました。\nコードに不備はありません')
+    if now == '13:10':
+        await channel.send('01:10時報の実行を確認しました。\nコードに不備はありません')
 
     
 @bot.command()
