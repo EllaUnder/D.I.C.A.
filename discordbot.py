@@ -98,9 +98,10 @@ async def timeloop():
 @tasks.loop(seconds=60)
 async def timeloop():
     channel = bot.get_channel(Channel_ID1)
-    now = datetime.datetime.now().strftime('%H:%M')
-    if now == '18:05':
-        await channel.send('04:45時報の実行を確認しました。\nコードに不備はありません。')
+    JST = timezone(timedelta(hours=+9),'JST')
+    now = datetime.datetime.now(JST).strftime('%H:%M')
+    if now == '18:55':
+        await channel.send('06:55時報の実行を確認しました。\nコードに不備はありません。')
 
     
 @bot.command()
