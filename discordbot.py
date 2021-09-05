@@ -93,6 +93,14 @@ async def loop():
     now = datetime.datetime.now().strftime('%H:%M')
     if now == '09:00':
         await channel.send('D.I.C.O.が9時をお知らせします。\n今日も一日頑張りましょう。')
+        
+@tasks.loop(seconds=600)
+async def loop():
+    channel = bot.get_channel(Channel_ID1)
+    now = datetime.datetime.now().strftime('%H:%M')
+    if now == '12:30':
+        await channel.send('12:30時報の実行を確認しました。\nコードに不備はありません')
+
     
 @bot.command()
 async def ping(ctx):
