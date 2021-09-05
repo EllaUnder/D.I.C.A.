@@ -99,7 +99,7 @@ async def timeloop():
 async def timeloop():
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now().strftime('%H:%M')
-    if now == '16:45':
+    if now == '18:05':
         await channel.send('04:45時報の実行を確認しました。\nコードに不備はありません。')
 
     
