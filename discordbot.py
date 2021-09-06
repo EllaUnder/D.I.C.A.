@@ -61,6 +61,8 @@ async def timeloop():
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-    
-    
-bot.run(token)
+
+
+if __name__ == '__main__':
+    bot = Laplace(self)
+    bot.run(token)
