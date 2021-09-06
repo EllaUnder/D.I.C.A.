@@ -28,6 +28,8 @@ class Laplace(commands.Bot):
         for cog in INITIAL_EXTENSIONS:
             try:
                 self.load_extension(cog)
+            except Exception:
+                print('エラーが発生しました。')
 
 @bot.event
 async def on_ready():
