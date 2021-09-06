@@ -20,7 +20,7 @@ Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
 
 INITIAL_EXTENSIONS = [
-    'Cogs.List'
+    'Cogs.list'
 ]
 
 class Laplace(commands.Bot):
