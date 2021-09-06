@@ -106,6 +106,8 @@ async def timeloop():
         await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
     
 #レスポンス
+@bot.event()
+async def on_message():
 
 
     
