@@ -1,3 +1,7 @@
+import discord
+from discord.ext import commands
+import datetime
+
 @commands.command
 @commands.has_role(864846474399711253)
 async def regin(self,ctx):
