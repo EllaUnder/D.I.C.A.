@@ -1,10 +1,16 @@
 import discord
 from discord.ext import commands
 import datetime
+from datetime import timedelta,timezone
 
-@commands.command
-@commands.has_role(864846474399711253)
-async def regin(self,ctx):
+class list(commands.Cog):
+    def __init__(self,bot):
+        self.bot = bot
+
+
+        @commands.command
+        @commands.has_role(864846474399711253)
+            async def regin(self,ctx):
     if ctx.channel.id == 867042310180962315:
         channel = bot.get_channel(Channel_ID2)
         await channel.purge()
