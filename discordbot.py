@@ -57,18 +57,6 @@ async def timeloop():
     if now == '09:00':
         Today_Greeting = random.choice(Greeting_List)
         await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
-    
-#レスポンス
-@bot.event
-async def on_message(message):
-    if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
-        luck = random.random()
-        if luck <= 0.3:
-            await message.channel.send('おはようございます。')
-        else:
-            pass
-
-    await bot.process_commands(message)
 
 #動作確認
 @bot.command()
