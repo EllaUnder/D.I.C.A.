@@ -109,7 +109,7 @@ async def timeloop():
 async def on_message(message):
     if message.content == 'おはよう' or message.content == 'オハヨウ':
         luck = random.random()
-        if luck =< 0.3:
+        if luck <= 0.3:
             await message.channel.send('おはようございます。')
         else:
             pass
