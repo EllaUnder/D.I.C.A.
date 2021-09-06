@@ -74,10 +74,6 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-#Cogファイル読み込み
-bot.load_extension('Cogs.List')
-
-
 #動作確認
 @bot.command()
 async def ping(ctx):
