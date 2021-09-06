@@ -3,8 +3,10 @@ from discord.ext import commands,tasks
 import os
 import traceback
 import random
+import re
 import datetime
 from datetime import timedelta,timezone
+from janome.tokenizer import tokenizer
 
 bot = commands.Bot(
     command_prefix='#d',
