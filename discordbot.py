@@ -91,7 +91,7 @@ async def regin(ctx):
         for UID in list:
             await ctx.send(UID)
     else:
-        return
+        pass
    
 #時報
 @tasks.loop(seconds=60)
@@ -107,12 +107,12 @@ async def timeloop():
 #レスポンス
 @bot.event
 async def on_message(message):
-    if message.content == ('おはよう'or'オハヨウ')
+    if message.content == 'おはよう'or'オハヨウ'
         luck = random.random()
         if luck =< 0.3:
             await message.channel.send('おはようございます。')
         else:
-            return
+            pass
 
     await bot.process_commands(message)
 
