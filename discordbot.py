@@ -24,7 +24,10 @@ INITIAL_EXTENSIONS = [
 ]
 
 class Laplace(commands.Bot):
-    def __init__(self,)
+    def __init__(self):
+        for cog in INITIAL_EXTENSIONS:
+            try:
+                self.load_extension(cog)
 
 @bot.event
 async def on_ready():
