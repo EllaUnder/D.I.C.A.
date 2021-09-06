@@ -21,7 +21,8 @@ Channel_ID4 = 871581378234433586 #IDコピー
 
 INITIAL_EXTENSIONS = [
     'Cogs.list',
-    'Cogs.embed'
+    'Cogs.embed',
+    'Cogs.response'
 ]
 
 class Laplace(commands.Bot):
@@ -32,20 +33,18 @@ class Laplace(commands.Bot):
             except Exception:
                 print('エラーが発生しました。')
 
-@bot.event
-async def on_ready():
-    print('起動しました')
-    channel = bot.get_channel(Channel_ID1)
-    await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
-    timeloop.start()
-    
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    channel = bot.get_channel(Channel_ID1)
-    await channel.send(error_msg)
+    async def on_ready(self):
+        print('起動しました')
+        channel = bot.get_channel(Channel_ID1)
+        await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
+        timeloop.start()
+    
+    async def on_command_error(self,ctx, error):
+        orig_error = getattr(error, "original", error)
+        error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+        channel = bot.get_channel(Channel_ID1)
+        await channel.send(error_msg)
    
 #時報
 @tasks.loop(seconds=60)
