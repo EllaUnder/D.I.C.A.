@@ -104,15 +104,6 @@ async def timeloop():
         Today_Greeting = random.choice(Greeting_List)
         await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
     
-#レスポンス
-@bot.event
-async def on_message(message):
-    if message.content == ('おはよう' or 'オハヨウ'):
-        await message.send('おはようございます。')
-    
-
-
-    
 #動作確認
 @bot.command()
 async def ping(ctx):
