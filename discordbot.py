@@ -6,6 +6,7 @@ import random
 import re
 import datetime
 from datetime import timedelta,timezone
+import janome
 from janome.tokenizer import tokenizer
 
 bot = commands.Bot(
