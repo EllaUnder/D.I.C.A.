@@ -107,7 +107,7 @@ async def timeloop():
 #レスポンス
 @bot.event
 async def on_message(message):
-    if message.content == 'おはよう'or'オハヨウ'
+    if message.content == 'おはよう' or message.content == 'オハヨウ'
         luck = random.random()
         if luck =< 0.3:
             await message.channel.send('おはようございます。')
