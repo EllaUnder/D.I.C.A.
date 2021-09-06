@@ -106,7 +106,7 @@ async def timeloop():
     
 #レスポンス
 @bot.event
-async def on_message():
+async def on_message(message):
     if ctx.content == ('おはよう' or 'オハヨウ'):
         await ctx.send('おはようございます。')
     
