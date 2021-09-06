@@ -107,6 +107,7 @@ async def timeloop():
     
 #レスポンス
 
+
     
 #動作確認
 @bot.command()
