@@ -19,37 +19,21 @@ Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
 
-INITIAL_EXTENSIONS = [
-    'Cogs.list',
-    'Cogs.embed',
-    'Cogs.response'
-]
+@bot.event
+async def on_ready(self):
+    print('起動しました')
+    channel = bot.get_channel(Channel_ID1)
+    await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
 
-class Laplace(commands.Bot):
-    def __init__(self,command_prefix):
-        self.bot = bot
-
-        for cog in INITIAL_EXTENSIONS:
-            try:
-                bot.load_extension(cog)
-            except Exception:
-                print('エラーが発生しました。')
-
-
-    async def on_ready(self):
-        print('起動しました')
-        channel = bot.get_channel(Channel_ID1)
-        await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
-    
-    async def on_command_error(self,ctx, error):
-        orig_error = getattr(error, "original", error)
-        error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-        channel = bot.get_channel(Channel_ID1)
-        await channel.send(error_msg)
+@bot.event
+async def on_command_error(self,ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    channel = bot.get_channel(Channel_ID1)
+    await channel.send(error_msg)
    
 #時報
 
 
-if __name__ == '__main__':
-    bot = Laplace(bot)
-    bot.run(token)
+
+bot.run(token)
