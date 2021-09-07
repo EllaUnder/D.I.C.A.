@@ -26,9 +26,8 @@ INITIAL_EXTENSIONS = [
 ]
 
 class Laplace(commands.Bot):
-    def __init__(self,command_prefix,help_command):
-        super().__init__(command_prefix,help_command)
-        self.remove_command('help')
+    def __init__(self,command_prefix):
+        self.bot = bot
 
         for cog in INITIAL_EXTENSIONS:
             try:
