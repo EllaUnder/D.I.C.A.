@@ -20,13 +20,13 @@ Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
 
 @bot.event
-async def on_ready(self):
+async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
 
 @bot.event
-async def on_command_error(self,ctx, error):
+async def on_command_error(ctx,error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     channel = bot.get_channel(Channel_ID1)
