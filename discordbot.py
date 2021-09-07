@@ -103,7 +103,7 @@ async def on_message(message):
         else:
             pass
 
-await bot.process_commands(message)
+    await bot.process_commands(message)
 
 
 
