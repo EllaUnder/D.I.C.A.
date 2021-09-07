@@ -38,7 +38,6 @@ class Laplace(commands.Bot):
         print('起動しました')
         channel = bot.get_channel(Channel_ID1)
         await channel.send('D.I.C.O.起動しました。\nreginの実行を忘れないでください。')
-        timeloop.start()
     
     async def on_command_error(self,ctx, error):
         orig_error = getattr(error, "original", error)
