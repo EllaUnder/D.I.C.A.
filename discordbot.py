@@ -27,6 +27,7 @@ INITIAL_EXTENSIONS = [
 
 class Laplace(commands.Bot):
     def __init__(self,bot):
+        self.bot = bot
         for cog in INITIAL_EXTENSIONS:
             try:
                 bot.load_extension(cog)
