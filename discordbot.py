@@ -26,10 +26,10 @@ INITIAL_EXTENSIONS = [
 ]
 
 class Laplace(commands.Bot):
-    def __init__(self):
+    def __init__(self,bot):
         for cog in INITIAL_EXTENSIONS:
             try:
-                self.load_extension(cog)
+                bot.load_extension(cog)
             except Exception:
                 print('エラーが発生しました。')
 
