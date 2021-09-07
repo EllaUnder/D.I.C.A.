@@ -33,7 +33,7 @@ async def on_command_error(ctx,error):
     await channel.send(error_msg)
 
 #リスト
-@bot.commands()
+@bot.command()
 @commands.has_role(864846474399711253)
 async def regin(ctx):
     if ctx.channel.id == 867042310180962315:
@@ -86,7 +86,7 @@ async def regin(ctx):
         pass
 
 #Embed
-@bot.commands()
+@bot.command()
 @commands.has_role(864846474399711253)
 async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
