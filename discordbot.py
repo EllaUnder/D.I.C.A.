@@ -50,5 +50,5 @@ class Laplace(commands.Bot):
 
 
 if __name__ == '__main__':
-    bot = Laplace(self)
+    bot = Laplace(bot)
     bot.run(token)
