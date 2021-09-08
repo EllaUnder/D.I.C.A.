@@ -112,9 +112,21 @@ async def timeloop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
     Greeting_List = ['今日も一日頑張りましょう。','オペレーターの皆さん、おはようございます。']
     JST = timezone(timedelta(hours=+9),'JST')
-    now = datetime.datetime.now(JST).strftime('%H:%M')
-    if now == '09:00':
+    now1 = datetime.datetime.now(JST).strftime('%H:%M')
+    if now1 == '09:00':
         Today_Greeting = random.choice(Greeting_List)
         await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
+
+@tasks.loop(seconds=60)
+async def timeloop():
+    channel = bot.get_channel(881121615339986964) #ラウンジ
+    Dish_List = ['カレー','うどん']
+    JST = timezone(timedelta(hours=+9),'JST')
+    now2 = datetime.datetime.now(JST).strftime('%H:%M')
+    if now2 == '12:00':
+        Today_Lunch = random.choice(Dish_List)
+        await channel.send(f'D.I.C.O.が正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。')
+
+
 
 bot.run(token)
