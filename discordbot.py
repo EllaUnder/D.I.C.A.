@@ -50,7 +50,7 @@ async def regin(ctx):
     if ctx.channel.id == 864846769351294976:
         channel = bot.get_channel(Channel_ID3)
         await channel.purge()
-        embed = discord.Embed(title='⛔️警戒ユーザーリスト',color=0xff0000)
+        embed = discord.Embed(title='⛔️警戒ユーザーリスト1',color=0xff0000)
         embed.add_field(name='<@759520152655757374>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759336641265674/image0.png)')
         embed.add_field(name='<@724918305948827689>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/867759953283514368/image0.png)')
         embed.add_field(name='<@864016640143523850>',value='サーバー招待リンクのスパム。\n警戒Lv1に分類する。')
@@ -72,6 +72,8 @@ async def regin(ctx):
         embed.add_field(name='<@277414484719697920>',value='everyoneメンションでサーバーの全チャンネルに渡って添付画像と同じ文を送信。\nリンク先はニトロプレゼントに見せかけたアカウント乗っ取りリンクだと思われる。\n規定に基づき警戒Lv3に分類する。\n備考:該当アカウントは乗っ取られたものである可能性があります。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/882770290864701531/image0.png)')
         embed.add_field(name='<@787216130531393546>',value='everyoneメンションで添付画像と同じ文を送信。\nリンク先はニトロプレゼントに見せかけたアカウント乗っ取りリンクだと思われる。\n規定に基づき警戒Lv3に分類する。\n備考:該当アカウントはTwitterやTwitch、Battle.netのアカウントが接続されており、ほぼ確実に乗っ取られたアカウントであると思われる。\n[画像](https://cdn.discordapp.com/attachments/864846073050431498/883672303693619200/image0.png)')
         embed.add_field(name='<@683230272543522867>',value='everyoneメンション、目が痛くなるGIF、どこかの国の言語文字、荒らし共栄圏・Freeze及び何らかのサーバー招待リンクを含む長文メッセージをスパム。\n規定に基づき警戒Lv2に分類する。')
+        await channel.send(embed=embed)
+        embed = discord.Embed(title='⛔️警戒ユーザーリスト2',color=0xff0000)
         embed.add_field(name='<@886477238386708541>\n<@886295586591088641>\n<@886477272092123207>\n<@886477290756788224>\n<@886477418146197514>\n<@886477322759340072>\n<@886477247085690930>\n<@886477266283008020>\n<@886295571873296445>\n<@886477315507380234>\n<@886477244648787998>\n<@886477282259116082>\n<@886295472770261054>\n<@886688572697108611>\n<@886688543861264395>\n<@886688583891714069>\n<@886688586366341140>\n<@886688599666462811>\n<@886688526341640193>',value='同じサーバーに参加しているユーザーに不審な短縮URLを送信。\n被害と悪質さは大きいと判断し、警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/801123681312309310/886756270781128704/image0.png)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
