@@ -102,7 +102,7 @@ async def Elink(ctx,arg1,arg2):
 #レスポンス
 @bot.event
 async def on_message(message):
-    if message.auther == message.auther.bot:
+    if message.author == message.author.bot:
         pass
 
     if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
