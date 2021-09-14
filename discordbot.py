@@ -103,7 +103,7 @@ async def Elink(ctx,arg1,arg2):
 @bot.event
 async def on_message(message):
     if message.author == message.author.bot:
-        pass
+        return
 
     if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
         luck = random.random()
