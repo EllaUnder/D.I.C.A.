@@ -7,7 +7,6 @@ import re
 import datetime
 from datetime import timedelta,timezone
 
-client = discord.Client()
 bot = commands.Bot(
     command_prefix='#d',
     strip_after_prefix = True,
@@ -103,7 +102,7 @@ async def Elink(ctx,arg1,arg2):
 #レスポンス
 @bot.event
 async def on_message(message):
-    if message.auther = client.user:
+    if message.auther = bot.user:
         return
 
     if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
