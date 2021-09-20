@@ -80,6 +80,7 @@ async def regin(ctx):
         embed.add_field(name='<@734183904621101098>',value='サーバーにVortex JPを入れるよう誘導させ、サーバーを手酷く荒らした。\nまた、荒らしクランを自称するサーバーの招待リンクをスパムしたり、デタラメの可能性はあるが他者のアカウントトークンの一部を公開するなどかなり悪質な行為と判断し、警戒Lv3に分類する。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/887264256045776936/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/887264259476705290/image0.png)\n[画像3](https://cdn.discordapp.com/attachments/887112112630022165/887264266883846154/image0.png)\n[画像4](https://cdn.discordapp.com/attachments/887112112630022165/887294056772825138/image0.jpg)')
         embed.add_field(name='<@707823343746809858>',value='everyoneメンションと共にnitro配布に偽装したアカウント乗っ取りのURLのスパム。\n規定に基づき警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/888048351197687888/image0.png)')
         embed.add_field(name='<@834469544449409035>',value='「N」という文字列をスパム。\n警戒Lv1に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/889453301270208512/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/889453305821003817/image0.png)')
+        embed.add_field(name='<@ 831454397786750976>\n<@889198593163022336>',value='暴言を吐く荒らし行為。脅威度規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/889487375779127346/image0.png)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
