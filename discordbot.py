@@ -102,19 +102,7 @@ async def Elink(ctx,arg1,arg2):
 
    
 #レスポンス
-@bot.event
-async def on_message(message):
-    if message.author.bot == True:
-        return
 
-    if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
-        luck = random.random()
-        if luck <= 0.7:
-            await message.channel.send('おはようございます。')
-        else:
-            pass
-
-    await bot.process_commands(message)
 
 #時報
 @tasks.loop(seconds=60)
