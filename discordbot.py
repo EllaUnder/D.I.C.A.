@@ -124,5 +124,7 @@ async def timeloop():
         else:
             Today_Lunch = random.choice(Dish_List)
             await channel.send(f'D.I.C.O.が正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。\n午後の業務も頑張っていきましょう。')
+    if now == '18:00':
+        await channel.send('PM6時をお知らせします。業務終了です。\nオペレーター各位、お疲れ様でした。')
 
 bot.run(token)
