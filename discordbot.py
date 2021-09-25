@@ -82,6 +82,7 @@ async def regin(ctx):
         embed.add_field(name='<@834469544449409035>',value='「N」という文字列をスパム。\n警戒Lv1に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/889453301270208512/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/889453305821003817/image0.png)')
         embed.add_field(name='<@831454397786750976>\n<@889198593163022336>',value='暴言を吐く荒らし行為。脅威度規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/889487375779127346/image0.png)')
         embed.add_field(name='<@886493465159032922>',value='同じサーバーに参加するユーザーにDMを送信し、荒らし対策botとしてVortex JPの使用を推奨。\n脅威度規定に基づき警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/890554164709589002/image0.png)')
+        embed.add_field(name='<@888343812429197332>',value='DMにて「セキュリティが低いと感じる」と言い、Vortex JPの導入を勧める。\n脅威度規定に基づき警戒Lv3で分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/890932707524222986/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/890932713312374804/image0.png)\n[画像3](https://media.discordapp.net/attachments/887112112630022165/890932717003370596/image0.png)\n[画像4](https://cdn.discordapp.com/attachments/887112112630022165/890932722380472350/image0.png)\n[画像5](https://cdn.discordapp.com/attachments/887112112630022165/890932726868369508/image0.png)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
