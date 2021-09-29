@@ -101,6 +101,14 @@ async def regin(ctx):
     else:
         pass
 
+#グローバルBAN
+@bot.event
+async def on_member_join(member):
+    user_id = member.id
+    with open(''json'',encoding=''UTF-8'') as f:
+        if user_id in f.read():
+            await member.ban(user_id)
+
 #Embed
 @bot.command()
 @commands.has_role(864846474399711253)
