@@ -104,7 +104,7 @@ async def regin(ctx):
 #グローバルBAN
 @bot.event
 async def on_member_join(member):
-    user_id = member.id
+    user_id = str(member.id)
     with open("list.json",encoding="UTF-8") as f:
         if user_id in f.read():
             await member.ban(user_id)
