@@ -113,7 +113,7 @@ async def on_member_join(member):
         if user_id in list_txt:
             channel = bot.get_channel(Channel_ID1)
             await channel.send('ブラックリストの読み込みが完了しました')
-            await member.ban(user_id)
+            await member.ban()
     
     await bot.process_commands(member)
 
