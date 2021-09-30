@@ -110,8 +110,8 @@ async def regin(ctx):
 @bot.event
 async def on_member_join(member):
     user_id = str(member.id)
-        if user_id in list_txt:
-            await member.ban()
+    if user_id in list_txt:
+        await member.ban()
     
     await bot.process_commands(member)
 
