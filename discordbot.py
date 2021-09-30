@@ -109,7 +109,7 @@ async def on_member_join(member):
         if user_id in f.read():
             await member.ban(user_id)
     
-    await bot.process_commands(join)
+    await bot.process_commands(member)
 
 #Embed
 @bot.command()
