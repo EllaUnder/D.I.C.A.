@@ -25,6 +25,9 @@ Channel_ID4 = 871581378234433586 #IDコピー
 async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
+    with open("list.txt",encoding="UTF-8") as f:
+        list_txt = f.read()
+        await channel.send('ブラックリストの読み込みが完了しました')
     await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
     timeloop.start()
 
@@ -107,12 +110,7 @@ async def regin(ctx):
 @bot.event
 async def on_member_join(member):
     user_id = str(member.id)
-    with open("list.txt",encoding="UTF-8") as f:
-        list_txt = f.read()
-        print(list_txt)
         if user_id in list_txt:
-            channel = bot.get_channel(Channel_ID1)
-            await channel.send('ブラックリストの読み込みが完了しました')
             await member.ban()
     
     await bot.process_commands(member)
