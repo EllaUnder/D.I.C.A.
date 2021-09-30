@@ -28,6 +28,7 @@ async def on_ready():
     await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
     with open("list.txt",encoding="UTF-8") as f:
         list_txt = f.read()
+        list_rtxt = list_txt.split('\n')
         await channel.send('ブラックリストの読み込みが完了しました')
     timeloop.start()
 
