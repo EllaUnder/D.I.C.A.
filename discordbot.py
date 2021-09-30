@@ -25,10 +25,10 @@ Channel_ID4 = 871581378234433586 #IDコピー
 async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
+    await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
     with open("list.txt",encoding="UTF-8") as f:
         list_txt = f.read()
         await channel.send('ブラックリストの読み込みが完了しました')
-    await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
     timeloop.start()
 
 @bot.event
