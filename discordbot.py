@@ -106,7 +106,8 @@ async def regin(ctx):
 async def on_member_join(member):
     user_id = str(member.id)
     with open("list.txt",encoding="UTF-8") as f:
-        if user_id in f.read():
+        list_txt = f.read()
+        if user_id in list_txt:
             channel = bot.get_channel(Channel_ID1)
             await channel.send('ブラックリストの読み込みが完了しました')
             await member.ban(user_id)
