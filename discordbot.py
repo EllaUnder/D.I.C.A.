@@ -112,7 +112,8 @@ async def regin(ctx):
 async def on_member_join(member):
     user_id = str(member.id)
     if user_id in list_txt:
-        await member.ban()
+        reason = ''.join([s for s in list_rtxt if user_id in s]).split(',')[1]
+        await member.ban(reason = reason)
     
     await bot.process_commands(member)
 
