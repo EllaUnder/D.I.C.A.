@@ -21,14 +21,16 @@ Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
 
+#ブラックリスト読み込み
+with open("list.txt",encoding="UTF-8") as f:
+    list_txt = f.read()
+    list_rtxt = list_txt.split('\n')
+
 @bot.event
 async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
-    with open("list.txt",encoding="UTF-8") as f:
-        list_txt = f.read()
-        list_rtxt = list_txt.split('\n')
         await channel.send('ブラックリストの読み込みが完了しました')
     timeloop.start()
 
