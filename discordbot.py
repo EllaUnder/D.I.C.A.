@@ -30,8 +30,8 @@ with open("list.txt",encoding="UTF-8") as f:
 async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
+    await channel.send('ブラックリストの読み込みが完了しました。')
     await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
-        await channel.send('ブラックリストの読み込みが完了しました')
     timeloop.start()
 
 @bot.event
