@@ -116,8 +116,6 @@ async def on_member_join(member):
     if user_id in list_txt:
         reason = ''.join([s for s in list_rtxt if user_id in s]).split(',')[1]
         await member.ban(reason = reason)
-    
-    await bot.process_commands(member)
 
 #Embed
 @bot.command()
