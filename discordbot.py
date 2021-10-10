@@ -98,7 +98,7 @@ async def regin(ctx):
         embed.add_field(name='<@695959366360104990>',value='「荒らし共栄圏万歳」というメッセージと共に3つのサーバー招待リンク、何らかの言語、クラッシュGIFを送信。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323351094657074/image0.png)')
         embed.add_field(name='<@733646120299003935>',value='everyoneメンションでサーバーの宣伝文をスパム。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323062673346600/image0.png)')
         embed.add_field(name='<@890237743966335006>',value='大量の空白改行を用いたスパム。\n荒らしの集団攻撃参加者の1人であることから警戒Lv2に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323578845397053/image0.png)')
-        embed.add_field(name='<@868848971622268949>',value='クラッシュGIFを送信。\n警戒Lv2に分類する。\n［画像］(https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)')
+        embed.add_field(name='<@868848971622268949>',value='クラッシュGIFを送信。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
