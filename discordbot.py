@@ -99,6 +99,7 @@ async def regin(ctx):
         embed.add_field(name='<@733646120299003935>',value='everyoneメンションでサーバーの宣伝文をスパム。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323062673346600/image0.png)')
         embed.add_field(name='<@890237743966335006>',value='大量の空白改行を用いたスパム。\n荒らしの集団攻撃参加者の1人であることから警戒Lv2に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323578845397053/image0.png)')
         embed.add_field(name='<@868848971622268949>',value='クラッシュGIFを送信。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)')
+        embed.add_field(name='<@644499064485838850>',value='意味不明な文字列をスパム。\n警戒Lv1に分類。\n[画像](https://media.discordapp.net/attachments/887112112630022165/891323821276135424/image0.png)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
