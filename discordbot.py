@@ -128,7 +128,7 @@ async def on_member_join(member):
     c_time = now - creared_at(member)
     u_name = name(member)
     if c_time <= 2628002.88:
-        if 'ワッパステイ' in u_name or if '共栄圏' in u_name:
+        if 'ワッパステイ' in u_name or '共栄圏' in u_name:
             await member.add_roles(884218829151043594) # user => member
     else:
         return
