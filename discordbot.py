@@ -115,13 +115,20 @@ async def regin(ctx):
     else:
         pass
 
-#グローバルBAN
+#セキュリティシステム
 @bot.event
 async def on_member_join(member):
     user_id = str(member.id)
     if user_id in list_txt:
         reason = ''.join([s for s in list_rtxt if user_id in s]).split(',')[1]
         await member.ban(reason = reason)
+        return
+    #コンディションシステム
+    now = datetime.datetime.now()
+    c_time = now - creared_at(member)
+    u_name = name(member)
+    if c_time <= 2628002.88 and if 'ワッパステイ' or '共栄圏' in u_name:
+        await member.add_roles(884218829151043594) # user => member
 
 #Embed
 @bot.command()
