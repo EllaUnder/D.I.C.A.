@@ -133,7 +133,7 @@ async def on_member_join(member):
         await channel.send('コンディション更新、カラーオレンジです。')
     elif '共栄圏' in u_name or 'ワッパステイ' in u_name or '荒らし' in u_name:
         await member.ban()
-        await channel.send(''コンディション更新、カラーレッドです。)
+        await channel.send('コンディション更新、カラーレッドです。')
     else:
         return
 
