@@ -10,7 +10,8 @@ from datetime import timedelta,timezone
 bot = commands.Bot(
     command_prefix='#d',
     strip_after_prefix = True,
-    intents=discord.Intents().all()
+    intents=discord.Intents().all(),
+    activity=discord.Game('D.I.C.O.管制補佐システム')
 )
 
 token = os.environ['DISCORD_BOT_TOKEN']
