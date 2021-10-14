@@ -131,7 +131,7 @@ async def on_member_join(member):
     if c_time <= 2628002.88:
         await member.add_roles(884218829151043594)
         await channel.send('コンディション更新、カラーオレンジです。')
-    elif '共栄圏' in u_name or 'ワッパステイ' in u_name or '荒らし' in u_name:
+    elif '共栄圏' in u_name or 'ワッパステイ' in u_name or '荒らし' in u_name or 'サウロン' in u_name:
         await member.ban()
         await channel.send('コンディション更新、カラーレッドです。')
     else:
