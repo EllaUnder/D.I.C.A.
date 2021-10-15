@@ -148,9 +148,11 @@ async def Elink(ctx,arg1,arg2):
     #検索機能
 @bot.command()
 @commands.has_role(864846474399711253)
-async def search(ctx,arg1):
-    if arg1 in list_txt:
+async def search(ctx,arg):
+    if arg in list_txt:
         await ctx.send('検索ヒットしました。該当IDは報告リストに存在します。')
+    elif not arg in list_txt:
+        await ctx.send('該当IDは報告リストに存在しません。')
     else:
         return
    
