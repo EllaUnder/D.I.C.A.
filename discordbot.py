@@ -26,6 +26,8 @@ Channel_ID4 = 871581378234433586 #IDコピー
 with open("list.txt",encoding="UTF-8") as f:
     list_txt = f.read()
     list_rtxt = list_txt.split('\n')
+with open("blacklist.json",encoding="UTF-8") as b:
+    b_list_txt = b.read()
 
 @bot.event
 async def on_ready():
@@ -147,11 +149,10 @@ async def Elink(ctx,arg1,arg2):
 
     #検索機能
 @bot.command()
-@commands.has_role(864846474399711253)
 async def search(ctx,arg):
-    if arg in list_txt:
+    if arg in list_txt or arg in b_list_txt:
         await ctx.send('検索ヒットしました。該当IDは報告リストに存在します。')
-    elif not arg in list_txt:
+    elif not arg in list_txt and not arg in b_list_txt:
         await ctx.send('該当IDは報告リストに存在しません。')
     else:
         return
