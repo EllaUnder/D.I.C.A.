@@ -137,13 +137,22 @@ async def on_member_join(member):
     else:
         return
 
-#Embed
+#コマンド
+    #Embed
 @bot.command()
 @commands.has_role(864846474399711253)
 async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
 
+    #検索機能
+@bot.command()
+@commands.has_role(864846474399711253)
+async def search(ctx,arg1)
+    if arg1 in list_txt:
+        await ctx.send('検索ヒットしました。該当IDは報告リストに存在します。')
+    else:
+        return
    
 #レスポンス
 
