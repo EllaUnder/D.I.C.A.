@@ -157,6 +157,9 @@ async def search(ctx,arg):
     else:
         return
    
+#レスポンスコマンド
+@bot.event
+
 #レスポンス
 
 
