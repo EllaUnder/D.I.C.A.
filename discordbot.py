@@ -160,7 +160,7 @@ async def search(ctx,arg):
 #レスポンスコマンド
 @bot.event
 async def on_message(message):
-    if message.startswith('Laplace' or 'ラプラス'):
+    if message.startswith('Laplace') or message.startswith('ラプラス'):
         await ctx.send('お呼びでしょうか？')
 
 
