@@ -173,6 +173,8 @@ async def on_message(message):
             await message.channel.send('おはようございます。')
         else:
             return
+    elif message.author.bot == True:
+        return
 
     await bot.process_commands(message)
 
