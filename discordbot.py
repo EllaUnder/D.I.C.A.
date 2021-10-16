@@ -162,6 +162,8 @@ async def search(ctx,arg):
 async def on_message(message):
     if message.startswith('Laplace') or message.startswith('ラプラス'):
         await ctx.send('お呼びでしょうか？')
+    
+    await bot.process_commands(message)
 
 
 #レスポンス
@@ -173,7 +175,7 @@ async def on_message(message):
             await message.channel.send('おはようございます。')
         else:
             return
-    elif message.author.bot == True:
+    elif message.author.bot:
         return
 
     await bot.process_commands(message)
