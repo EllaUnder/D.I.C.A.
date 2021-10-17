@@ -161,6 +161,7 @@ async def search(ctx,arg):
 @bot.event
 async def on_message(message):
     if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
+        channel = message.channel
         await message.channel.send('お呼びでしょうか？')
     
     await bot.process_commands(message)
