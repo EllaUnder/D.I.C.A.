@@ -21,6 +21,7 @@ Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
+Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 #ブラックリスト読み込み
 with open("list.txt",encoding="UTF-8") as f:
@@ -124,11 +125,13 @@ async def on_member_join(member):
     if user_id in list_txt:
         reason = ''.join([s for s in list_rtxt if user_id in s]).split(',')[1]
         await member.ban(reason = reason)
+        channel = bot.get_channel(Channel_ID5)
+        await channel.send('BANしました')
         return
     #コンディションシステム
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now()
-    c_time = now - member.creared_at(member)
+    c_time = now - member.created_at(member)
     u_name = name(member)
     if c_time <= 2628002.88:
         await member.add_roles(884218829151043594)
