@@ -199,6 +199,16 @@ async def on_message(message):
 @commands.has_any_role(865030088477900811,865029743173828608,864846474399711253)
 async def record(ctx,arg1,arg2):
     r_operator_mention = f"<@{ctx.author.id}>"
+
+    try:
+        url = ctx.message.attachments[0].url
+    except:
+        url = None
+    if url != None: #画像があった場合の処理
+        embed.set_image(url=url)
+    else: # 画像がないときの処理
+        pass
+
     embed = discord.Embed(title=f'{arg1}',description=f'{arg2}',color=0x00FF7F)
     embed.add_field(name='記録者',value=f'{r_operator_mention}')
     channel = bot.get_channel(Channel_ID6)
