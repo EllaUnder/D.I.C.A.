@@ -169,6 +169,18 @@ async def search(ctx,arg):
         await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
     else:
         return
+
+    #特定ユーザーのメッセージを削除
+@bot.command()
+async def MsearchD(ctx,arg1, arg2):
+    if not ctx.auther.id == 854331482444267550:
+        return
+    channel = bot.get_channel(message.channel.id)
+    messages = await channel.history(limit=int(arg1)).flatten()
+    for message in messages:
+        if message.author.id == int(arg2):
+            await message.delete # 検索対象のIDと一緒ならの処理
+
    
 #レスポンスコマンド
 @bot.event
