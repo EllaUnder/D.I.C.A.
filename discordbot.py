@@ -173,12 +173,12 @@ async def search(ctx,arg):
     #特定ユーザーのメッセージを削除
 @bot.command()
 async def MsearchD(ctx,arg1,arg2):
-    if not ctx.auther.id == 854331482444267550:
+    if not ctx.message.auther.id == 854331482444267550:
         return
-    channel = bot.get_channel(message.channel.id)
+    channel = bot.get_channel(ctx.message.channel.id)
     messages = await channel.history(limit=int(arg1)).flatten()
     for message in messages:
-        if ctx.message.author.id == int(arg2):
+        if message.author.id == int(arg2):
             await message.delete() # 検索対象のIDと一緒ならの処理
 
    
