@@ -22,6 +22,7 @@ Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 Channel_ID4 = 871581378234433586 #IDコピー
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
+Channel_ID6 = 899500385788624906 #活動記録
 
 #ブラックリスト読み込み
 with open("list.txt",encoding="UTF-8") as f:
@@ -145,7 +146,7 @@ async def on_member_join(member):
 #コマンド
     #Embed
 @bot.command()
-@commands.has_role(864846474399711253)
+@commands.has_role(865029743173828608,864846474399711253)
 async def Elink(ctx,arg1,arg2):
     embed = discord.Embed(description=f'[{arg1}]({arg2})')
     await ctx.send(embed=embed)
@@ -183,6 +184,12 @@ async def on_message(message):
         return
 
     await bot.process_commands(message)
+
+#オペレーター管制補佐システム
+@bot.command()
+@commands.has_role(865030088477900811,865029743173828608,864846474399711253)
+async def (message):
+    
 
 
 #時報
