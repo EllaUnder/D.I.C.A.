@@ -154,9 +154,17 @@ async def Elink(ctx,arg1,arg2):
     #検索機能
 @bot.command()
 async def search(ctx,arg):
-    if arg in list_txt or arg in b_list_txt:
-        await ctx.send('検索ヒットしました。該当IDは報告リストに存在します。')
+    if arg in list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+            sleep(3)
+        await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
+    elif arg in b_list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+            sleep(3)
+        await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
     elif not arg in list_txt and not arg in b_list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+            sleep(3)
         await ctx.send('該当IDは報告リストに存在しません。')
     else:
         return
@@ -188,7 +196,9 @@ async def on_message(message):
 #オペレーター管制補佐システム
 @bot.command()
 @commands.has_role(865030088477900811,865029743173828608,864846474399711253)
-async def (message):
+async def record(ctx,arg):
+    r_operator = message.author.id
+    
     
 
 
