@@ -205,7 +205,7 @@ async def record(ctx,arg1,arg2):
     except:
         url = None
     if url != None: #画像があった場合の処理
-        embed.set_image(url=url)
+        embed.set_image(url)
     else: # 画像がないときの処理
         pass
 
