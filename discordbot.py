@@ -157,15 +157,15 @@ async def Elink(ctx,arg1,arg2):
 async def search(ctx,arg):
     if arg in list_txt:
         await ctx.send('ちょっと待ってくださいね…')
-        sleep(3)
+        time.sleep(3)
         await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
     elif arg in b_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
-        sleep(3)
+        time.sleep(3)
         await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
     elif not arg in list_txt and not arg in b_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
-        sleep(3)
+        time.sleep(3)
         await ctx.send('該当IDは報告リストに存在しません。')
     else:
         return
