@@ -200,7 +200,7 @@ async def on_message(message):
 async def record(ctx,arg1,arg2):
     r_operator = ctx.author.id
     embed = discord.Embed(title=f'{arg1}',description=f'{arg2}',color=0x00FF7F)
-    embed.set_author(name=f'<@{r_operator}> の活動報告')
+    embed.set_author(name=f'{r_operator.mention}の活動報告')
     channel = bot.get_channel(Channel_ID6)
     await channel.send(embed=embed)
     
