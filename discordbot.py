@@ -198,7 +198,7 @@ async def on_message(message):
 @bot.command()
 @commands.has_any_role(865030088477900811,865029743173828608,864846474399711253)
 async def record(ctx,arg1,arg2):
-    r_operator = message.author.id
+    r_operator = ctx.author.id
     embed = discord.Embed(title=f'{arg1}',description=f'{arg2}',color=0x00FF7F)
     embed.set_author(name=f'<@{r_operator}> の活動報告')
     channel = bot.get_channel(Channel_ID6)
