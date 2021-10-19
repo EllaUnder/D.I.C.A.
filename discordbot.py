@@ -171,12 +171,9 @@ async def search(ctx,arg):
         return
 
     #特定ユーザーのメッセージを削除
-author_id = '854331482444267550','408509122653323265'
-
 @bot.command()
+@commands.has_any_role(864846474399711253,865029743173828608)
 async def MsearchD(ctx,arg1,arg2):
-    if not str(ctx.message.author.id) in author_id:
-        return
     channel = bot.get_channel(ctx.message.channel.id)
     messages = await channel.history(limit=int(arg1)).flatten()
     for message in messages:
