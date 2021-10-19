@@ -233,7 +233,7 @@ async def record(ctx,arg1,arg2):
 @tasks.loop(seconds=60)
 async def timeloop():
     channel = bot.get_channel(881121615339986964) #ラウンジ
-    Greeting_List = ['今日も一日頑張りましょう。','オペレーターの皆さん、おはようございます。']
+    Greeting_List = ['今日も一日頑張りましょう。','オフィサーの皆さん、おはようございます。']
     Dish_List = ['キャンディ','ドーナツ','バームクーヘン']
     JST = timezone(timedelta(hours=+9),'JST')
     now = datetime.datetime.now(JST).strftime('%H:%M')
@@ -248,6 +248,6 @@ async def timeloop():
             Today_Lunch = random.choice(Dish_List)
             await channel.send(f'D.I.C.O.が正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。\n午後の業務も頑張っていきましょう。')
     if now == '18:00':
-        await channel.send('PM6時をお知らせします。業務終了です。\nオペレーター各位、お疲れ様でした。')
+        await channel.send('PM6時をお知らせします。業務終了です。\nオフィサー各位、お疲れ様でした。')
 
 bot.run(token)
