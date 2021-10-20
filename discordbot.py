@@ -134,7 +134,7 @@ async def on_member_join(member):
     #コンディションシステム
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now()
-    c_time = now - member.created_at(member)
+    c_time = now - member.created_at()
     u_name = name(member)
     if c_time <= 2628002.88:
         await member.add_roles(884218829151043594)
