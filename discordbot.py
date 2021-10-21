@@ -191,7 +191,7 @@ async def help(ctx):
     embed.add_field(name='`search <ユーザーID>`',value='報告リスト、ブラックリストに指定したユーザーが存在するかどうか検索します。')
     embed.add_field(name='`Elink <タイトル> <メッセージリンク>`',value='埋め込みメッセージを作成します。\n管理者専用です。')
     embed.add_field(name='`MsearchD <検索範囲> <ユーザーID>`',value='検索範囲の中に指定したユーザーのメッセージがあった場合全て削除します。\n課長・副課長専用です。')
-    embed.add_field(neme='`record <タイトル> <内容> [写真]`',value='荒らし対策の活動記録を残します。\nオフィサー専用です。')
+    embed.add_field(name='`record <タイトル> <内容> [写真]`',value='荒らし対策の活動記録を残します。\nオフィサー専用です。')
     embed.add_field(name='`help`',value='コマンド一覧を表示します。')
     await ctx.send(embed=embed)
 
