@@ -185,6 +185,9 @@ async def MsearchD(ctx,arg1,arg2):
             await message.delete() # 検索対象のIDと一緒ならの処理
     await ctx.send('悪いメッセージはドーン、ドン！💣💥')
 
+    #ユーザー情報取得
+    
+
     #ヘルプ
 @bot.command()
 async def help(ctx):
