@@ -188,7 +188,7 @@ async def MsearchD(ctx,arg1,arg2):
     #ヘルプ
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title='Laplaceのコマンド一覧',description='プレフィックスは`#d`です。\n引数`<>`は必須になります。引数`[]`はオプションです。\n ',color=0x00ff8d)
+    embed = discord.Embed(title='Laplaceのコマンド一覧',description='プレフィックスは`#d`です。\n引数`<>`は必須になります。引数`[]`はオプションです。',color=0x00ff8d)
     embed.add_field(name='`search <ユーザーID>`',value='報告リスト、ブラックリストに指定したユーザーが存在するかどうか検索します。')
     embed.add_field(name='`Elink <タイトル> <メッセージリンク>`',value='埋め込みメッセージを作成します。\n管理者専用です。')
     embed.add_field(name='`MsearchD <検索範囲> <ユーザーID>`',value='検索範囲の中に指定したユーザーのメッセージがあった場合全て削除します。\n課長・副課長専用です。')
