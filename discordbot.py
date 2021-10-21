@@ -109,6 +109,7 @@ async def regin(ctx):
         embed.add_field(name='<@868848971622268949>',value='クラッシュGIFを送信。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)')
         embed.add_field(name='<@644499064485838850>',value='意味不明な文字列をスパム。\n警戒Lv1に分類。\n[画像](https://media.discordapp.net/attachments/887112112630022165/891323821276135424/image0.png)')
         embed.add_field(name='<@819763736306778163>',value='複数の捨て垢と共にサーバーの荒らしを実行。\n潜伏して荒らしではないような振る舞いをしてたとの報告あり。\n規定に基づき警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/899982815440044062/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/899982815725240320/image1.png)')
+        embed.add_field(name='<@856027143082606683>',value='管理権限を与えられた他人のサーバーに参加しているユーザーを突如大量にkickする。\n警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/900698996341882890/image0.jpg)')
         await channel.send(embed=embed)
         JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
@@ -187,7 +188,7 @@ async def MsearchD(ctx,arg1,arg2):
     #ヘルプ
 @bot.command()
 async def help(ctx):
-    embed = discord.Embed(title='Laplaceのコマンド一覧',description='プレフィックスは`#d`です。\n引数`<>`は必須になります。引数`[]`はオプションです。',color=0x00ff8d)
+    embed = discord.Embed(title='Laplaceのコマンド一覧',description='プレフィックスは`#d`です。\n引数`<>`は必須になります。引数`[]`はオプションです。\n ',color=0x00ff8d)
     embed.add_field(name='`search <ユーザーID>`',value='報告リスト、ブラックリストに指定したユーザーが存在するかどうか検索します。')
     embed.add_field(name='`Elink <タイトル> <メッセージリンク>`',value='埋め込みメッセージを作成します。\n管理者専用です。')
     embed.add_field(name='`MsearchD <検索範囲> <ユーザーID>`',value='検索範囲の中に指定したユーザーのメッセージがあった場合全て削除します。\n課長・副課長専用です。')
