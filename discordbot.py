@@ -11,6 +11,7 @@ from datetime import timedelta,timezone
 bot = commands.Bot(
     command_prefix='#d',
     strip_after_prefix = True,
+    help_command=None,
     intents=discord.Intents().all(),
     activity=discord.Game('D.I.C.O.管制補佐システム')
 )
