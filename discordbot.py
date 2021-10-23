@@ -188,7 +188,6 @@ async def MsearchD(ctx,arg1,arg2):
     await ctx.send('悪いメッセージはドーン、ドン！💣💥')
 
     #ユーザー情報取得
-
 @bot.command()
 async def info(ctx,*args):
     #ギルド情報あり
@@ -201,6 +200,7 @@ async def info(ctx,*args):
         embed.add_field(name='__Information__',value=f'**Bot**:Yes\n**ID**:{user.id}' if member.bot else f'**Bot**:No\n**ID**:{user.id}')
         a_join_time = user.created_at()
         embed.add_field(name='__Joined__',value=f'**Discord**:{a_join_time}\n**Guild**:{user.joined_at()}')
+        await ctx.send(embed=embed)
 
     
 
