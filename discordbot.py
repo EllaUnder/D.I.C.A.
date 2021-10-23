@@ -188,6 +188,20 @@ async def MsearchD(ctx,arg1,arg2):
     await ctx.send('悪いメッセージはドーン、ドン！💣💥')
 
     #ユーザー情報取得
+
+@bot.command()
+async def info(ctx,*args):
+    #ギルド情報あり
+    if len(args) == 0:
+        user = await bot.fetch_user(ctx.author.id)
+        user_mention = f'<@{user.id}>'
+        embed = discord.Embed(title=f'{user_mention}')
+        embed.set_author(name=user.name,icon_url=user.default_avatar)
+        embed.set_thumbnail(url=user.display_avatar)
+        embed.add_field(name='__Information__',value=f'**Bot**:Yes\n**ID**:{user.id}' if member.bot else f'**Bot**:No\n**ID**:{user.id}')
+        a_join_time = user.created_at()
+        embed.add_field(name='__Joined__',value=f'**Discord**:{a_join_time}\n**Guild**:{user.joined_at()}')
+
     
 
     #ヘルプ
