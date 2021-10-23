@@ -202,8 +202,6 @@ async def info(ctx,*args):
         embed.add_field(name='__Joined__',value=f'**Discord**:{a_join_time}\n**Guild**:{user.joined_at()}')
         await ctx.send(embed=embed)
 
-    
-
     #ヘルプ
 @bot.command()
 async def help(ctx):
@@ -214,6 +212,7 @@ async def help(ctx):
     embed.add_field(name='__record <タイトル> <内容> [写真]__',value='荒らし対策の活動記録を残します。\nオフィサー専用です。')
     embed.add_field(name='__help__',value='コマンド一覧を表示します。')
     await ctx.send(embed=embed)
+
 
 #レスポンスコマンド
 @bot.event
@@ -259,7 +258,23 @@ async def record(ctx,arg1,arg2):
     channel = bot.get_channel(Channel_ID6)
     await channel.send(embed=embed)
     
-    
+#招待リンク追跡
+@bot.event
+async def on_invite_create(invite):
+    i_creator = invite.inviter.id
+    i_creator_mention = f'<@{i_creator}>'
+    i_c_time = invite.created_at()
+    i_limittime = invite.expires_at()
+    i_url = invite.url
+    i_channel = invite.channel
+    embed = discord.Embed(title='招待リンクが作成されました。',description=f'__作成者__:{i_creator_mention}')
+    embed.add_field(name='__作成時刻__',value=f'{i_c_time}')
+    embed.add_field(name='__招待期限__',value=f'{i_c_limittime}')
+    embed.add_field(name='__招待チャンネル__',value=f'{i_channel}')
+    embed.add_field(name='__招待リンク__',value=f'{i_url}')
+    channel = bot.get_channel(Channel_ID1)
+    await channel.send(embed=embed)
+
     
 
 
