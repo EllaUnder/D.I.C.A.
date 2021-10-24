@@ -251,7 +251,7 @@ async def on_invite_create(invite):
     i_creator = invite.inviter.id
     i_creator_mention = f'<@{i_creator}>'
     i_c_time = invite.created_at
-    i_limittime = invite.expires_at()
+    i_limittime = invite.expires_at
     i_url = invite.url
     i_channel = invite.channel
     embed = discord.Embed(title='招待リンクが作成されました。',description=f'__作成者__:{i_creator_mention}')
