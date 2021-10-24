@@ -255,7 +255,6 @@ async def on_invite_create(invite):
     i_channel = invite.channel
     embed = discord.Embed(title='招待リンクが作成されました。',description=f'__作成者__:{i_creator_mention}')
     embed.add_field(name='__作成時刻__',value=f'{i_c_time}')
-    embed.add_field(name='__招待期限__',value=f'{i_c_limittime}')
     embed.add_field(name='__招待チャンネル__',value=f'{i_channel}')
     embed.add_field(name='__招待リンク__',value=f'{i_url}')
     channel = bot.get_channel(Channel_ID1)
