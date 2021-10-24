@@ -139,7 +139,7 @@ async def on_member_join(member):
     #コンディションシステム
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now()
-    c_time = now - member.created_at()
+    c_time = now - member.created_at
     u_name = name(member)
     if c_time <= 2628002.88:
         await member.add_roles(884218829151043594)
@@ -250,7 +250,7 @@ async def record(ctx,arg1,arg2):
 async def on_invite_create(invite):
     i_creator = invite.inviter.id
     i_creator_mention = f'<@{i_creator}>'
-    i_c_time = invite.created_at()
+    i_c_time = invite.created_at
     i_limittime = invite.expires_at()
     i_url = invite.url
     i_channel = invite.channel
