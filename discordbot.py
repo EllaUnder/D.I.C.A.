@@ -33,6 +33,10 @@ with open("list.txt",encoding="UTF-8") as f:
 with open("blacklist.json",encoding="UTF-8") as b:
     b_list_txt = b.read()
 
+#タイムゾーン設定
+JST = timezone(timedelta(hours=+9),'JST')
+
+
 @bot.event
 async def on_ready():
     print('起動しました')
@@ -59,7 +63,6 @@ async def regin(ctx):
         embed = discord.Embed(title='⚠️注意ユーザーリスト',color=0xffff00)
         embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
         await channel.send(embed=embed)
-        JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
         time = clock.strftime('%Y年%m月%d日 %H:%M:%S')
         await channel.send(f'更新日時　{time}')
@@ -113,7 +116,6 @@ async def regin(ctx):
         embed.add_field(name='<@877980784059904080>',value='セキュリティbot Vortexに偽装したbotを入れ、サーバーを改造。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/901341248051355719/image0-6.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/901341248248504380/image0-4.png)')
         embed.add_field(name='<@883023393753006130>',value='everyoneメンションと不明のリンクを送信する荒らし行為。\n規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/901426956854231101/Screenshot_20211023-192952.png)')
         await channel.send(embed=embed)
-        JST = timezone(timedelta(hours=+9),'JST')
         clock = datetime.datetime.now(JST)
         time = clock.strftime('%Y年%m月%d日 %H:%M:%S')
         await channel.send(f'更新日時　{time}')
@@ -230,8 +232,10 @@ async def on_message(message):
 @commands.has_any_role(865030088477900811,865029743173828608,864846474399711253)
 async def record(ctx,arg1,arg2):
     r_operator_mention = f"<@{ctx.author.id}>"
+    now = datetime.datetime.now(JST)
     embed = discord.Embed(title=f'{arg1}',description=f'{arg2}',color=0x00FF7F)
-    embed.add_field(name='記録者',value=f'{r_operator_mention}')
+    embed.add_field(name='__記録者__',value=f'{r_operator_mention}')
+    embed.add_field(name='__記録時刻__',value=f'{now}')
 
     try:
         url = ctx.message.attachments[0].url
