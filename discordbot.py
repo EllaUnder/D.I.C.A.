@@ -161,7 +161,7 @@ async def Elink(ctx,arg1,arg2):
     await ctx.send(embed=embed)
 
     #検索機能
-ignore_author = '861772187416526848','868344464937218059','738641470281744405'
+ignore_author = '861772187416526848','868344464937218059','738641470281744405','840871694901182507'
 
 @bot.command()
 async def search(ctx,arg):
