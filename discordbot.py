@@ -161,27 +161,22 @@ async def Elink(ctx,arg1,arg2):
     await ctx.send(embed=embed)
 
     #検索機能
-ignore_author = '861772187416526848','868344464937218059','738641470281744405','840871694901182507'
-
 @bot.command()
-async def search(ctx,arg):
-    if str(ctx.author.id) in ignore_author:
+async def search(ctx,arg): 
+    if arg in list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+        time.sleep(random.uniform(0.5,1.5))
+        await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
+    elif arg in b_list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+        time.sleep(random.uniform(0.5,1.5))
+        await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
+    elif not arg in list_txt and not arg in b_list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+        time.sleep(random.uniform(0.5,1.5))
+        await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
+    else:
         return
-    else: 
-        if arg in list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
-        elif arg in b_list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
-        elif not arg in list_txt and not arg in b_list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
-        else:
-            return
 
     #特定ユーザーのメッセージを削除
 @bot.command()
