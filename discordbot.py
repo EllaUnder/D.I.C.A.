@@ -142,7 +142,7 @@ async def on_member_join(member):
     channel = bot.get_channel(Channel_ID1)
     now = datetime.datetime.now()
     c_time = now - member.created_at
-    u_name = member.name(member)
+    u_name = member.name
     if c_time <= 2628002.88:
         await member.add_roles(884218829151043594)
         await channel.send('コンディション更新、カラーオレンジです。')
