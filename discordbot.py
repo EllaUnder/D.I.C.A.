@@ -115,7 +115,7 @@ async def regin(ctx):
         embed.add_field(name='<@856027143082606683>',value='管理権限を与えられた他人のサーバーに参加しているユーザーを突如大量にkickする。\n警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/900698996341882890/image0.jpg)')
         embed.add_field(name='<@877980784059904080>',value='セキュリティbot Vortexに偽装したbotを入れ、サーバーを改造。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/901341248051355719/image0-6.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/901341248248504380/image0-4.png)')
         embed.add_field(name='<@883023393753006130>',value='everyoneメンションと不明のリンクを送信する荒らし行為。\n規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/901426956854231101/Screenshot_20211023-192952.png)')
-        embed.add_field(name='<@903237515086028800>',value='人種差別的な暴言とサーバー招待リンクのスパム。\n捨て垢と思われるが、今後も使用される可能性を考慮して警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/903253063500963890/IMG_0102.png)')
+        embed.add_field(name='<@903237515086028800>',value='人種差別的な暴言とサーバー招待リンクのスパム。\n捨て垢と思われるが、2サーバーでの荒らし行為を確認。今後も使用される可能性を考慮して警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903253063500963890/IMG_0102.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903254129932116019/IMG_7671.png)\n[画像3](https://cdn.discordapp.com/attachments/887112112630022165/903254130489974814/IMG_7670.png)\n[画像4](https://cdn.discordapp.com/attachments/887112112630022165/903254130968129567/IMG_7667.png)')
         await channel.send(embed=embed)
         clock = datetime.datetime.now(JST)
         time = clock.strftime('%Y年%m月%d日 %H:%M:%S')
