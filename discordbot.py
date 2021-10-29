@@ -42,7 +42,7 @@ async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('ブラックリストの読み込みが完了しました。')
-    await channel.send('Discord情報対策室管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
+    await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
     timeloop.start()
 
 @bot.event
@@ -228,7 +228,7 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-#オペレーター管制補佐システム
+#監察官補佐システム
 @bot.command()
 @commands.has_any_role(865030088477900811,865029743173828608,864846474399711253)
 async def record(ctx,arg1,arg2):
@@ -278,15 +278,15 @@ async def timeloop():
     now = datetime.datetime.now(JST).strftime('%H:%M')
     if now == '09:00':
         Today_Greeting = random.choice(Greeting_List)
-        await channel.send(f'D.I.C.O.が9時をお知らせします。\n{Today_Greeting}')
+        await channel.send(f'Laplaceが9時をお知らせします。\n{Today_Greeting}')
     if now == '12:00':
         p = random.random()
         if p <= 0.1:
-            await channel.send('D.I.C.O.が正午をお知らせします。\n今日の私のランチはきなこもちです。\n午後の業務も頑張っていきましょう。')
+            await channel.send('Laplaceが正午をお知らせします。\n今日の私のランチはきなこもちです。\n午後の業務も頑張っていきましょう。')
         else:
             Today_Lunch = random.choice(Dish_List)
-            await channel.send(f'D.I.C.O.が正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。\n午後の業務も頑張っていきましょう。')
+            await channel.send(f'Laplaceが正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。\n午後の業務も頑張っていきましょう。')
     if now == '18:00':
-        await channel.send('PM6時をお知らせします。業務終了です。\nオフィサー各位、お疲れ様でした。')
+        await channel.send('PM6時をお知らせします。業務終了です。\n監察官各位、お疲れ様でした。')
 
 bot.run(token)
