@@ -144,8 +144,9 @@ async def on_member_join(member):
     now = datetime.datetime.now()
     c_time = now - member.created_at
     u_name = member.name
+    role = guild.get_role(884218829151043594)
     if c_time.total_seconds() <= 2628002.88:
-        await member.add_roles(884218829151043594)
+        await member.add_roles(role)
         await channel.send('コンディション更新、カラーオレンジです。')
     elif '共栄圏' in u_name or 'ワッパステイ' in u_name or '荒らし' in u_name or 'サウロン' in u_name:
         await member.ban()
