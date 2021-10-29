@@ -42,7 +42,12 @@ async def on_ready():
     print('起動しました')
     channel = bot.get_channel(Channel_ID1)
     await channel.send('ブラックリストの読み込みが完了しました。')
-    await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動しました。\nreginの実行を忘れないでください。')
+    time.sleep(random.uniform(0.5,1.5))
+    await channel.send('報告リストの読み込みが完了しました。')
+    time.sleep(random.uniform(0.5,1.5))
+    await channel.send('**System All Green**')
+    time.sleep(random.uniform(0.5,1.5))
+    await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
     timeloop.start()
 
 @bot.event
@@ -57,21 +62,10 @@ async def on_command_error(ctx,error):
 @bot.command()
 @commands.has_role(864846474399711253)
 async def regin(ctx):
-    if ctx.channel.id == 867042310180962315:
-        channel = bot.get_channel(Channel_ID2)
-        await channel.purge()
-        embed = discord.Embed(title='⚠️注意ユーザーリスト',color=0xffff00)
-        embed.add_field(name='<@523369028920541194>',value='事前告知のないeveryoneメンションでマジックショーの予告をする。\n配慮に欠けた行為であり、6サーバーでの同様の行為が報告されているが、確認したサーバーではeveryoneメンションの禁止がルールに規定されていなかったことを考慮して、注意Lv1に分類する。\n[決議内容](https://discord.com/channels/864768192399278110/864846073050431498/867049641232695336)')
-        await channel.send(embed=embed)
-        clock = datetime.datetime.now(JST)
-        time = clock.strftime('%Y年%m月%d日 %H:%M:%S')
-        await channel.send(f'更新日時　{time}')
     if ctx.channel.id == 864846769351294976:
         channel = bot.get_channel(Channel_ID3)
         await channel.purge()
         embed = discord.Embed(title='⛔️警戒ユーザーリスト1',color=0xff0000)
-        embed.add_field(name='<@759520152655757374>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n警戒Lv1に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/887112132137742376/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/888050988441821244/image0.png)')
-        embed.add_field(name='<@724918305948827689>',value='意味不明な文字列やGIF画像を連投するスパム行為。\n警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/887112247539810314/image0.png)')
         embed.add_field(name='<@864016640143523850>',value='サーバー招待リンクのスパム。\n警戒Lv1に分類する。')
         embed.add_field(name='<@482484875794972692>',value='サーバー招待リンクのスパム。\n警戒Lv1に分類する。')
         embed.add_field(name='<@621546963963346956>',value='スパム行為による荒らし。\n警戒Lv1に分類する。')
