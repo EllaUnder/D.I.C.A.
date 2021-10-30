@@ -37,7 +37,7 @@ with open("blacklist.json",encoding="UTF-8") as b:
 JST = timezone(timedelta(hours=+9),'JST')
 
 #ギルド定義
-guild = bot.guild
+guild = bot.guild[0]
 
 
 @bot.event
