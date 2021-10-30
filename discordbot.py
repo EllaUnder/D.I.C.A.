@@ -36,9 +36,6 @@ with open("blacklist.json",encoding="UTF-8") as b:
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
 
-#ギルド定義
-guild = bot.guild[0]
-
 
 @bot.event
 async def on_ready():
