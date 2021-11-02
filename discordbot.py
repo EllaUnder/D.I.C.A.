@@ -73,7 +73,8 @@ async def stest(ctx,arg):
         for report in r_json:
             d_class = str(report['class'])
             res_match = re.match('E-|E|E+|D-|D|D+|C-|C|C+|B-|B|B+|A-|A|A+|S-|S|S+','d_class')
-            await ctx.send(res_match)
+            if res_match != None:
+                await ctx.send(res_match)
 
 #リスト
 @bot.command()
