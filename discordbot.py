@@ -73,6 +73,8 @@ async def regin(ctx):
         await channel.purge()
         embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
         field_count = 0
+        user_id_count = 0
+        content_count = 0
 
         for r_info in r_json:
             user_id_count += len(str(r_info['name']))
