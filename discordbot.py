@@ -75,26 +75,27 @@ async def regin(ctx):
         field_count = 0
         user_id_count = 0
         content_count = 0
+        total_str = 9
 
         for r_info in r_json:
-            user_id_count += len(str(r_info['name']))
-            content_count += len(str(r_info['value']))
-　　　　　　　　
-            if user_id_count + content_count >= 6000:
+            total_str += len(str(r_info['name'])) + len(str(r_info['value']))
+
+            if field_count >= 25 or total_str >= 6000: # field_count = 25 -> firld_count >= 25 
                 print(user_id_count + content_count)
                 print(field_count)
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
-                field_count,user_id_count,content_count = 0,0,0
+                field_count, total_str = 0, 9
                 r_user_id = str(r_info['name'])
                 r_content = str(r_info['value'])
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
-                user_id_count += len(str(r_info['name']))
-                content_count += len(str(r_info['value']))
+                total_str += len(str(r_info['name'])) + len(str(r_info['value']))
+                
 
             else:
                 r_user_id = str(r_info['name'])
                 r_content = str(r_info['value'])
+                total_count += len(str(r_info['value'])) + len(str(r_info['name']))
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
                 field_count += 1
 
