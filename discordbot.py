@@ -73,12 +73,13 @@ async def regin(ctx):
         await channel.purge()
         embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
         for r_info in r_json:
-            count = 0
+            field_count = 0
             r_user_id = str(r_info['name'])
             r_content = str(r_info['value'])
             embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
-            count += 1
-            if count >= 20:
+            field_count += 1
+            txt_count = len(embed)
+            if field_count < 25 and txt_count > 6000:
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
                 count = 0
