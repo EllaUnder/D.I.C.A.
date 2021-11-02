@@ -85,7 +85,7 @@ async def regin(ctx):
                 print(field_count)
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
-                user_id_count, content_count = 0, 0
+                field_count,user_id_count,content_count = 0,0,0
                 r_user_id = str(r_info['name'])
                 r_content = str(r_info['value'])
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
