@@ -31,9 +31,12 @@ Channel_ID6 = 899500385788624906 #活動記録
 with open("list.txt",encoding="UTF-8") as f:
     list_txt = f.read()
     list_rtxt = list_txt.split('\n')
+
 with open("blacklist.json",encoding="UTF-8") as b:
     b_list_txt = b.read()
-file = open("report.json",'r')
+
+with open("report.json",'r') as f:
+file = f
 r_json = json.loads(file)
 type(r_json)
 
