@@ -83,7 +83,7 @@ async def regin(ctx):
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
                 count = 0
-            if count != 0:
+        if count != 0:
                 await channel.send(embed=embed)
     else:
         pass
