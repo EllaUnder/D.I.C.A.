@@ -35,10 +35,9 @@ with open("list.txt",encoding="UTF-8") as f:
 with open("blacklist.json",encoding="UTF-8") as b:
     b_list_txt = b.read()
 
-with open("report.json",'r') as f:
-    file = f.read
-r_json = json.loads(file)
-type(r_json)
+file = open("report.json",'r')
+r_json = json.load(file)
+print(type(r_json))
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
