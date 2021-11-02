@@ -7,6 +7,7 @@ import re
 import time
 import datetime
 from datetime import timedelta,timezone
+import json
 
 bot = commands.Bot(
     command_prefix='#d',
@@ -26,12 +27,15 @@ Channel_ID4 = 871581378234433586 #IDコピー
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 Channel_ID6 = 899500385788624906 #活動記録
 
-#ブラックリスト読み込み
+#リスト系読み込み
 with open("list.txt",encoding="UTF-8") as f:
     list_txt = f.read()
     list_rtxt = list_txt.split('\n')
 with open("blacklist.json",encoding="UTF-8") as b:
     b_list_txt = b.read()
+file = open("report.json",'r')
+json = json loads(file)
+type(json)
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
