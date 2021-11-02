@@ -65,6 +65,15 @@ async def on_command_error(ctx,error):
     await channel.send(error_msg)
     await ctx.send('コマンドエラーです。')
 
+#テスト
+@bot.command()
+async def stest(ctx,arg): 
+    if arg in ('E','D','C','B','A','S')
+        for report in r_json:
+            d_class = str(report['class'])
+            res_match = re.match('E.|D.|C.|B.|A.|S.','d_class')
+            await ctx.send(res_match)
+
 #リスト
 @bot.command()
 @commands.has_role(864846474399711253)
