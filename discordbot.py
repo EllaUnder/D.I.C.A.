@@ -75,8 +75,8 @@ async def regin(ctx):
         for r_info in r_json:
             await ctx.send(r_info)
             count = 0
-            r_user_id = str(r_info[name])
-            r_content = str(r_info[value])
+            r_user_id = str(r_info['name'])
+            r_content = str(r_info['value'])
             embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
             count += 1
             if count >= 25:
