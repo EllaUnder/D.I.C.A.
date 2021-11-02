@@ -72,26 +72,28 @@ async def regin(ctx):
         channel =bot.get_channel(Channel_ID3)
         await channel.purge()
         embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
+        field_count = 0
+
         for r_info in r_json:
-            field_count = 0
-            user_id_count = 0
-            content_count = 0
-            r_user_id = str(r_info['name'])
-            r_content = str(r_info['value'])
-            embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
-            field_count += 1
             user_id_count += len(str(r_info['name']))
             content_count += len(str(r_info['value']))
-            if field_count > 25 and (user_id_count + content_count) > 6000:
-                remove_index = field_count - 1
-                embed.remove_field(remove_index)
+
+            if user_id_count + content_count >= 6000:
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
-                field_count,user_id_count,content_count = 0,0,0
-            elif field_count >= 25 and (user_id_count + content_count) <= 6000:
-                await channel.send(embed=embed)
-                embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
-                field_count,user_id_count,content_count = 0,0,0
+                user_id_count, content_count = 0, 0
+                r_user_id = str(r_info['name'])
+                r_content = str(r_info['value'])
+                embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
+                user_id_count += len(str(r_info['name']))
+                content_count += len(str(r_info['value']))
+
+            else:
+                r_user_id = str(r_info['name'])
+                r_content = str(r_info['value'])
+                embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
+                field_count += 1
+
         if field_count != 0:
             await channel.send(embed=embed)
     else:
