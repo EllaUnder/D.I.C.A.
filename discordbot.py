@@ -141,7 +141,7 @@ async def Elink(ctx,arg1,arg2):
     #検索機能
 @bot.command()
 async def search(ctx,arg): 
-    if arg in list_txt:
+    if arg in r_json:
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
@@ -149,7 +149,7 @@ async def search(ctx,arg):
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
-    elif not arg in list_txt and not arg in b_list_txt:
+    elif not arg in r_json and not arg in b_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
