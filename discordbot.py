@@ -60,7 +60,7 @@ async def on_command_error(ctx,error):
 
 #リスト
 @bot.command()
-@commands_has_role(864846474399711253)
+@commands.has_role(864846474399711253)
 async def regin(ctx):
     if ctx.channel.id == 864846769351294976:
         channel =bot.get_channel(Channel_ID3)
