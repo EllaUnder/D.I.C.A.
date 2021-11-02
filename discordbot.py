@@ -90,7 +90,6 @@ async def regin(ctx):
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
                 total_str += len(str(r_info['name'])) + len(str(r_info['value']))
                 
-
             else:
                 r_user_id = str(r_info['name'])
                 r_content = str(r_info['value'])
