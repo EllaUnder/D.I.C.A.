@@ -82,7 +82,9 @@ async def regin(ctx):
             field_count += 1
             user_id_count += len(str(r_info['name']))
             content_count += len(str(r_info['value']))
-            if field_count < 25 and (user_id_count + content_count) >= 6000:
+            if field_count < 25 and (user_id_count + content_count) > 6000:
+                remove_index = field_count - 1
+                embed.remove_field(remove_index)
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
                 field_count,user_id_count,content_count = 0,0,0
