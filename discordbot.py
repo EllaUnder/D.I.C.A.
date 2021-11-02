@@ -81,6 +81,8 @@ async def regin(ctx):
             content_count += len(str(r_info['value']))
 
             if user_id_count + content_count >= 6000:
+                print(user_id_count + content_count)
+                print(field_count)
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
                 user_id_count, content_count = 0, 0
