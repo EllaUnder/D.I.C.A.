@@ -34,8 +34,8 @@ with open("list.txt",encoding="UTF-8") as f:
 with open("blacklist.json",encoding="UTF-8") as b:
     b_list_txt = b.read()
 file = open("report.json",'r')
-json = json loads(file)
-type(json)
+r_json = json loads(file)
+type(r_json)
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
@@ -70,7 +70,7 @@ async def regin(ctx):
         channel =bot.get_channel(Channel_ID3)
         await channel.purge()
         embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
-        for r_info in json:
+        for r_info in r_json:
             count = 0
             r_user_id = str(r_info[name])
             r_content = str(r_info[value])
