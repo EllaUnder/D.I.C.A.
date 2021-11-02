@@ -194,65 +194,97 @@
     {
         "name":"<@864171242571825202>",
         "value":"サーバー参加直後、メンバーの大多数にDMで通話や不明なYouTubeのURLを送信する。\n警戒Lv1に分類。"
+        "d_value":"5",
+        "class":"E-"
     },
     {
         "name":"<@695959366360104990>",
-        "value":"「荒らし共栄圏万歳」というメッセージと共に3つのサーバー招待リンク、何らかの言語、クラッシュGIFを送信。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323351094657074/image0.png)"
+        "value":"「荒らし共栄圏万歳」というメッセージと共に3つのサーバー招待リンク、何らかの言語、クラッシュGIFを送信。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323351094657074/image0.png)",
+        "d_value":"20",
+        "class":"D-"
     },
     {
         "name":"<@733646120299003935>",
-        "value":"everyoneメンションでサーバーの宣伝文をスパム。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323062673346600/image0.png)"
+        "value":"everyoneメンションでサーバーの宣伝文をスパム。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323062673346600/image0.png)",
+        "d_value":"20",
+        "class":"D-"
     },
     {
         "name":"<@890237743966335006>",
-        "value":"大量の空白改行を用いたスパム。\n荒らしの集団攻撃参加者の1人であることから警戒Lv2に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323578845397053/image0.png)"
+        "value":"大量の空白改行を用いたスパム。\n荒らしの集団攻撃参加者の1人であることから警戒Lv2に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323578845397053/image0.png)",
+        "d_value":"20",
+        "class":"D-"
     },
     {
         "name":"<@868848971622268949>",
-        "value":"クラッシュGIFを送信。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)"
+        "value":"クラッシュGIFを送信。\n警戒Lv2に分類する。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/891323696894062622/image0.png)",
+        "d_value":"23",
+        "class":"D"
     },
     {
         "name":"<@644499064485838850>",
-        "value":"意味不明な文字列をスパム。\n警戒Lv1に分類。\n[画像](https://media.discordapp.net/attachments/887112112630022165/891323821276135424/image0.png)"
+        "value":"意味不明な文字列をスパム。\n警戒Lv1に分類。\n[画像](https://media.discordapp.net/attachments/887112112630022165/891323821276135424/image0.png)",
+        "d_value":"15",
+        "class":"E+"
     },
     {
         "name":"<@819763736306778163>",
-        "value":"複数の捨て垢と共にサーバーの荒らしを実行。\n潜伏して荒らしではないような振る舞いをしてたとの報告あり。\n規定に基づき警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/899982815440044062/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/899982815725240320/image1.png)"
+        "value":"複数の捨て垢と共にサーバーの荒らしを実行。\n潜伏して荒らしではないような振る舞いをしてたとの報告あり。\n規定に基づき警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/899982815440044062/image0.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/899982815725240320/image1.png)",
+        "d_value":"20",
+        "class":"D-"
     },
     {
         "name":"<@856027143082606683>",
-        "value":"管理権限を与えられた他人のサーバーに参加しているユーザーを突如大量にkickする。\n警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/900698996341882890/image0.jpg)"
+        "value":"管理権限を与えられた他人のサーバーに参加しているユーザーを突如大量にkickする。\n警戒Lv3に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/900698996341882890/image0.jpg)",
+        "d_value":"25",
+        "class":"D+"
     },
     {
         "name":"<@877980784059904080>",
-        "value":"セキュリティbot Vortexに偽装したbotを入れ、サーバーを改造。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/901341248051355719/image0-6.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/901341248248504380/image0-4.png)"
+        "value":"セキュリティbot Vortexに偽装したbotを入れ、サーバーを改造。\n脅威度規定に基づき警戒Lv2に分類する。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/901341248051355719/image0-6.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/901341248248504380/image0-4.png)",
+        "d_value":"30",
+        "class":"C-"
     },
     {
         "name":"<@883023393753006130>",
-        "value":"everyoneメンションと不明のリンクを送信する荒らし行為。\n規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/901426956854231101/Screenshot_20211023-192952.png)"
+        "value":"everyoneメンションと不明のリンクを送信する荒らし行為。\n規定に基づき警戒Lv1に分類。\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/901426956854231101/Screenshot_20211023-192952.png)",
+        "d_value":"5",
+        "class":"E-"
     },
     {
         "name":"<@903237515086028800>",
-        "value":"人種差別的な暴言とサーバー招待リンクのスパム。\n捨て垢と思われるが、2サーバーでの荒らし行為を確認。今後も使用される可能性を考慮して警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903253063500963890/IMG_0102.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903254129932116019/IMG_7671.png)\n[画像3](https://cdn.discordapp.com/attachments/887112112630022165/903254130489974814/IMG_7670.png)\n[画像4](https://cdn.discordapp.com/attachments/887112112630022165/903254130968129567/IMG_7667.png)"
+        "value":"人種差別的な暴言とサーバー招待リンクのスパム。\n捨て垢と思われるが、2サーバーでの荒らし行為を確認。今後も使用される可能性を考慮して警戒Lv2に分類。\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903253063500963890/IMG_0102.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903254129932116019/IMG_7671.png)\n[画像3](https://cdn.discordapp.com/attachments/887112112630022165/903254130489974814/IMG_7670.png)\n[画像4](https://cdn.discordapp.com/attachments/887112112630022165/903254130968129567/IMG_7667.png)",
+        "d_value":"20",
+        "class":"D-"
     },
     {
         "name":"<@895325105884913736>",
-        "value":"everyoneメンション、サーバーの招待リンク、クラッシュGIFをスパム。\n深夜のためサーバへの被害、メンバーへの被害ともに軽微の為、脅威度を以下に認定する。\n__評価値__:15\n__脅威クラス__:**E+**\n【備考】\n荒らし行為は確認されていないが、以下は該当ユーザーのサブアカウントとして判明しています。\n<@749524210925436970>\n<@838400028199878698>\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903753237033807902/IMG_5652.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903753237306421349/IMG_5653.png)"
+        "value":"everyoneメンション、サーバーの招待リンク、クラッシュGIFをスパム。\n深夜のためサーバへの被害、メンバーへの被害ともに軽微の為、脅威度を以下に認定する。\n__評価値__:15\n__脅威クラス__:**E+**\n【備考】\n荒らし行為は確認されていないが、以下は該当ユーザーのサブアカウントとして判明しています。\n<@749524210925436970>\n<@838400028199878698>\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903753237033807902/IMG_5652.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903753237306421349/IMG_5653.png)",
+        "d_value":"15",
+        "class":"E"
     },
     {
         "name":"<@792082032472621077>",
-        "value":"クラッシュGIF、everyoneメンション、招待リンクのスパム。\n脅威度を以下に認定する。\n__評価値__:35\n__脅威クラス__:**C**\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903428456019283998/IMG_1730.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903555033839308830/IMG_0107.png)"
+        "value":"クラッシュGIF、everyoneメンション、招待リンクのスパム。\n脅威度を以下に認定する。\n__評価値__:35\n__脅威クラス__:**C**\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903428456019283998/IMG_1730.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903555033839308830/IMG_0107.png)",
+        "d_value":"35",
+        "class":"C"
     },
     {
         "name":"<@903528510633697311>\n<@877062272575496193>\n<@850724781161578517>",
-        "value":"権限を付与された上でVortexを始めとした荒らし対策botをBANし、その後荒らしbotでサーバーを改造。\n累計で2サーバへの被害を確認、莫大な通知量によりPCがフリーズしたとの報告。\nよって脅威度を以下に認定する。\n__評価値__:30\n__脅威クラス__:**C-**\n[サーバー改造後の様子](https://cdn.discordapp.com/attachments/887112112630022165/903931483608203345/-_Discord_2021_10_30_9_59_58.png)"
+        "value":"権限を付与された上でVortexを始めとした荒らし対策botをBANし、その後荒らしbotでサーバーを改造。\n累計で2サーバへの被害を確認、莫大な通知量によりPCがフリーズしたとの報告。\nよって脅威度を以下に認定する。\n__評価値__:30\n__脅威クラス__:**C-**\n[サーバー改造後の様子](https://cdn.discordapp.com/attachments/887112112630022165/903931483608203345/-_Discord_2021_10_30_9_59_58.png)",
+        "d_value":"30",
+        "class":"C-"
     },
     {
         "name":"<@654607374031519755>",
-        "value":"コマンドを利用して、管理者に無断でサーバー参加メンバーのkick・BANを試みる。\n管理者からの追求に悪意のある態度で応答し、反省の色は見られなかった。\n未遂ではあるが、要注意人物として脅威度を以下に認定する。\n__評価値__:3\n__脅威クラス__:**E-**\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903996017458946068/IMG_3347.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903996017786105887/IMG_3348.png)"
+        "value":"コマンドを利用して、管理者に無断でサーバー参加メンバーのkick・BANを試みる。\n管理者からの追求に悪意のある態度で応答し、反省の色は見られなかった。\n未遂ではあるが、要注意人物として脅威度を以下に認定する。\n__評価値__:3\n__脅威クラス__:**E-**\n[画像1](https://cdn.discordapp.com/attachments/887112112630022165/903996017458946068/IMG_3347.png)\n[画像2](https://cdn.discordapp.com/attachments/887112112630022165/903996017786105887/IMG_3348.png)",
+        "d_value":"3",
+        "class":"E-"
     },
     {
         "name":"<@899482526626766869>",
-        "value":"よく分からない長文とあらゆるロールのメンション、及び招待リンクのスパム。\nプロbotによる即時削除でサーバーへの被害はゼロ、参加メンバーも全く気付いている様子が無いので脅威度を以下に認定する。\n__評価値__:3\n__脅威クラス__**E-**\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/903893656514224178/IMG_0114.png)"
+        "value":"よく分からない長文とあらゆるロールのメンション、及び招待リンクのスパム。\nプロbotによる即時削除でサーバーへの被害はゼロ、参加メンバーも全く気付いている様子が無いので脅威度を以下に認定する。\n__評価値__:3\n__脅威クラス__**E-**\n[画像](https://cdn.discordapp.com/attachments/887112112630022165/903893656514224178/IMG_0114.png)",
+        "d_value":"3",
+        "class":"E-"
     }
 ]
