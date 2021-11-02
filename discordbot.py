@@ -80,7 +80,7 @@ async def regin(ctx):
             user_id_count += len(str(r_info['name']))
             content_count += len(str(r_info['value']))
 
-            if user_id_count + content_count >= 6000:
+            if field_count = 25 or (user_id_count + content_count) >= 6000:
                 print(user_id_count + content_count)
                 print(field_count)
                 await channel.send(embed=embed)
