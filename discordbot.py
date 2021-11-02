@@ -79,9 +79,8 @@ async def regin(ctx):
         for r_info in r_json:
             user_id_count += len(str(r_info['name']))
             content_count += len(str(r_info['value']))
-　　　　　　　　total_str = user_id_count + content_count + 9
-
-            if field_count = 25 or total_str >= 6000:
+　　　　　　　　
+            if user_id_count + content_count >= 6000:
                 print(user_id_count + content_count)
                 print(field_count)
                 await channel.send(embed=embed)
