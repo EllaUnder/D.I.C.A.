@@ -68,7 +68,8 @@ async def on_command_error(ctx,error):
 #テスト
 @bot.command()
 async def stest(ctx,arg): 
-    if arg = ('E','D','C','B','A','S')
+s_class = 'E','D','C','B','A','S'
+    if arg in s_class
         for report in r_json:
             d_class = str(report['class'])
             res_match = re.match('E.|D.|C.|B.|A.|S.','d_class')
