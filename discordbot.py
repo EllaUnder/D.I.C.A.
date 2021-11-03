@@ -155,7 +155,7 @@ s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+',
 async def search(ctx,arg): 
     if re.search('[a-zA-Z]',arg):
         if arg not in s_class: # もし引数が予想以外なら警告で返す
-            await ctx.send(f"Warning: not support args '{arg}'")
+            await ctx.send(f"脅威クラス**{arg}**は存在しません。")
             return
 
         users = [] # クラスが一致した人の情報を入れておく
@@ -165,15 +165,15 @@ async def search(ctx,arg):
                 users.append([info["id"], info["value"]]) # usersに情報を一旦保管
 
         if users == []: # もし結果が空なら返す
-            await ctx.send("Search results: None")
+            await ctx.send("Search result: **None**")
             await ctx.send('該当するユーザーは見つかりませんでした。')
             return
 
-        embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000) # 初期Embed
+        embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
         field_count = 0
 
         for user in users:
-            if field_count >= 24: # いつもの
+            if field_count >= 25: # いつもの
                 await ctx.send(embed=embed)
                 embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
                 field_count = 0
