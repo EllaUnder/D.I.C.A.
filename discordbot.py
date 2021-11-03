@@ -149,8 +149,47 @@ async def Elink(ctx,arg1,arg2):
     await ctx.send(embed=embed)
 
     #検索機能
+s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
+
 @bot.command()
 async def search(ctx,arg): 
+    if re.search('[a-zA-Z]',arg) = True:
+        if arg not in s_class: # もし引数が予想以外なら警告で返す
+            await ctx.send(f"Warning: not support args '{arg}'")
+                return
+
+        users = [] # クラスが一致した人の情報を入れておく
+
+        for info in r_json:  
+            if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                users.append([info["id"], info["value"]]) # usersに情報を一旦保管
+
+        if users == []: # もし結果が空なら返す
+            await ctx.send("Search results: None")
+            await ctx.send('該当するユーザーは見つかりませんでした。')
+            return
+
+        embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000) # 初期Embed
+        field_count = 0
+
+        for user in users:
+            if field_count >= 24: # いつもの
+                await ctx.send(embed=embed)
+                embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
+                field_count = 0
+                user_id = str(user[0])
+                user_content = str(user[1])
+                embed.add_field(name=f'▼__{user_id}__',value=user_content)
+
+            else:
+                user_id = str(user[0])
+                user_content = str(user[1])
+                field_count += 1
+                embed.add_field(name=f'▼__{user_id}__',value=user_content)
+
+        if field_count != 0:
+            await ctx.send(embed=embed)
+
     if arg in r_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
