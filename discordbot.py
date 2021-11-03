@@ -174,6 +174,7 @@ async def search(ctx,arg):
 
         for user in users:
             if field_count >= 25: # いつもの
+                time.sleep(random.uniform(3.0,5.0))
                 await ctx.send(embed=embed)
                 embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
                 field_count = 0
@@ -189,6 +190,11 @@ async def search(ctx,arg):
 
         if field_count != 0:
             await ctx.send(embed=embed)
+    
+    elif re.search('[0-9]',arg):
+        arg_digits = len(str(arg))
+        if 1 <= arg_digits <= 3:
+        
 
     if arg in r_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
