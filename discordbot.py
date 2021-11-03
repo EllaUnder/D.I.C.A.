@@ -39,7 +39,7 @@ with open("report.json",'r') as r:
     r_json = json.load(r)
 r_list_txt = []
 for r_ids in r_json:
-    r_id = str(r_ids['name'])
+    r_id = str(r_ids['id'])
     r_list_txt.append(r_id)
 
 print(type(r_json))
@@ -94,19 +94,19 @@ async def regin(ctx):
         total_str = 9
 
         for r_info in r_json:
-            total_str += len(str(r_info['name'])) + len(str(r_info['value']))
+            total_str += len(str(r_info['id'])) + len(str(r_info['value']))
 
             if field_count >= 25 or total_str >= 6000: 
                 await channel.send(embed=embed)
                 embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
                 field_count, total_str = 0, 9
-                r_user_id = str(r_info['name'])
+                r_user_id = str(r_info['id'])
                 r_content = str(r_info['value'])
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
-                total_str += len(str(r_info['name'])) + len(str(r_info['value']))
+                total_str += len(str(r_info['id'])) + len(str(r_info['value']))
                 
             else:
-                r_user_id = str(r_info['name'])
+                r_user_id = str(r_info['id'])
                 r_content = str(r_info['value'])
                 total_str += len(str(r_info['value'])) + len(str(r_info['name']))
                 embed.add_field(name=f'▼__{r_user_id}__',value=r_content)
