@@ -37,7 +37,11 @@ with open("blacklist.json",encoding="UTF-8") as b:
 
 with open("report.json",'r') as r:
     r_json = json.load(r)
-    r_txt_json = r.read()
+r_list_txt = []
+for r_ids in r_json:
+    r_id = str(r_ids['id'])
+    r_list_txt.append(r_id)
+
 print(type(r_json))
 
 #タイムゾーン設定
@@ -150,7 +154,7 @@ async def Elink(ctx,arg1,arg2):
     #検索機能
 @bot.command()
 async def search(ctx,arg): 
-    if arg in r_txt_json:
+    if arg in r_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('検索ヒットしました。\n該当IDは報告リストに存在します。')
@@ -158,7 +162,7 @@ async def search(ctx,arg):
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('検索ヒットしました。\n該当IDはブラックリストに存在します。')
-    elif not arg in r_txt_json and not arg in b_list_txt:
+    elif not arg in r_list_txt and not arg in b_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
