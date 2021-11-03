@@ -72,7 +72,7 @@ async def stest(ctx,arg):
     if arg in s_class:
         for report in r_json:
             d_class = str(report['class'])
-            res_match = re.match('E-|E|E+|D-|D|D+|C-|C|C+|B-|B|B+|A-|A|A+|S-|S|S+','d_class')
+            res_match = re.match('[EDCBAS][+-]','d_class')
             if res_match != None:
                 await ctx.send(res_match)
 
