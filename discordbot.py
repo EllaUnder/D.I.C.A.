@@ -37,10 +37,7 @@ with open("blacklist.json",encoding="UTF-8") as b:
 
 with open("report.json",'r') as r:
     r_json = json.load(r)
-r_list_txt = []
-for r_ids in r_json:
-    r_id = str(r_ids['id'])
-    r_list_txt.append(r_id)
+r_list_txt = [r_ids['id'] for r_ids in r_json]
 
 print(type(r_json))
 
