@@ -158,11 +158,11 @@ async def search(ctx,arg):
             await ctx.send(f"脅威クラス**{arg}**は存在しません。")
             return
 
-        users = [] # クラスが一致した人の情報を入れておく
+        users_c = [] # クラスが一致した人の情報を入れておく
 
         for info in r_json:  
             if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
-                users.append([info["id"], info["value"]]) # usersに情報を一旦保管
+                users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
 
         if users == []: # もし結果が空なら返す
             await ctx.send("Search result: **None**")
@@ -172,7 +172,7 @@ async def search(ctx,arg):
         embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
         field_count = 0
 
-        for user in users:
+        for user in users_c:
             if field_count >= 25: # いつもの
                 time.sleep(random.uniform(3.0,5.0))
                 await ctx.send(embed=embed)
@@ -194,6 +194,8 @@ async def search(ctx,arg):
     elif re.search('[0-9]',arg):
         arg_digits = len(str(arg))
         if 1 <= arg_digits <= 3:
+            users_d_value = []
+            
         
 
     if arg in r_list_txt:
