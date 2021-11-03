@@ -39,7 +39,7 @@ with open("report.json",'r') as r:
     r_json = json.load(r)
 r_list_txt = []
 for r_ids in r_json:
-    r_id = str(r_ids['id'])
+    r_id = str(r_ids['name'])
     r_list_txt.append(r_id)
 
 print(type(r_json))
