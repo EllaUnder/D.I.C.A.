@@ -37,6 +37,7 @@ with open("blacklist.json",encoding="UTF-8") as b:
 
 with open("report.json",'r') as r:
     r_json = json.load(r)
+    r_list_txt = r.read()
 
 print(type(r_json))
 
@@ -199,12 +200,10 @@ async def search(ctx,arg):
         if 1 <= arg_digits <= 3:
             users_d_value = []
             
-    elif:
-        for id_info in r_json:
-            if arg in id_info['id']:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('該当IDは報告リストに存在します。')
+    elif arg in r_list_txt:
+        await ctx.send('ちょっと待ってくださいね…')
+        time.sleep(random.uniform(0.5,1.5))
+        await ctx.send('該当IDは報告リストに存在します。')
     
     elif arg in b_list_txt:
         await ctx.send('ちょっと待ってくださいね…')
@@ -215,6 +214,7 @@ async def search(ctx,arg):
         await ctx.send('ちょっと待ってくださいね…')
         time.sleep(random.uniform(0.5,1.5))
         await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
+
     else:
         return
 
