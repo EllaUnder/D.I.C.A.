@@ -66,17 +66,6 @@ async def on_command_error(ctx,error):
     await channel.send(error_msg)
     await ctx.send('コマンドエラーです。')
 
-#テスト
-s_class = 'E','D','C','B','A','S'
-@bot.command()
-async def stest(ctx,arg): 
-    if arg in s_class:
-        for report in r_json:
-            d_class = str(report['class'])
-            res_match = re.match('[EDCBAS][+-]','d_class')
-            if res_match != None:
-                await ctx.send(res_match)
-
 #リスト
 @bot.command()
 @commands.has_role(864846474399711253)
@@ -223,8 +212,8 @@ async def search(ctx,arg):
 @commands.has_any_role(864846474399711253,865029743173828608)
 async def MsearchD(ctx,arg1,arg2):
     channel = bot.get_channel(ctx.message.channel.id)
-    messages = await channel.history(limit=int(arg1)).flatten()
     await ctx.send('サーチイテレータ、開始します…')
+    messages = await channel.history(limit=int(arg1)).flatten()
     for message in messages:
         if message.author.id == int(arg2):
             await message.delete() # 検索対象のIDと一緒ならの処理
