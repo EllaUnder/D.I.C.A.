@@ -112,12 +112,13 @@ async def on_member_join(member):
     await channel.send(f'ようこそ、{join_member_mention}様。貴方の入館を歓迎します。\nここはDiscord安全情報機関 D.I.C.A. ロビーです。\nまずは<#{864831620208656394}>と<#{864849667114926141}>をお読み下さい。')
     
     user_id = str(member.id)
-    if user_id in list_txt:
-        reason = ''.join([s for s in list_rtxt if user_id in s]).split(',')[1]
-        await member.ban(reason = reason)
-        channel = bot.get_channel(Channel_ID5)
-        await channel.send('BANしました')
-        return
+    for join in r_json:
+        if user_id in join['id']:
+            await member.ban()
+            channel = bot.get_channel(Channel_ID5)
+            await channel.send('BANしました')
+            return
+
     #コンディションシステム
     now = datetime.datetime.now()
     c_time = now - member.created_at
