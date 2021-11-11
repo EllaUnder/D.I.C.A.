@@ -225,7 +225,7 @@ async def MsearchD(ctx,arg1,arg2):
     #サーバーコピー
 
 @bot.command()
-@commands.has_permission(864846474399711253)
+@commands.has_role(864846474399711253)
 async def copy(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
