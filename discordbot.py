@@ -223,7 +223,6 @@ async def MsearchD(ctx,arg1,arg2):
     #ユーザー情報取得
 
     #サーバーコピー
-
 @bot.command()
 @commands.has_role(864846474399711253)
 async def copy(ctx,arg):
@@ -231,7 +230,7 @@ async def copy(ctx,arg):
     time.sleep(0.5)
     await ctx.send('ギルド観測儀・ラプラス、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
-    to_guild = bot.get_guild(int(arg))
+    to_guild = bot.get_guild(arg)
     c_guild_cate = c_guild.categories
     to_guild_cate = to_guild.categories
     c_guild_chan = c_guild.channels
