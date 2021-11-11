@@ -14,7 +14,7 @@ bot = commands.Bot(
     strip_after_prefix = True,
     help_command=None,
     intents=discord.Intents().all(),
-    activity=discord.Game('D.I.C.O.管制補佐システム')
+    activity=discord.Game('D.I.C.A.管制補佐システム')
 )
 
 token = os.environ['DISCORD_BOT_TOKEN']
