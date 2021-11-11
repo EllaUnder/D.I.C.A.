@@ -222,6 +222,30 @@ async def MsearchD(ctx,arg1,arg2):
 
     #ユーザー情報取得
 
+    #サーバーコピー
+
+@bot.command()
+@commands.has_permission(864846474399711253)
+async def copy(ctx,arg):
+    await ctx.send('実行許可を確認しました。')
+    time.sleep(0.5)
+    await ctx.send('ギルド観測儀・ラプラス、展開します。')
+    c_guild = bot.get_guild(ctx.guild.id)
+    to_guild = bot.get_guild(int(arg))
+    c_guild_cate = c_guild.categories
+    to_guild_cate = to_guild.categories
+    c_guild_chan = c_guild.channels
+    to_guild_chan = to_guild.channels
+    await ctx.send('ギルド情報を取得しました。')
+
+    for category in c_guild_cate:
+        category_name = category.name
+        await to_guild.create_category(category_name)
+        for channel_category in category.channels:
+            channel_name = channel_category.name
+            await category.create_channel(channel_name)
+    await ctx.send('ギルド外殻の複製完了。')
+
     #ヘルプ
 @bot.command()
 async def help(ctx):
