@@ -254,7 +254,6 @@ async def copy(ctx,arg):
                 messages = channel_category.history(limit = 400).flatten() 
                 await ctx.send(messages)
             break
-        break
                
     await ctx.send('ギルド外殻の複製完了。')
 
