@@ -255,16 +255,7 @@ async def copy(ctx,arg):
                 await ctx.send(messages)
             break
         break
-                to_text_channel = await to_category.create_text_channel(channel_name) 
-                messages_dict[str(to_text_channel.id)] = messages
-                webhook = to_text_channel.create_webhook(name="CopyWebHook")
-                webhook_url = webhook.url
-                for message in messages_dict:
-                    
-            if channel_category.type.name == 'voice':
-                await to_category.create_voice_channel(channel_name)
-            if channel_category.type.name == 'stage_voice':
-                await to_category.create_stage_channel(channel_name)
+               
     await ctx.send('ギルド外殻の複製完了。')
 
     #ヘルプ
