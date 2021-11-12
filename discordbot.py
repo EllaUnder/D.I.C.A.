@@ -256,7 +256,7 @@ async def copy(ctx,arg):
         for channel_category in category.channels:
             channel_name = channel_category.name
             if channel_category.type.name == 'text':
-                messages = await channel_category.history(limit = 400).flatten() 
+                messages = await channel_category.history(limit = 400).flatten().reverse()
                 to_text_channel = await to_category.create_text_channel(channel_name) 
                 messages_dict[str(to_text_channel.id)] = messages
             if channel_category.type.name == 'voice':
@@ -273,12 +273,31 @@ async def copy(ctx,arg):
             webhook_url = webhook.url
             for message in messages_dict[str(channel.id)]:
                 header = { "Content-type": "application/json" }
-                data = {
-                  "content" : f"{message.content}",
-                  "username" : f"{message.author.name}",
-                  "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")}
-                requests.post(webhook_url, json = data, headers=header)
-                time.sleep(2.0)
+                try:
+                    url = message.attachments[0].url
+                except:
+                    url = None
+                if url != None:
+                    data = {
+                        "content" : f"{message.content}",
+                        "username" : f"{message.author.name}",
+                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
+                        "embeds":[{
+                            "image":{
+                            "url":message.attachments[0].url}
+                        }]
+                    }
+                    requests.post(webhook_url, json = data, headers=header)
+                    time.sleep(2.0)
+                else:
+                    date = {
+                        "content" : f"{message.content}",
+                        "username" : f"{message.author.name}",
+                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
+                    }
+                    requests.post(webhook_url, json = data, headers=header)
+                    time.sleep(2.0)
+    await ctx.send('メジャーコンプリート。')
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
