@@ -8,7 +8,6 @@ import time
 import datetime
 from datetime import timedelta,timezone
 import json
-import requests
 
 bot = commands.Bot(
     command_prefix='#d',
