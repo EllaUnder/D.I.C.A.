@@ -257,7 +257,7 @@ async def copy(ctx,arg):
             channel_name = channel_category.name
             if channel_category.type.name == 'text':
                 messages = await channel_category.history(limit=400).flatten()
-                messages_log = messages.reverse()
+                messages_log = list(reversed(messages))
                 to_text_channel = await to_category.create_text_channel(channel_name) 
                 messages_dict[str(to_text_channel.id)] = messages_log
             if channel_category.type.name == 'voice':
