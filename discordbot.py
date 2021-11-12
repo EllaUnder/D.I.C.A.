@@ -241,15 +241,15 @@ async def copy(ctx,arg):
 
     for category in c_guild_cate:
         category_name = category.name
-        await to_guild.create_category(category_name)
+        to_category = await to_guild.create_category(category_name)
         for channel_category in category.channels:
             channel_name = channel_category.name
             if channel_category.type.name == 'text':
-                await to_guild.create_text_channel(channel_name)
+                await to_category.create_text_channel(channel_name)
             if channel_category.type.name == 'voice':
-                await to_guild.create_voice_channel(channel_name)
+                await to_category.create_voice_channel(channel_name)
             if channel_category.type.name == 'stage_voice':
-                await to_guild.create_stage_channel(channel_name)
+                await to_category.create_stage_channel(channel_name)
     await ctx.send('ギルド外殻の複製完了。')
 
     #ヘルプ
