@@ -239,6 +239,11 @@ async def copy(ctx,arg):
     to_guild_chan = to_guild.channels
     await ctx.send('ギルド情報を取得しました。')
 
+    for channel in to_guild.channels:
+        channel.delete()
+    for category in to_guild.categories:
+        category.delete()
+
     for category in c_guild_cate:
         category_name = category.name
         to_category = await to_guild.create_category(category_name)
