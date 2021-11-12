@@ -256,6 +256,10 @@ async def copy(ctx,arg):
                 messages_dict[str(to_text_channel.id)] = messages
                 webhook = to_text_channel.create_webhook(name="CopyWebHook")
                 webhook_url = webhook.url
+                for message in messages_dict:
+                    author_avatar=message.author.avatar_url
+                    author_name=message.author.name
+                    message_content=message.content
                     
             if channel_category.type.name == 'voice':
                 await to_category.create_voice_channel(channel_name)
