@@ -245,8 +245,7 @@ async def copy(ctx,arg):
         await channel.delete()
     for category in to_guild.categories:
         await category.delete()
-    to_guild_roles_len = len(to_guild_roles)
-    if to_guild_roles_len != 0:
+    if len(to_guild_roles):
         for role in to_guild_roles:
             await roles.delete()
     await ctx.send('初期化完了')
