@@ -249,6 +249,7 @@ async def copy(ctx,arg):
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
     await ctx.send('__定礎転写、開始__')
+    await ctx.send('転写と並行して観測、実行します。')
     for category in c_guild_cate:
         category_name = category.name
         to_category = await to_guild.create_category(category_name)
@@ -258,18 +259,28 @@ async def copy(ctx,arg):
                 messages = channel_category.history(limit = 400).flatten() 
                 to_text_channel = await to_category.create_text_channel(channel_name) 
                 messages_dict[str(to_text_channel.id)] = messages
-                webhook = await to_text_channel.create_webhook(name="CopyWebHook")
-                webhook_url = webhook.url
                 for message in messages_dict:
                     author_avatar=message.author.avatar_url
                     author_name=message.author.name
                     message_content=message.content
-                    
-                    
             if channel_category.type.name == 'voice':
                 await to_category.create_voice_channel(channel_name)
             if channel_category.type.name == 'stage_voice':
                 await to_category.create_stage_channel(channel_name)
+    await ctx.send('ギルド外殻の複製、完了しました。')
+    time.sleep()
+    await
+    for channel in to_guild.channels:
+        if channel.type.name = 'text':
+            webhook = await channel.create_webhook(name = "CopyWebHook")
+            webhook_url = webhook.url
+            for message in message_dict[str(channel.id)]:
+                header = { "Content-type": "application/json" }
+                data = {
+                  "content" : f"{message.content}",
+                  "username" : f"{message.author.name}",
+                  "avatar_url": message.author.avatar_url.replace(".webp", ".png")}
+                requests.post(webhook_url, json = data, headers=header)
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
