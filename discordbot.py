@@ -229,7 +229,7 @@ async def MsearchD(ctx,arg1,arg2):
 async def copy(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
-    await ctx.send('ギルド観測儀・ラプラス、展開します。')
+    await ctx.send('ギルド観測儀ラプラス、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
     to_guild_id = int(arg)
     to_guild = bot.get_guild(to_guild_id)
@@ -278,6 +278,7 @@ async def copy(ctx,arg):
                   "username" : f"{message.author.name}",
                   "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")}
                 requests.post(webhook_url, json = data, headers=header)
+                time.sleep(2.0)
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
