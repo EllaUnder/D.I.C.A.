@@ -231,7 +231,8 @@ async def copy(ctx,arg):
     time.sleep(0.5)
     await ctx.send('ギルド観測儀・ラプラス、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
-    to_guild = bot.get_guild(arg)
+    to_guild_id = int(arg)
+    to_guild = bot.get_guild(to_guild_id)
     c_guild_cate = c_guild.categories
     to_guild_cate = to_guild.categories
     c_guild_chan = c_guild.channels
