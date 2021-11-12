@@ -238,11 +238,12 @@ async def copy(ctx,arg):
     c_guild_chan = c_guild.channels
     to_guild_chan = to_guild.channels
     await ctx.send('ギルド情報を取得しました。')
-
+    await ctx.send('初期化開始')
     for channel in to_guild.channels:
         await channel.delete()
     for category in to_guild.categories:
         await category.delete()
+    await ctx.send('初期化完了')
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
@@ -258,10 +259,6 @@ async def copy(ctx,arg):
                 messages = await channel_category.history(limit = 400).flatten() 
                 to_text_channel = await to_category.create_text_channel(channel_name) 
                 messages_dict[str(to_text_channel.id)] = messages
-                for message in messages_dict:
-                    author_avatar=message.author.avatar_url
-                    author_name=message.author.name
-                    message_content=message.content
             if channel_category.type.name == 'voice':
                 await to_category.create_voice_channel(channel_name)
             if channel_category.type.name == 'stage_voice':
