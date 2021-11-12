@@ -244,7 +244,12 @@ async def copy(ctx,arg):
         await to_guild.create_category(category_name)
         for channel_category in category.channels:
             channel_name = channel_category.name
-            await category.create_channel(channel_name)
+            if channel_category.type == ChannelType.text:
+                await category.create_text_channel(channel_name)
+            if channel_category.type == ChannelType.voice:
+                await categorycreate_voice_channel(channel_name)
+            if channel_category.type == ChannelType.stage:
+                await category.create_stage_channel(channel_name)
     await ctx.send('ギルド外殻の複製完了。')
 
     #ヘルプ
