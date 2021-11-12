@@ -271,7 +271,7 @@ async def copy(ctx,arg):
         if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
             webhook_url = webhook.url
-            for message in message_dict[str(channel.id)]:
+            for message in messages_dict[str(channel.id)]:
                 header = { "Content-type": "application/json" }
                 data = {
                   "content" : f"{message.content}",
