@@ -240,9 +240,9 @@ async def copy(ctx,arg):
     await ctx.send('ギルド情報を取得しました。')
 
     for channel in to_guild.channels:
-        channel.delete()
+        await channel.delete()
     for category in to_guild.categories:
-        category.delete()
+        await category.delete()
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
