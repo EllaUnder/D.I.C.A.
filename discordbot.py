@@ -275,7 +275,7 @@ async def copy(ctx,arg):
                 data = {
                   "content" : f"{message.content}",
                   "username" : f"{message.author.name}",
-                  "avatar_url": message.author.avatar_url.replace(".webp", ".png")}
+                  "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")}
                 requests.post(webhook_url, json = data, headers=header)
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
