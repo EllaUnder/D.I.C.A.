@@ -248,8 +248,8 @@ async def copy(ctx,arg):
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
-    await ctx.send('__定礎転写、開始__')
-    await ctx.send('転写と並行して観測、実行します。')
+    await ctx.send('__定礎複写、開始__')
+    await ctx.send('複写と並行して観測、実行します。')
     for category in c_guild_cate:
         category_name = category.name
         to_category = await to_guild.create_category(category_name)
@@ -268,8 +268,9 @@ async def copy(ctx,arg):
             if channel_category.type.name == 'stage_voice':
                 await to_category.create_stage_channel(channel_name)
     await ctx.send('ギルド外殻の複製、完了しました。')
-    time.sleep()
-    await
+    await ctx.send('ノアズ・メジャー、観測停止。')
+    time.sleep(random.uniform(1.0,1.5))
+    await ctx.send('スレッドセット。観測データ、実証転写します。')
     for channel in to_guild.channels:
         if channel.type.name = 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
