@@ -249,7 +249,10 @@ async def copy(ctx,arg):
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
     await ctx.send('__定礎複写、開始__')
+    time.sleep(random.uniform(1.0,3.0))
     await ctx.send('複写と並行して観測、実行します。')
+    time.sleep(random.uniform(1.0,3.0))
+    await ctx.send('コピースケール、400で固定。')
     for category in c_guild_cate:
         category_name = category.name
         to_category = await to_guild.create_category(category_name)
