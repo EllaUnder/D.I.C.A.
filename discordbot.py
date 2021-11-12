@@ -246,6 +246,9 @@ async def copy(ctx,arg):
         category.delete()
 
     messages_dict = {}
+    await ctx.send('ノアズ・メジャー、観測起動します。')
+    time.sleep(random.uniform(1.0,3.0))
+    await ctx.send('__定礎転写、開始__')
     for category in c_guild_cate:
         category_name = category.name
         to_category = await to_guild.create_category(category_name)
@@ -267,7 +270,9 @@ async def copy(ctx,arg):
                 await to_category.create_voice_channel(channel_name)
             if channel_category.type.name == 'stage_voice':
                 await to_category.create_stage_channel(channel_name)
-    await ctx.send('ギルド外殻の複製完了。')
+    await ctx.send('全工程オールクリア。')
+    time.sleep(random.uniform(0.5,1.0))
+    await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
     #ヘルプ
 @bot.command()
