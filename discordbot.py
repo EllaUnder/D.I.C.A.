@@ -8,6 +8,7 @@ import time
 import datetime
 from datetime import timedelta,timezone
 import json
+import requests
 
 bot = commands.Bot(
     command_prefix='#d',
@@ -254,12 +255,13 @@ async def copy(ctx,arg):
                 messages = channel_category.history(limit = 400).flatten() 
                 to_text_channel = await to_category.create_text_channel(channel_name) 
                 messages_dict[str(to_text_channel.id)] = messages
-                webhook = to_text_channel.create_webhook(name="CopyWebHook")
+                webhook = await to_text_channel.create_webhook(name="CopyWebHook")
                 webhook_url = webhook.url
                 for message in messages_dict:
                     author_avatar=message.author.avatar_url
                     author_name=message.author.name
                     message_content=message.content
+                    
                     
             if channel_category.type.name == 'voice':
                 await to_category.create_voice_channel(channel_name)
