@@ -226,7 +226,6 @@ async def MsearchD(ctx,arg1,arg2):
 @bot.command()
 @commands.has_role(864846474399711253)
 async def copy(ctx,arg):
-    await ctx.send(f'{str(arg)}')
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
     await ctx.send('ギルド観測儀・ラプラス、展開します。')
