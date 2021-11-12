@@ -281,7 +281,7 @@ async def copy(ctx,arg):
                     data = {
                         "content" : f"{message.content}",
                         "username" : f"{message.author.name}",
-                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
+                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png"),
                         "embeds": [{
                             "image":{
                             "url":message.attachments[0].url}
