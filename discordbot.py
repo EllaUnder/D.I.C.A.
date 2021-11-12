@@ -272,7 +272,7 @@ async def copy(ctx,arg):
     time.sleep(random.uniform(1.0,1.5))
     await ctx.send('スレッドセット。観測データ、実証転写します。')
     for channel in to_guild.channels:
-        if channel.type.name = 'text':
+        if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
             webhook_url = webhook.url
             for message in message_dict[str(channel.id)]:
