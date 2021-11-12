@@ -291,7 +291,7 @@ async def copy(ctx,arg):
                     requests.post(webhook_url, json = data, headers=header)
                     time.sleep(2.0)
                 else:
-                    date = {
+                    data = {
                         "content" : f"{message.content}",
                         "username" : f"{message.author.name}",
                         "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
