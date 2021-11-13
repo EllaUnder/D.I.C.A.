@@ -245,11 +245,8 @@ async def copy(ctx,arg):
         await channel.delete()
     for category in to_guild.categories:
         await category.delete()
-    try:
-        for d_role in to_guild_roles_bef:
-            await d_role.delete()
-    except:
-        pass
+    for d_role in to_guild_roles_bef:
+        await d_role.delete()
     await ctx.send('初期化完了')
 
     cc_guild_roles = list(reversed(c_guild_roles))
