@@ -336,7 +336,6 @@ async def yaboyo(ctx,arg):
     to_guild_cate = to_guild.categories
     c_guild_chan = c_guild.channels
     to_guild_chan = to_guild.channels
-
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
@@ -358,7 +357,8 @@ async def yaboyo(ctx,arg):
     await ctx.send('ノアズ・メジャー、観測停止。')
     time.sleep(random.uniform(1.0,1.5))
     await ctx.send('スレッドセット。観測データ、実証転写します。')
-    for channel in to_guild.channels:
+    to_guild_cate = discord.utils.get(to_guild.categories,name="Project : αντιχθονアーカイブ")
+    for channel in to_guild_cate.channels:
         if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
             webhook_url = webhook.url
