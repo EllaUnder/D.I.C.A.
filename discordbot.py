@@ -238,7 +238,7 @@ async def copy(ctx,arg):
     c_guild_chan = c_guild.channels
     to_guild_chan = to_guild.channels
     c_guild_roles = c_guild.roles
-    to_guild_roles = to_guild.roles
+    to_guild_roles_bef = to_guild.roles
     await ctx.send('ギルド情報を取得しました。')
     await ctx.send('初期化開始')
     for channel in to_guild.channels:
@@ -246,8 +246,8 @@ async def copy(ctx,arg):
     for category in to_guild.categories:
         await category.delete()
     try:
-        for role in to_guild_roles:
-            await role.delete()
+        for d_role in to_guild_roles_bef:
+            await d_role.delete()
     except:
         pass
     await ctx.send('初期化完了')
@@ -259,6 +259,9 @@ async def copy(ctx,arg):
         role_mentionable = role. mentionable
         role_hoist = role.hoist
         await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
+    to_guild_roles_af = to_guild.roles
+    e_role = discord.utils.get(to_guild_roles_af,name="@everyone")
+    await e_role.delete()
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
