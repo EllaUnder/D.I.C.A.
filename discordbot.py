@@ -254,8 +254,8 @@ async def copy(ctx,arg):
         role_name = role.name
         role_permissions = role.permission
         role_color = role.color.value
-        
-        
+        role_mentionable = role. mentionable
+        await to_guild.create_role(name=role_name,color=role_color,mentionable=role_mentionable)
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
