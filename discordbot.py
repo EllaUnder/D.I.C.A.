@@ -252,6 +252,7 @@ async def copy(ctx,arg):
         pass
     await ctx.send('初期化完了')
 
+    cc_guild_roles = list(reversed(c_guild_roles))
     for role in c_guild_roles:
         role_name = role.name
         role_permissions = role.permissions
