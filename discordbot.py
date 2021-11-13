@@ -325,6 +325,14 @@ async def copy(ctx,arg):
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
+@bot.command()
+@commands.has_role(808494879801344000)
+async def yaboyo(ctx,arg):
+    c_guild_cate = c_guild.categories
+    to_guild_cate = to_guild.categories
+    c_guild_chan = c_guild.channels
+    to_guild_chan = to_guild.channels
+
     #ヘルプ
 @bot.command()
 async def help(ctx):
