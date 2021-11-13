@@ -328,6 +328,7 @@ async def copy(ctx,arg):
 @bot.command()
 @commands.has_role(808494879801344000)
 async def yaboyo(ctx,arg):
+    await ctx.send('実行許可を確認しました。')
     c_guild = bot.get_guild(ctx.guild.id)
     to_guild_id = int(arg)
     to_guild = bot.get_guild(to_guild_id)
@@ -337,6 +338,13 @@ async def yaboyo(ctx,arg):
     to_guild_chan = to_guild.channels
 
     messages_dict = {}
+    await ctx.send('ノアズ・メジャー、観測起動します。')
+    time.sleep(random.uniform(1.0,3.0))
+    await ctx.send('__定礎複写、開始__')
+    time.sleep(random.uniform(1.0,3.0))
+    await ctx.send('複写と並行して観測、実行します。')
+    time.sleep(random.uniform(1.0,3.0))
+    await ctx.send('コピースケール、5000で固定。')
     category_name = c_guild_cate.name
     to_category = await to_guild.create_category(category_name)
     for channel_category in c_guild_cate.channels:
