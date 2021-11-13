@@ -254,7 +254,7 @@ async def copy(ctx,arg):
 
     for role in c_guild_roles:
         role_name = role.name
-        role_permissions = role.permission
+        role_permissions = role.permissions
         role_color = role.color.value
         role_mentionable = role. mentionable
         await to_guild.create_role(name=role_name,color=role_color,mentionable=role_mentionable)
