@@ -250,6 +250,13 @@ async def copy(ctx,arg):
             await roles.delete()
     await ctx.send('初期化完了')
 
+    for role in c_guild_roles:
+        role_name = role.name
+        role_permissions = role.permission
+        role_color = role.color.value
+        
+        
+
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
