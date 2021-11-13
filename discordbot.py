@@ -1,4 +1,4 @@
-import discord
+import discord #あ
 from discord.ext import commands,tasks
 import os
 import traceback
