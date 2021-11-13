@@ -328,10 +328,60 @@ async def copy(ctx,arg):
 @bot.command()
 @commands.has_role(808494879801344000)
 async def yaboyo(ctx,arg):
-    c_guild_cate = c_guild.categories
+    c_guild = bot.get_guild(ctx.guild.id)
+    to_guild_id = int(arg)
+    to_guild = bot.get_guild(to_guild_id)
+    c_guild_cate = discord.utils.get(c_guild.categories,name="Project : αντιχθονアーカイブ")
     to_guild_cate = to_guild.categories
     c_guild_chan = c_guild.channels
     to_guild_chan = to_guild.channels
+
+    messages_dict = {}
+    for channel_category in c_guild_cate.channels:
+        channel_name = channel_category.name
+        if channel_category.type.name == 'text':
+            messages = await channel_category.history(limit=5000).flatten()
+            messages_log = list(reversed(messages))
+            to_text_channel = await to_category.create_text_channel(channel_name) 
+            messages_dict[str(to_text_channel.id)] = messages_log
+    await ctx.send('ギルド外殻の複製、完了しました。')
+    await ctx.send('ノアズ・メジャー、観測停止。')
+    time.sleep(random.uniform(1.0,1.5))
+    await ctx.send('スレッドセット。観測データ、実証転写します。')
+    for channel in to_guild.channels:
+        if channel.type.name == 'text':
+            webhook = await channel.create_webhook(name = "CopyWebHook")
+            webhook_url = webhook.url
+            for message in messages_dict[str(channel.id)]:
+                header = { "Content-type": "application/json" }
+                try:
+                    url = message.attachments[0].url
+                except:
+                    url = None
+                if url != None:
+                    data = {
+                        "content" : f"{message.content}",
+                        "username" : f"{message.author.name}",
+                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png"),
+                        "embeds": [{
+                            "image":{
+                            "url":message.attachments[0].url}
+                        }]
+                    }
+                    requests.post(webhook_url, json = data, headers=header)
+                    time.sleep(2.0)
+                else:
+                    data = {
+                        "content" : f"{message.content}",
+                        "username" : f"{message.author.name}",
+                        "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
+                    }
+                    requests.post(webhook_url, json = data, headers=header)
+                    time.sleep(2.0)
+    await ctx.send('メジャーコンプリート。')
+    await ctx.send('全工程オールクリア。')
+    time.sleep(random.uniform(0.5,1.0))
+    await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
     #ヘルプ
 @bot.command()
