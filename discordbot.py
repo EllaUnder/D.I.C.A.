@@ -337,16 +337,15 @@ async def yaboyo(ctx,arg):
     to_guild_chan = to_guild.channels
 
     messages_dict = {}
-    for category in c_guild_cate:
-        category_name = category.name
-        to_category = await to_guild.create_category(category_name)
-        for channel_category in c_guild_cate.channels:
-            channel_name = channel_category.name
-            if channel_category.type.name == 'text':
-                messages = await channel_category.history(limit=5000).flatten()
-                messages_log = list(reversed(messages))
-                to_text_channel = await to_category.create_text_channel(channel_name) 
-                messages_dict[str(to_text_channel.id)] = messages_log
+    category_name = c_guild_cate.name
+    to_category = await to_guild.create_category(category_name)
+    for channel_category in c_guild_cate.channels:
+        channel_name = channel_category.name
+        if channel_category.type.name == 'text':
+            messages = await channel_category.history(limit=5000).flatten()
+            messages_log = list(reversed(messages))
+            to_text_channel = await to_category.create_text_channel(channel_name) 
+            messages_dict[str(to_text_channel.id)] = messages_log
     await ctx.send('ギルド外殻の複製、完了しました。')
     await ctx.send('ノアズ・メジャー、観測停止。')
     time.sleep(random.uniform(1.0,1.5))
