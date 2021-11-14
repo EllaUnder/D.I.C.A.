@@ -228,7 +228,7 @@ async def MsearchD(ctx,arg1,arg2):
     #サーバーコピー
 @bot.command()
 @commands.has_role(864846474399711253)
-async def copy(ctx,arg):
+async def System-Ziusudra(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
     await ctx.send('ギルド観測儀ラプラス、展開します。')
