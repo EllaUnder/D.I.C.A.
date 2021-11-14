@@ -248,7 +248,7 @@ async def copy(ctx,arg):
         await category.delete()
     for d_role in to_guild_roles_bef:
         if not d_role in to_guild.get_member(bot.user.id).roles:
-        await d_role.delete()
+            await d_role.delete()
     await ctx.send('初期化完了')
 
     cc_guild_roles = list(reversed(c_guild_roles))
