@@ -261,7 +261,7 @@ async def copy(ctx,arg):
             role_mentionable = role. mentionable
             role_hoist = role.hoist
             await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
-    await ctc.send('ロール、転写完了しました。')
+    await ctx.send('ロール、転写完了しました。')
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
