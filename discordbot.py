@@ -255,6 +255,7 @@ async def copy(ctx,arg):
 
     cc_guild_roles = list(reversed(c_guild_roles))
     await ctx.send('ロールセット。転写します。')
+    roles_dict = {}
     for role in cc_guild_roles:
         if not role.is_default():
             role_name = role.name
@@ -262,7 +263,8 @@ async def copy(ctx,arg):
             role_color = role.color.value
             role_mentionable = role. mentionable
             role_hoist = role.hoist
-            await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
+            to_role = await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
+            roles_dict[str(to_role.id)] = role.id
     await ctx.send('ロール、転写完了しました。')
 
     messages_dict = {}
