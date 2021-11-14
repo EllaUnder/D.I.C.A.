@@ -251,8 +251,8 @@ async def copy(ctx,arg):
             await d_role.delete()
     await ctx.send('初期化完了')
 
-    
     cc_guild_roles = list(reversed(c_guild_roles))
+    await ctx.send('ロールセット。転写します。')
     for role in c_guild_roles:
         role_name = role.name
         role_permissions = role.permissions
@@ -263,6 +263,7 @@ async def copy(ctx,arg):
     to_guild_roles_af = to_guild.roles
     e_role = discord.utils.get(to_guild_roles_af,name="@everyone")
     await e_role.delete()
+    await ctc.send('ロール、転写完了しました。')
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
@@ -270,7 +271,7 @@ async def copy(ctx,arg):
     await ctx.send('__定礎複写、開始__')
     time.sleep(random.uniform(0.5,1.5))
     await ctx.send('複写と並行して観測、実行します。')
-    time.sleep(random.uniform(1.0,3.0))
+    time.sleep(random.uniform(0.5,1.0))
     await ctx.send('コピースケール、400で固定。')
     for category in c_guild_cate:
         category_name = category.name
