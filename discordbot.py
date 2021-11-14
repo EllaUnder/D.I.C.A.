@@ -246,24 +246,21 @@ async def copy(ctx,arg):
         await channel.delete()
     for category in to_guild.categories:
         await category.delete()
-    self_role = discord.utils.get(to_guild_roles_bef,name="Laplace")
     for d_role in to_guild_roles_bef:
-        if not d_role == to_guild.default_role and not d_role == self_role:
-            await d_role.delete()
+        if not d_role in to_guild.get_member(bot.user.id).roles:
+        await d_role.delete()
     await ctx.send('初期化完了')
 
     cc_guild_roles = list(reversed(c_guild_roles))
     await ctx.send('ロールセット。転写します。')
-    for role in c_guild_roles:
-        role_name = role.name
-        role_permissions = role.permissions
-        role_color = role.color.value
-        role_mentionable = role. mentionable
-        role_hoist = role.hoist
-        await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
-    to_guild_roles_af = to_guild.roles
-    e_role = discord.utils.get(to_guild_roles_af,name="@everyone")
-    await e_role.delete()
+    for role in cc_guild_roles:
+        if not role.is_default():
+            role_name = role.name
+            role_permissions = role.permissions
+            role_color = role.color.value
+            role_mentionable = role. mentionable
+            role_hoist = role.hoist
+            await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
     await ctc.send('ロール、転写完了しました。')
 
     messages_dict = {}
