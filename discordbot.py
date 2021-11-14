@@ -239,7 +239,9 @@ async def copy(ctx,arg):
     to_guild_chan = to_guild.channels
     c_guild_roles = c_guild.roles
     to_guild_roles_bef = to_guild.roles
+    await ctx.send(to_guild_roles_bef)
     await ctx.send('ギルド情報を取得しました。')
+
     await ctx.send('初期化開始')
     for channel in to_guild.channels:
         await channel.delete()
