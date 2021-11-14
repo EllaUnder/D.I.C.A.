@@ -228,10 +228,10 @@ async def MsearchD(ctx,arg1,arg2):
     #サーバーコピー
 @bot.command()
 @commands.has_role(864846474399711253)
-async def System-Ziusudra(ctx,arg):
+async def TravelSystem(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
-    await ctx.send('ギルド観測儀ラプラス、展開します。')
+    await ctx.send('モジュール・ギルド観測儀、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
     to_guild_id = int(arg)
     to_guild = bot.get_guild(to_guild_id)
