@@ -248,7 +248,7 @@ async def copy(ctx,arg):
         await category.delete()
     self_role = discord.utils.get(to_guild_roles_bef,name="Laplace")
     for d_role in to_guild_roles_bef:
-        if not d_role == to_guild.default_role or not d_role == self_role:
+        if not d_role == to_guild.default_role and not d_role == self_role:
             await d_role.delete()
     await ctx.send('初期化完了')
 
