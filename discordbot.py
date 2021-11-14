@@ -246,6 +246,7 @@ async def copy(ctx,arg):
         await channel.delete()
     for category in to_guild.categories:
         await category.delete()
+    self_role = discord.utils.get(to_guild_roles_bef,name="@everyone")
     for d_role in to_guild_roles_bef:
         if not d_role == to_guild.default_role:
             await d_role.delete()
