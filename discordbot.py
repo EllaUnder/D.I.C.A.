@@ -239,7 +239,6 @@ async def copy(ctx,arg):
     to_guild_chan = to_guild.channels
     c_guild_roles = c_guild.roles
     to_guild_roles_bef = to_guild.roles
-    print(to_guild_roles_bef)
     await ctx.send('ギルド情報を取得しました。')
 
     await ctx.send('初期化開始')
@@ -248,9 +247,11 @@ async def copy(ctx,arg):
     for category in to_guild.categories:
         await category.delete()
     for d_role in to_guild_roles_bef:
-        await d_role.delete()
+        if not d_role == to_guild.default_role:
+            await d_role.delete()
     await ctx.send('初期化完了')
 
+    
     cc_guild_roles = list(reversed(c_guild_roles))
     for role in c_guild_roles:
         role_name = role.name
@@ -267,7 +268,7 @@ async def copy(ctx,arg):
     await ctx.send('ノアズ・メジャー、観測起動します。')
     time.sleep(random.uniform(1.0,3.0))
     await ctx.send('__定礎複写、開始__')
-    time.sleep(random.uniform(1.0,3.0))
+    time.sleep(random.uniform(0.5,1.5))
     await ctx.send('複写と並行して観測、実行します。')
     time.sleep(random.uniform(1.0,3.0))
     await ctx.send('コピースケール、400で固定。')
