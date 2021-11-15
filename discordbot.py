@@ -28,7 +28,7 @@ def Travel_overwrites(p_key, channel_permissions, roles_dict):
         permission = channel_permissions[key]
 
         # overwritesに移行先のロールをkeyにしたpermissionを代入
-        channel_permissions[permission_dict[key]] = permission
+        channel_permissions[roles_dict[key]] = permission
 
         # 移行元の権限の要素は消す
         del channel_permissions[key]
