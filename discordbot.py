@@ -274,9 +274,9 @@ async def Nautilus(ctx,arg):
 
     cc_guild_roles = list(reversed(c_guild_roles))
     await ctx.send('ロールセット。複製します。')
-    print(cc_guild_roles)
     roles_dict = {}
     for role in cc_guild_roles:
+        print(role)
         if not role.is_default():
             role_name = role.name
             role_permissions = role.permissions
