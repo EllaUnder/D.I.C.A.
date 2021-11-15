@@ -9,6 +9,7 @@ import datetime
 from datetime import timedelta,timezone
 import json
 import requests
+import math
 
 bot = commands.Bot(
     command_prefix='#d',
@@ -241,7 +242,7 @@ async def MsearchD(ctx,arg1,arg2):
 
     #ユーザー情報取得
 
-    #サーバーコピー
+    #システム・ノーチラス
 @bot.command()
 @commands.has_role(864846474399711253)
 async def Nautilus(ctx,arg):
@@ -318,6 +319,8 @@ async def Nautilus(ctx,arg):
     await ctx.send('スレッドセット。観測データ、実証転写します。')
     time.sleep(0.7)
     await ctx.send('ノアズ・メジャー、モード・ライティング。測定針にスレッド装填。')
+    dict_length = len(messages_dict)
+    per_count = 0
     for channel in to_guild.channels:
         if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
@@ -340,6 +343,12 @@ async def Nautilus(ctx,arg):
                     }
                     requests.post(webhook_url, json = data, headers=header)
                     time.sleep(2.0)
+                    per_count += 1
+                    progress_per = math.floor(per_count ÷ dict_length)
+                    if random.random() <= 0.3:
+                        await ctx.send(f'ログコピー率は{progress_per}%です。')
+                    else:
+                        pass
                 else:
                     data = {
                         "content" : f"{message.content}",
@@ -348,6 +357,13 @@ async def Nautilus(ctx,arg):
                     }
                     requests.post(webhook_url, json = data, headers=header)
                     time.sleep(2.0)
+                    per_count += 1
+                    progress_per = math.floor(per_count ÷ dict_length)
+                    if random.random() <= 0.3:
+                        await ctx.send(f'ログコピー率は{progress_per}%です。')
+                    else:
+                        pass
+    per_count = 0
     await ctx.send('メジャーコンプリート。')
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
