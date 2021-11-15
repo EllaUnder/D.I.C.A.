@@ -344,8 +344,7 @@ async def Nautilus(ctx,arg):
                     requests.post(webhook_url, json = data, headers=header)
                     time.sleep(2.0)
                     per_count += 1
-                    pp_per = per_count ÷ dict_length
-                    progress_per = math.floor(int(pp_per))
+                    progress_per = math.floor(per_count/dict_length)
                     if random.random() <= 0.3:
                         await ctx.send(f'ログコピー率は{progress_per}%です。')
                     else:
@@ -359,8 +358,7 @@ async def Nautilus(ctx,arg):
                     requests.post(webhook_url, json = data, headers=header)
                     time.sleep(2.0)
                     per_count += 1
-                    pp_per = per_count ÷ dict_length
-                    progress_per = math.floor(int(pp_per))
+                    progress_per = math.floor(per_count/dict_length)
                     if random.random() <= 0.3:
                         await ctx.send(f'ログコピー率は{progress_per}%です。')
                     else:
