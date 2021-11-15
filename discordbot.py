@@ -244,7 +244,7 @@ async def MsearchD(ctx,arg1,arg2):
 
     #システム・ノーチラス
 @bot.command()
-@commands.has_role(864846474399711253)
+@commands.has_any_role(864846474399711253,899474219623129168)
 async def Nautilus(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(random.uniform(0.5,1.5))
