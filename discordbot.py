@@ -24,16 +24,18 @@ token = os.environ['DISCORD_BOT_TOKEN']
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
     keys = list(p_key)
     for key in keys: # keysをforで回す
-        # まずpermissionオブジェクトを取り出す
-        permission = channel_permissions[key]
+        try:
+            # まずpermissionオブジェクトを取り出す
+            permission = channel_permissions[key]
 
-        # overwritesに移行先のロールをkeyにしたpermissionを代入
-        channel_permissions[roles_dict[key]] = permission
+            # overwritesに移行先のロールをkeyにしたpermissionを代入
+            channel_permissions[roles_dict[key]] = permission
 
-        # 移行元の権限の要素は消す
-        del channel_permissions[key]
-    return channel_permissions
-
+            # 移行元の権限の要素は消す
+            del channel_permissions[key]
+        return channel_permissions
+        except:
+            pass
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
@@ -296,7 +298,7 @@ async def TravelSystem(ctx,arg):
         to_category = await to_guild.create_category(category_name)
         for channel_category in category.channels:
             channel_name = channel_category.name
-            channel_permissions = channel_category.overwrites_for(role)
+            channel_permissions = channel_category.overwrites
             p_key = channel_permissions.keys()
             channel_overwrites = Travel_overwrites(p_key,channel_permissions,roles_dict)
             if channel_category.type.name == 'text':
