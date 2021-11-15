@@ -21,7 +21,7 @@ bot = commands.Bot(
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #defs
-def Travel_overwrites(p_key,channelpermissions,roles_dict):
+def Travel_overwrites(p_key,channel_permissions,roles_dict):
     keys = list(p_key)
     for key in keys: # keysをforで回す
         # まずpermissionオブジェクトを取り出す
