@@ -296,7 +296,7 @@ async def TravelSystem(ctx,arg):
         to_category = await to_guild.create_category(category_name)
         for channel_category in category.channels:
             channel_name = channel_category.name
-            channel_permissions = channel_category.overwrites
+            channel_permissions = channel_category.overwrites_for(role)
             p_key = channel_permissions.keys()
             channel_overwrites = Travel_overwrites(p_key,channel_permissions,roles_dict)
             if channel_category.type.name == 'text':
