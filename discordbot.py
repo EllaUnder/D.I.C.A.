@@ -244,8 +244,9 @@ async def MsearchD(ctx,arg1,arg2):
     #サーバーコピー
 @bot.command()
 @commands.has_role(864846474399711253)
-async def TravelSystem(ctx,arg):
+async def Nautilus(ctx,arg):
     await ctx.send('実行許可を確認しました。')
+    await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
     time.sleep(0.5)
     await ctx.send('ギルド観測儀・ラプラスアイ、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
