@@ -281,6 +281,8 @@ async def TravelSystem(ctx,arg):
         for channel_category in category.channels:
             channel_name = channel_category.name
             channel_permissions = channel_category.overwrite
+            p_key = channel_permissions.keys()
+            
             if channel_category.type.name == 'text':
                 messages = await channel_category.history(limit=400).flatten()
                 messages_log = list(reversed(messages))
