@@ -345,7 +345,7 @@ async def Nautilus(ctx,arg):
                     time.sleep(2.0)
                     per_count += 1
                     progress_per = math.floor(per_count/dict_length)
-                    if random.random() <= 0.1:
+                    if random.random() <= 0.03:
                         await ctx.send(f'転写率**{progress_per}**%です。')
                     else:
                         pass
@@ -359,7 +359,7 @@ async def Nautilus(ctx,arg):
                     time.sleep(2.0)
                     per_count += 1
                     progress_per = math.floor(per_count/dict_length)
-                    if random.random() <= 0.1:
+                    if random.random() <= 0.03:
                         await ctx.send(f'転写率**{progress_per}**%です。')
                     else:
                         pass
