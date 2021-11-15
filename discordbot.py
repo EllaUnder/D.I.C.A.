@@ -33,9 +33,9 @@ def Travel_overwrites(p_key, channel_permissions, roles_dict):
 
             # 移行元の権限の要素は消す
             del channel_permissions[key]
-        return channel_permissions
         except:
             pass
+    return channel_permissions
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
