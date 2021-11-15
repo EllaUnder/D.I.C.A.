@@ -300,12 +300,12 @@ async def TravelSystem(ctx,arg):
             if channel_category.type.name == 'text':
                 messages = await channel_category.history(limit=400).flatten()
                 messages_log = list(reversed(messages))
-                to_text_channel = await to_category.create_text_channel(channel_name) 
+                to_text_channel = await to_category.create_text_channel(channel_name,overwrites=channel_overwrites) 
                 messages_dict[str(to_text_channel.id)] = messages_log
             if channel_category.type.name == 'voice':
-                await to_category.create_voice_channel(channel_name)
+                await to_category.create_voice_channel(channel_name,overwrites=channel_overwrites)
             if channel_category.type.name == 'stage_voice':
-                await to_category.create_stage_channel(channel_name)
+                await to_category.create_stage_channel(channel_name,overwrites=channel_overwrites)
     await ctx.send('ギルド外殻の複製、完了しました。')
     await ctx.send('ノアズ・メジャー、観測停止。')
     time.sleep(random.uniform(1.0,1.5))
