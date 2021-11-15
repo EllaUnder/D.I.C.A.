@@ -1,4 +1,4 @@
-import discord
+import discord #再起動
 from discord.ext import commands,tasks
 import os
 import traceback
