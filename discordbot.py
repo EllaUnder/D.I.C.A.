@@ -246,6 +246,7 @@ async def MsearchD(ctx,arg1,arg2):
 @commands.has_role(864846474399711253)
 async def Nautilus(ctx,arg):
     await ctx.send('実行許可を確認しました。')
+    time.sleep(random.uniform(0.5,1.5))
     await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
     time.sleep(0.5)
     await ctx.send('ギルド観測儀・ラプラスアイ、展開します。')
