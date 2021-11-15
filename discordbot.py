@@ -279,6 +279,8 @@ async def TravelSystem(ctx,arg):
             role_hoist = role.hoist
             to_role = await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
             roles_dict[role] = to_role
+        else:
+            roles_dict[role] = to_role
     await ctx.send('ロール、転写完了しました。')
 
     messages_dict = {}
