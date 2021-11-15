@@ -20,6 +20,20 @@ bot = commands.Bot(
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
+#defs
+def Travel_overwrites(keys,overwrites,permission_dict):
+    keys = list(p_key)
+    for key in keys: # keysをforで回す
+        # まずpermissionオブジェクトを取り出す
+        permission = overwrites[key]
+
+        # overwritesに移行先のロールをkeyにしたpermissionを代入
+        overwrites[permission_dict[key]] = permission
+
+        # 移行元の権限の要素は消す
+        del overwrites[key]
+    return overwrites
+
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
@@ -264,7 +278,7 @@ async def TravelSystem(ctx,arg):
             role_mentionable = role. mentionable
             role_hoist = role.hoist
             to_role = await to_guild.create_role(name=role_name,color=role_color,permissions=role_permissions,mentionable=role_mentionable,hoist=role_hoist)
-            roles_dict[str(to_role.id)] = role.id
+            roles_dict[role] = to_role
     await ctx.send('ロール、転写完了しました。')
 
     messages_dict = {}
@@ -280,7 +294,7 @@ async def TravelSystem(ctx,arg):
         to_category = await to_guild.create_category(category_name)
         for channel_category in category.channels:
             channel_name = channel_category.name
-            channel_permissions = channel_category.overwrite
+            channel_permissions = channel_category.overwrites
             p_key = channel_permissions.keys()
             
             if channel_category.type.name == 'text':
