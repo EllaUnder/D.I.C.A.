@@ -247,7 +247,7 @@ async def MsearchD(ctx,arg1,arg2):
 async def TravelSystem(ctx,arg):
     await ctx.send('実行許可を確認しました。')
     time.sleep(0.5)
-    await ctx.send('モジュール・ギルド観測儀、展開します。')
+    await ctx.send('ギルド観測儀・ラプラスアイ、展開します。')
     c_guild = bot.get_guild(ctx.guild.id)
     to_guild_id = int(arg)
     to_guild = bot.get_guild(to_guild_id)
@@ -270,7 +270,7 @@ async def TravelSystem(ctx,arg):
     await ctx.send('初期化完了')
 
     cc_guild_roles = list(reversed(c_guild_roles))
-    await ctx.send('ロールセット。転写します。')
+    await ctx.send('ロールセット。複製します。')
     roles_dict = {}
     for role in cc_guild_roles:
         if not role.is_default():
@@ -283,7 +283,7 @@ async def TravelSystem(ctx,arg):
             roles_dict[role] = to_role
         else:
             roles_dict[role] = to_guild.default_role
-    await ctx.send('ロール、転写完了しました。')
+    await ctx.send('ロール、複製完了しました。')
 
     messages_dict = {}
     await ctx.send('ノアズ・メジャー、観測起動します。')
@@ -314,6 +314,8 @@ async def TravelSystem(ctx,arg):
     await ctx.send('ノアズ・メジャー、観測停止。')
     time.sleep(random.uniform(1.0,1.5))
     await ctx.send('スレッドセット。観測データ、実証転写します。')
+    time.sleep(0.7)
+    await ctx.send('ノアズ・メジャー、モード・ライティング。測定針にスレッド装填。')
     for channel in to_guild.channels:
         if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
