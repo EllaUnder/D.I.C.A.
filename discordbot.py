@@ -1,4 +1,4 @@
-import discord #再起動
+import discord 
 from discord.ext import commands,tasks
 import os
 import traceback
@@ -394,14 +394,18 @@ async def on_message(message):
 #レスポンス
 @bot.event
 async def on_message(message):
-    if message.author.bot:
-        return
-    elif message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
-        luck = random.random()
-        if luck <= 0.3:
-            await message.channel.send('おはようございます。')
-        else:
+    mg_id = message.guild.id
+    if mg_id == 864768192399278110:
+        if message.author.bot:
             return
+        elif message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
+            luck = random.random()
+            if luck <= 0.3:
+                await message.channel.send('おはようございます。')
+            else:
+                return
+    else:
+        return
 
     await bot.process_commands(message)
 
