@@ -381,7 +381,7 @@ async def help(ctx):
     await ctx.send(embed=embed)
 
 #レスポンス
-hand_list = '✊','✌️','✋'
+hand_list = '✊','✌️','🖐'
 
 @bot.event
 async def on_message(message):
@@ -400,12 +400,12 @@ async def on_message(message):
         await message.channel.send('お呼びでしょうか？')
 
     if 'じゃんけん' in message.content:
-        if ("✊" in message.content or 
-            "✌️" in message.content or 
-            "🖐" in message.content):
-
+        con_ = message.content
+        hand_ = con_[5]
+        if hand_ in hand_list:
             res_hand = random.choice(hand_list)
             await message.channel.send(f'ポン！{res_hand}')
+            
 
     else:
         return
