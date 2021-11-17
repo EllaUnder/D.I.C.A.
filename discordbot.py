@@ -81,7 +81,8 @@ with open("report.json",'r') as r:
     r_json = json.load(r)
     r_list_txt = r.read()
 
-print(type(r_json))
+with open("tarot.json",'t')
+    t_json = json.load(t)
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
@@ -392,6 +393,10 @@ async def Nautilus(ctx,arg):
     await ctx.send('全工程オールクリア。')
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
+
+    #タロット占い
+@bot.command()
+async def tarot(ctx):
 
     #ヘルプ
 @bot.command()
