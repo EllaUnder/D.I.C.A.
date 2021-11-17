@@ -395,8 +395,7 @@ async def Nautilus(ctx,arg):
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
     #タロット占い
-@bot.command()
-async def tarot(ctx):
+
 
     #ヘルプ
 @bot.command()
