@@ -405,7 +405,7 @@ async def help(ctx):
     await ctx.send(embed=embed)
 
 #レスポンス
-hand_list = '✊','✌️','🖐'
+hand_list = ['✊','✌️','🖐']
 
 @bot.event
 async def on_message(message):
