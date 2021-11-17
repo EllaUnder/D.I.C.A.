@@ -399,7 +399,10 @@ async def on_message(message):
     if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
         await message.channel.send('お呼びでしょうか？')
 
-    if 'じゃんけん' in message.content:
+    if (":fist:" in message.content or 
+        ":v:" in message.content or 
+        ":hand_splayed:" in message.content):
+
         res_hand = random.choice(hand_list)
         await message.channel.send(f'ポン！{res_hand}')
 
