@@ -369,20 +369,6 @@ async def Nautilus(ctx,arg):
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
-    #じゃんけん
-hand_list = '✊','✌️','✋'
-@bot.command()
-async def じゃんけん(ctx,arg):
-    jg_id = ctx.guild.id
-    if jg_id == 898234988280037406:
-        if not arg in hand_list:
-            await ctx.send('じゃんけんにその手は無いよ！')
-        elif arg in hand_list:
-            res_hand = random.choice(hand_list)
-            await ctx.send(f'ポン！{res_hand}')
-    else:
-        return
-
     #ヘルプ
 @bot.command()
 async def help(ctx):
@@ -396,13 +382,18 @@ async def help(ctx):
 
 
 #レスポンスコマンド
+hand_list = '✊','✌️','✋'
 @bot.event
 async def on_message(message):
     if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
         channel = message.channel
         await message.channel.send('お呼びでしょうか？')
-    
-    await bot.process_commands(message)
+
+    if 'じゃんけん' in message.content:
+        res_hand = random.choice(hand_list)
+        await message.channel.send(f'ポン！{res_hand}')
+
+        await bot.process_commands(message)
 
 
 #レスポンス
