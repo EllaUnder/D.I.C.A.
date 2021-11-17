@@ -433,8 +433,10 @@ async def on_message(message):
 
     if message.content == 'ねこ' or 'ねこ、' in message.content:
         luck = random.random()
+        list_ = ['にゃん','にゃぁん','にゃ','ฅ^•ω•^ฅ？']
         if luck <= 0.3:
-            await message.channel.send('おはようございます。')
+            res_ = random.choice(list_)
+            await message.channel.send(f'{res_}')
         else:
             return
     
