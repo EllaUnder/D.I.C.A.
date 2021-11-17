@@ -448,28 +448,4 @@ async def on_invite_create(invite):
         channel = bot.get_channel(Channel_ID1)
         await channel.send(embed=embed)
 
-    
-
-
-#時報
-@tasks.loop(seconds=60)
-async def timeloop():
-    channel = bot.get_channel(881121615339986964) #ラウンジ
-    Greeting_List = ['今日も一日頑張りましょう。','オフィサーの皆さん、おはようございます。']
-    Dish_List = ['キャンディ','ドーナツ','バームクーヘン']
-    JST = timezone(timedelta(hours=+9),'JST')
-    now = datetime.datetime.now(JST).strftime('%H:%M')
-    if now == '09:00':
-        Today_Greeting = random.choice(Greeting_List)
-        await channel.send(f'Laplaceが9時をお知らせします。\n{Today_Greeting}')
-    if now == '12:00':
-        p = random.random()
-        if p <= 0.1:
-            await channel.send('Laplaceが正午をお知らせします。\n今日の私のランチはきなこもちです。\n午後の業務も頑張っていきましょう。')
-        else:
-            Today_Lunch = random.choice(Dish_List)
-            await channel.send(f'Laplaceが正午をお知らせします。\n今日の私のランチは{Today_Lunch}です。\n午後の業務も頑張っていきましょう。')
-    if now == '18:00':
-        await channel.send('PM6時をお知らせします。業務終了です。\n監察官各位、お疲れ様でした。')
-
 bot.run(token)
