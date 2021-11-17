@@ -405,7 +405,7 @@ async def help(ctx):
     await ctx.send(embed=embed)
 
 #レスポンス
-hand_list = ['✊','✌️','🖐️']
+hand_list = ['✊','✌','🖐']
 
 @bot.event
 async def on_message(message):
@@ -429,9 +429,6 @@ async def on_message(message):
         hand = message.content[5]
         res_hand = random.choice(hand_list)
         await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
-
-    else:
-       return
 
     await bot.process_commands(message)
 
