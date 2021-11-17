@@ -42,19 +42,19 @@ def rps(hand, res_hand):
     if hand == res_hand:
         return "あいこです"
 
-    elif hand == "✊":
+    if hand == "✊":
         if res_hand == "✌️":
             return "貴方の勝利です"
         elif res_hand == "🖐️":
             return "私の勝ちです"
 
-    elif hand == "✌️":
+    if hand == "✌️":
         if res_hand == "✊":
             return "私の勝ちです"
         elif res_hand == "🖐️":
             return "貴方の勝利です"
 
-    elif hand == "🖐️":
+    if hand == "🖐️":
         if res_hand == "✌️":
             return "私の勝ちです"
         elif res_hand == "✊":
