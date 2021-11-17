@@ -437,7 +437,7 @@ async def on_message(message):
         await bot.process_commands(message)
         return
 
-    if message.content.startswith('じゃんけん'):
+    if message.content == 'じゃんけん✊' or message.content == 'じゃんけん✌️' or message.content == 'じゃんけん🖐':
         hand = message.content[5]
         res_hand = random.choice(hand_list)
         if not hand in hand_list:
