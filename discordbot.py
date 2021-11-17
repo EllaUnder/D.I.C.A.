@@ -83,6 +83,7 @@ with open("report.json",'r') as r:
 
 with open("tarot.json",'r') as t:
     t_json = json.load(t)
+    t_list = list(t_json.keys())
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
@@ -395,7 +396,13 @@ async def Nautilus(ctx,arg):
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
     #タロット占い
-
+@bot.command()
+async def tarot(ctx):
+    res_= random.choice(t_list)
+    res_pic = res_["pic"]
+    res_mean = res_["mean"]
+    embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
+    embed.add_field(name=f'{res_pic}')
 
     #ヘルプ
 @bot.command()
