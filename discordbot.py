@@ -423,11 +423,29 @@ async def on_message(message):
     if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
         await message.channel.send('お呼びでしょうか？')
 
+    ```py
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+            return
+    if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
+        mg_id = message.guild.id
+        if mg_id == 864768192399278110:
+            luck = random.random()
+            if luck <= 0.3:
+                await message.channel.send('おはようございます。')
+            else:
+                return
+    
+    if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
+        await message.channel.send('お呼びでしょうか？')
+        await bot.process_commands(message)
+        return
+
     if 'じゃんけん' in message.content:
         hand = message.content.replace("じゃんけん", "").replace(" ", "")
         raplace_hand = random.choice(hand_list)
         await message.channel.send(f"ポン！{raplace_hand}\n{rps(hand, raplace_hand)}")
-            
 
     else:
         return
