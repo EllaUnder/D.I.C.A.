@@ -83,7 +83,9 @@ with open("report.json",'r') as r:
 
 with open("tarot.json",'r') as t:
     t_json = json.load(t)
-    t_list = list(t_json.keys())
+    t_list = list(t_json)
+
+print(t_list)
 
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
