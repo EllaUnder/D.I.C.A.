@@ -423,14 +423,20 @@ hand_list = ['✊','✌','🖐']
 async def on_message(message):
     if message.author.bot:
             return
+
     if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
-        mg_id = message.guild.id
-        if mg_id == 864768192399278110:
-            luck = random.random()
-            if luck <= 0.3:
-                await message.channel.send('おはようございます。')
-            else:
-                return
+        luck = random.random()
+        if luck <= 0.3:
+            await message.channel.send('おはようございます。')
+        else:
+            return
+
+    if message.content == 'ねこ' or 'ねこ、' in message.content:
+        luck = random.random()
+        if luck <= 0.3:
+            await message.channel.send('おはようございます。')
+        else:
+            return
     
     if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
         await message.channel.send('お呼びでしょうか？')
