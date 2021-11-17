@@ -45,16 +45,16 @@ def rps(hand, res_hand):
     elif hand == "✊":
         if res_hand == "✌️":
             return "貴方の勝利です"
-        elif res_hand == "🖐":
+        elif res_hand == "🖐️":
             return "私の勝ちです"
 
     elif hand == "✌️":
         if res_hand == "✊":
             return "私の勝ちです"
-        elif res_hand == "🖐":
+        elif res_hand == "🖐️":
             return "貴方の勝利です"
 
-    elif hand == "🖐":
+    elif hand == "🖐️":
         if res_hand == "✌️":
             return "私の勝ちです"
         elif res_hand == "✊":
@@ -405,7 +405,7 @@ async def help(ctx):
     await ctx.send(embed=embed)
 
 #レスポンス
-hand_list = ['✊','✌️','🖐']
+hand_list = ['✊','✌️','🖐️']
 
 @bot.event
 async def on_message(message):
