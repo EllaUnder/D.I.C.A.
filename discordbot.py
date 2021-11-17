@@ -74,7 +74,6 @@ async def on_ready():
     await channel.send('💚**System All Green**' if random.random() <= 0.1 else '🟢**System All Green**')
     time.sleep(random.uniform(0.5,1.5))
     await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
-    timeloop.start()
 
 @bot.event
 async def on_command_error(ctx,error):
