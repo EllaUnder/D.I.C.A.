@@ -373,7 +373,7 @@ hand_list = '✊','✌️','✋'
 @bot.command()
 async def じゃんけん(ctx,arg):
     if not arg in hand_list:
-        return
+        await ctx.send('じゃんけんにその手は無いよ！')
     elif arg in hand_list:
         res_hand = random.choice(hand_list)
         await ctx.send(f'ポン！{res_hand}')
