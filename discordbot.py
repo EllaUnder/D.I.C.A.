@@ -38,6 +38,30 @@ def Travel_overwrites(p_key, channel_permissions, roles_dict):
             pass
     return channel_permissions
 
+def rps(hand, raplace_hand):
+    if hand == raplace_hand:
+        return "あいこです"
+
+    elif hand == "✊":
+        if raplace_hand == "✌":
+            return "貴方の勝利です"
+        elif raplace_hand == "✋":
+            return "私の勝ちです"
+
+    elif hand == "✌":
+        if raplace_hand == "✊":
+            return "私の勝ちです"
+        elif raplace_hand == "✋":
+            return "貴方の勝利です"
+
+    elif hand == "✋":
+        if raplace_hand == "✌":
+            return "私の勝ちです"
+        elif raplace_hand == "✊":
+            return "貴方の勝利です"
+    else:
+        return "エラー？"
+
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
@@ -400,11 +424,9 @@ async def on_message(message):
         await message.channel.send('お呼びでしょうか？')
 
     if 'じゃんけん' in message.content:
-        con_ = message.content
-        hand_ = con_[5]
-        if hand_ in hand_list:
-            res_hand = random.choice(hand_list)
-            await message.channel.send(f'ポン！{res_hand}')
+        hand = message.content.replace("じゃんけん", "").replace(" ", "")
+        raplace_hand = random.choice(hand_list)
+        await message.channel.send(f"ポン！{raplace_hand}\n{rps(hand, raplace_hand)}")
             
 
     else:
