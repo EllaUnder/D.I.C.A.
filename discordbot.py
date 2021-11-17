@@ -368,6 +368,16 @@ async def Nautilus(ctx,arg):
     time.sleep(random.uniform(0.5,1.0))
     await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
+    #じゃんけん
+hand_list = '✊','✌️','✋'
+@bot.command()
+async def さいしょはグー、じゃんけん(ctx,arg):
+    if not arg in hand_list:
+        return
+    elif arg in hand_list:
+        res_hand = random.choice(hand_list)
+        await ctx.send(f'ポン！{res_hand}')
+
     #ヘルプ
 @bot.command()
 async def help(ctx):
