@@ -60,7 +60,7 @@ def rps(hand, res_hand):
         elif res_hand == "✊":
             return "貴方の勝利です"
     else:
-        return "エラー？"
+        return "その手は無いよ！"
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
@@ -428,7 +428,10 @@ async def on_message(message):
     if 'じゃんけん' in message.content:
         hand = message.content[5]
         res_hand = random.choice(hand_list)
-        await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
+        if not hand in hand_list:
+            await message.channel.send(f'{rps(hand,res_hand)}')
+        elif hand in hand_list:
+            await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
 
     await bot.process_commands(message)
 
