@@ -401,7 +401,7 @@ async def tarot(ctx):
     res_pic= random.choice(t_list)
     res_mean = t_json[res_pic]
     embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
-    embed.set_image(res_pic)
+    embed.set_image(url=res_pic)
     await ctx.send(embed=embed)
     await ctx.send(f'{res_mean}')
 
