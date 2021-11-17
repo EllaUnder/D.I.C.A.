@@ -371,7 +371,7 @@ async def Nautilus(ctx,arg):
     #じゃんけん
 hand_list = '✊','✌️','✋'
 @bot.command()
-async def さいしょはグー！じゃんけん(ctx,arg):
+async def じゃんけん(ctx,arg):
     if not arg in hand_list:
         return
     elif arg in hand_list:
