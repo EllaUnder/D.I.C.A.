@@ -428,7 +428,7 @@ async def on_message(message):
     if 'じゃんけん' in message.content:
         hand = message.content.replace("じゃんけん", "").replace("️", "")
         res_hand = random.choice(hand_list)
-        await message.channel.send(f"ポン！{raplace_hand}\n{rps(hand, raplace_hand)}")
+        await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
 
     else:
        return
