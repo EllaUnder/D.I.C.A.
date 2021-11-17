@@ -385,11 +385,11 @@ hand_list = '✊','✌️','✋'
 
 @bot.event
 async def on_message(message):
-    mg_id = message.guild.id
-    if mg_id == 864768192399278110:
-        if message.author.bot:
+    if message.author.bot:
             return
-        elif message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
+    if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
+        mg_id = message.guild.id
+        if mg_id == 864768192399278110:
             luck = random.random()
             if luck <= 0.3:
                 await message.channel.send('おはようございます。')
