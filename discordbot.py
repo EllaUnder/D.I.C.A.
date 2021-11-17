@@ -380,23 +380,9 @@ async def help(ctx):
     embed.add_field(name='__help__',value='コマンド一覧を表示します。')
     await ctx.send(embed=embed)
 
-
-#レスポンスコマンド
-hand_list = '✊','✌️','✋'
-@bot.event
-async def on_message(message):
-    if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
-        channel = message.channel
-        await message.channel.send('お呼びでしょうか？')
-
-    if 'じゃんけん' in message.content:
-        res_hand = random.choice(hand_list)
-        await message.channel.send(f'ポン！{res_hand}')
-
-        await bot.process_commands(message)
-
-
 #レスポンス
+hand_list = '✊','✌️','✋'
+
 @bot.event
 async def on_message(message):
     mg_id = message.guild.id
@@ -409,6 +395,14 @@ async def on_message(message):
                 await message.channel.send('おはようございます。')
             else:
                 return
+    
+    if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
+        await message.channel.send('お呼びでしょうか？')
+
+    if 'じゃんけん' in message.content:
+        res_hand = random.choice(hand_list)
+        await message.channel.send(f'ポン！{res_hand}')
+
     else:
         return
 
