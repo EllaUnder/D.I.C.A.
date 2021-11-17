@@ -43,19 +43,19 @@ def rps(hand, raplace_hand):
         return "あいこです"
 
     elif hand == "✊":
-        if raplace_hand == "✌":
+        if raplace_hand == "✌️":
             return "貴方の勝利です"
         elif raplace_hand == "✋":
             return "私の勝ちです"
 
-    elif hand == "✌":
+    elif hand == "✌️":
         if raplace_hand == "✊":
             return "私の勝ちです"
         elif raplace_hand == "✋":
             return "貴方の勝利です"
 
     elif hand == "✋":
-        if raplace_hand == "✌":
+        if raplace_hand == "✌️":
             return "私の勝ちです"
         elif raplace_hand == "✊":
             return "貴方の勝利です"
