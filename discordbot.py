@@ -74,6 +74,7 @@ async def on_ready():
     await channel.send('💚**System All Green**' if random.random() <= 0.1 else '🟢**System All Green**')
     time.sleep(random.uniform(0.5,1.5))
     await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
+    timeloop.start()
 
 @bot.event
 async def on_command_error(ctx,error):
@@ -460,5 +461,16 @@ async def on_invite_create(invite):
         embed.add_field(name='__招待リンク__',value=f'{i_url}')
         channel = bot.get_channel(Channel_ID1)
         await channel.send(embed=embed)
+
+#適当なことを呟く
+@tasks.loop(seconds=60)
+async def timeloop():
+    channel = bot.get_channel(898235395203018752) #twitter2
+    tweet_List = ['ふん…','オラの武器はでっかい岩塩さ','群馬の暴力型侵略装置']
+    JST = timezone(timedelta(hours=+9),'JST')
+    now = datetime.datetime.now(JST).strftime('%H:%M')
+    if now == '09:00':
+        Today_tweet = random.choice(tweet_List)
+        await channel.send(f'{Today_tweet}')
 
 bot.run(token)
