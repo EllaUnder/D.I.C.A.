@@ -27,7 +27,6 @@ token = os.environ['DISCORD_BOT_TOKEN']
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 conn = psycopg2.connect(DATABASE_URL)
-cur = conn.cursor()
 
 
 
@@ -414,6 +413,13 @@ async def tarot(ctx):
     embed.set_image(url=res_pic)
     await ctx.send(embed=embed)
     await ctx.send(f'{res_mean}')
+
+    #メモ帳
+@bot.command()
+async def memo(ctx,arg):
+    cur = conn.cursor()
+    await ctx.send('メモッ！')
+
 
     #ヘルプ
 @bot.command()
