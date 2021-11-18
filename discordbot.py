@@ -22,6 +22,8 @@ bot = commands.Bot(
 )
 
 token = os.environ['DISCORD_BOT_TOKEN']
+#データベース
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 #defs
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
