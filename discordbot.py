@@ -27,7 +27,9 @@ token = os.environ['DISCORD_BOT_TOKEN']
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 conn = psycopg2.connect(DATABASE_URL)
+cur = conn.cursor()
 
+#メモ帳DBの用意
 
 
 #defs
