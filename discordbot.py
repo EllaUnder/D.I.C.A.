@@ -29,9 +29,6 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 conn = psycopg2.connect(DATABASE_URL)
 cur = conn.cursor()
 
-#メモ帳DBの用意
-
-
 #defs
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
     keys = list(p_key)
@@ -420,6 +417,12 @@ async def tarot(ctx):
 @bot.command()
 async def memo(ctx,arg):
     cur = conn.cursor()
+    #メモ帳テーブルの作成
+    CREATE TABLE memo(id,value);
+    #メモ内容を記録
+    INSERT INTO person VALUES (id,arg);
+    conn.commit()
+    cur.close()
     await ctx.send('メモッ！')
 
 
