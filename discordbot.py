@@ -414,16 +414,7 @@ async def tarot(ctx):
     await ctx.send(f'{res_mean}')
 
     #メモ帳
-@bot.command()
-async def memo(ctx,arg):
-    cur = conn.cursor()
-    #メモ帳テーブルの作成
-    CREATE TABLE memo(id,value);
-    #メモ内容を記録
-    INSERT INTO person VALUES (id,arg);
-    conn.commit()
-    cur.close()
-    await ctx.send('メモッ！')
+
 
 
     #ヘルプ
