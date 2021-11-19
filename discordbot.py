@@ -23,12 +23,6 @@ bot = commands.Bot(
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
-#データベース
-DATABASE_URL = os.environ.get('DATABASE_URL')
-
-conn = psycopg2.connect(DATABASE_URL)
-cur = conn.cursor()
-
 #defs
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
     keys = list(p_key)
@@ -412,10 +406,6 @@ async def tarot(ctx):
     embed.set_image(url=res_pic)
     await ctx.send(embed=embed)
     await ctx.send(f'{res_mean}')
-
-    #メモ帳
-
-
 
     #ヘルプ
 @bot.command()
