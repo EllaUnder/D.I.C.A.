@@ -369,28 +369,21 @@ async def Nautilus(ctx,arg):
                             "url":message.attachments[0].url}
                         }]
                     }
-                    requests.post(webhook_url, json = data, headers=header)
-                    time.sleep(2.0)
-                    per_count += 1
-                    progress_per = math.floor(per_count/dict_length)
-                    if random.random() <= 0.03:
-                        await ctx.send(f'転写率**{progress_per}**%です。')
-                    else:
-                        pass
                 else:
                     data = {
                         "content" : f"{message.content}",
                         "username" : f"{message.author.name}",
                         "avatar_url": str(message.author.avatar_url).replace(".webp", ".png")
                     }
-                    requests.post(webhook_url, json = data, headers=header)
-                    time.sleep(2.0)
-                    per_count += 1
-                    progress_per = math.floor(per_count/dict_length)
-                    if random.random() <= 0.03:
-                        await ctx.send(f'転写率**{progress_per}**%です。')
-                    else:
-                        pass
+                requests.post(webhook_url, json = data, headers=header)
+                time.sleep(2.0)
+                per_count += 1
+                progress_per = math.floor(per_count/dict_length)
+                if random.random() <= 0.1:
+                    per_content = f'転写率**{progress_per}**%です。'
+                    if not per_content == old_per_content:
+                        await per_message.edit(per_content)
+                    old_per_content = f'転写率**{progress_per}**%です。'
     per_count = 0
     await ctx.send('メジャーコンプリート。')
     await ctx.send('全工程オールクリア。')
