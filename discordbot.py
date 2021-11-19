@@ -258,7 +258,7 @@ async def search(ctx,arg):
 
     #特定ユーザーのメッセージを削除
 @bot.command()
-@commands.has_any_role(864846474399711253,865029743173828608)
+@commands.has_any_role(864846474399711253,865029743173828608,899474219623129168)
 async def MsearchD(ctx,arg1,arg2):
     channel = bot.get_channel(ctx.message.channel.id)
     await ctx.send('サーチイテレータ、開始します…')
