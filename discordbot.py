@@ -281,16 +281,17 @@ async def MsearchD(ctx,arg1,arg2):
     #システム・ノーチラス
 @bot.command()
 async def Nautilus(ctx,arg):
-def rep_check(m): # Nautilusの中に置くこと
-    return (m.author == ctx.author)
-
-reply = await bot.wait_for("message", check=rep_check)
-if not reply.content in ["Y", "y", "Yes", "yes", "はい"]:
-    await ctx.send("キャンセルしました。")
-    return
-
     a_id = ctx.author.id
     if not a_id == 854331482444267550:
+        return
+    
+    await ctx.send('実行許可をリクエストします。')
+    def rep_check(m): # Nautilusの中に置くこと
+        return (m.author == ctx.author)
+
+        reply = await bot.wait_for("message",check=rep_check)
+    if not reply.content in ["Y", "y", "Yes", "yes", "はい"]:
+        await ctx.send("キャンセルしました。")
         return
 
     await ctx.send('実行許可を確認しました。')
