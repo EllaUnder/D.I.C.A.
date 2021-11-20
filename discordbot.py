@@ -362,6 +362,7 @@ async def Nautilus(ctx,arg):
     per_message = await ctx.send('転写率**0**%で開始。')
     dict_length = len(messages_dict)
     per_count = 0
+    old_per_content = ""
     for channel in to_guild.channels:
         if channel.type.name == 'text':
             webhook = await channel.create_webhook(name = "CopyWebHook")
