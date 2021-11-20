@@ -291,10 +291,12 @@ async def Nautilus(ctx,arg):
             if m.reference.message_id == req_m.id and m.content in ["Y", "y", "Yes", "yes", "はい", "許可"]:
                 return True
         return False
-
-    reply = await bot.wait_for("message", check=rep_check, timeout=60.0)
-    
-
+    try:
+        reply = await bot.wait_for("message", check=rep_check, timeout=60.0)
+    except:
+        await ctx.send('タイムアウトによりリクエストを棄却しました。')
+        return
+    await ctx.send('実行許可を確認しました。')
     time.sleep(random.uniform(0.5,1.5))
     await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
     time.sleep(0.5)
