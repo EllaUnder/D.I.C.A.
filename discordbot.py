@@ -1,4 +1,4 @@
-#imports #更新
+#imports #更
 import discord 
 from discord.ext import commands,tasks
 import os
