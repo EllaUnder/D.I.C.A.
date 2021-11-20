@@ -396,7 +396,7 @@ async def Nautilus(ctx,arg):
                 if random.random() <= 0.1:
                     per_content = f'転写率**{progress_per}**%です。'
                     if not per_content == old_per_content:
-                        await per_message.edit(per_content)
+                        await per_message.edit(content=per_content)
                     old_per_content = f'転写率**{progress_per}**%です。'
     per_count = 0
     await ctx.send('メジャーコンプリート。')
