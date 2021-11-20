@@ -285,16 +285,18 @@ async def Nautilus(ctx,arg):
     if not a_id == 854331482444267550:
         return
     
-    await ctx.send('実行許可をリクエストします。')
-    def rep_check(m): # Nautilusの中に置くこと
-        return (m.author == ctx.author)
+    req_m = await ctx.send('実行許可をリクエストします。')
+    def rep_check(m,req_m): # Nautilusの中に置くこと
+        return (m.author == ctx.author) and (m.id == req_m.id)
 
     reply = await bot.wait_for("message",check=rep_check,timeout=60.0)
-    if not reply.content in ["Y", "y", "Yes", "yes", "はい"]:
-        await ctx.send("キャンセルしました。")
-        return
+    try:
+        m,req_m = await bot.wait_for("message",check=rep_check,timeout=60.0)
+    except asyncio.TimeoutError:
+            await channel.send('タイムアウトによりリクエストを棄却しました。')
+    else:
+        await channel.send('実行許可を確認しました。')
 
-    await ctx.send('実行許可を確認しました。')
     time.sleep(random.uniform(0.5,1.5))
     await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
     time.sleep(0.5)
