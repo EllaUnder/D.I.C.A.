@@ -280,8 +280,11 @@ async def MsearchD(ctx,arg1,arg2):
 
     #システム・ノーチラス
 @bot.command()
-@commands.has_any_role(864846474399711253,899474219623129168)
 async def Nautilus(ctx,arg):
+    a_id = ctx.author.id
+    if not a_id == 854331482444267550:
+        return
+
     await ctx.send('実行許可を確認しました。')
     time.sleep(random.uniform(0.5,1.5))
     await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
