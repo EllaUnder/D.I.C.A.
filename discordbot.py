@@ -287,6 +287,14 @@ async def Nautilus(ctx,arg):
     
     req_m = await ctx.send('実行許可をリクエストします。')
     def rep_check(m): # Nautilusの中に置くこと
+        if m.reference is not None:
+            if m.reference.message_id == req_m.id and m.content in ["Y", "y", "Yes", "yes", "はい", "許可"]:
+                return True
+        return False
+
+    reply = await bot.wait_for("message", check=rep_check, timeout=60.0)
+    req_m = await ctx.send('実行許可をリクエストします。')
+    def rep_check(m): # Nautilusの中に置くこと
         return (m.author == ctx.author) and (m.id == req_m.id)
 
     reply = await bot.wait_for("message",check=rep_check,timeout=60.0)
