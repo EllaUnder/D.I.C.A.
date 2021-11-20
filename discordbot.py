@@ -293,17 +293,7 @@ async def Nautilus(ctx,arg):
         return False
 
     reply = await bot.wait_for("message", check=rep_check, timeout=60.0)
-    req_m = await ctx.send('実行許可をリクエストします。')
-    def rep_check(m): # Nautilusの中に置くこと
-        return (m.author == ctx.author) and (m.id == req_m.id)
-
-    reply = await bot.wait_for("message",check=rep_check,timeout=60.0)
-    try:
-        m = await bot.wait_for("message",check=rep_check,timeout=60.0)
-    except asyncio.TimeoutError:
-            await channel.send('タイムアウトによりリクエストを棄却しました。')
-    else:
-        await channel.send('実行許可を確認しました。')
+    
 
     time.sleep(random.uniform(0.5,1.5))
     await ctx.send('システム・ノーチラス、フルドライブ。') #電子の海を旅する装置としてその名は決定された。「システム・ノーチラス」。
