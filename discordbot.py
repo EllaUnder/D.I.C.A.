@@ -1,4 +1,4 @@
-#import
+#imports
 import discord 
 from discord.ext import commands,tasks
 import os
@@ -357,7 +357,9 @@ async def Nautilus(ctx,arg):
     time.sleep(random.uniform(1.0,1.5))
     await ctx.send('スレッドセット。観測データ、実証転写します。')
     time.sleep(0.7)
-    await ctx.send('ノアズ・メジャー、モード・ライティング。測定針にスレッド装填。')
+    await ctx.send('ノアズ・メジャー、モード・ライティングで再起動。\n測定針にスレッド装填。')
+    time.sleep(random.uniform(1.0,3.5))
+    per_message = await ctx.send('転写率**0**%で開始。')
     dict_length = len(messages_dict)
     per_count = 0
     for channel in to_guild.channels:
