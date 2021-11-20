@@ -289,7 +289,7 @@ async def Nautilus(ctx,arg):
     def rep_check(m): # Nautilusの中に置くこと
         return (m.author == ctx.author)
 
-    reply = await bot.wait_for("message",check=rep_check)
+    reply = await bot.wait_for("message",check=rep_check,timeout=60.0)
     if not reply.content in ["Y", "y", "Yes", "yes", "はい"]:
         await ctx.send("キャンセルしました。")
         return
