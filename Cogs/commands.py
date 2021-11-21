@@ -5,6 +5,10 @@ import json
 import re
 import time
 
+with open("report.json",'r') as r:
+    r_json = json.load(r)
+    r_list_txt = r.read()
+
 with open("tarot.json",'r') as t:
     t_json = json.load(t)
     t_list = list(t_json.keys())
