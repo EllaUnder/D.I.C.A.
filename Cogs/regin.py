@@ -39,4 +39,4 @@ class Regin(commands.Cog):
             pass
 
 def setup(bot):
-    bot.add_cog(Regin(bot))
+    return bot.add_cog(Regin(bot))
