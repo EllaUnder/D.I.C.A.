@@ -21,9 +21,9 @@ class Commands(commands.Cog):
         await ctx.send(embed=embed)
 
     #検索
+    @commands.command()
     s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
 
-    @commands.command()
     async def search(self,ctx,arg): 
         if re.search('[a-zA-Z]',arg):
             if arg not in s_class: # もし引数が予想以外なら警告で返す
