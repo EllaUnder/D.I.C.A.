@@ -43,12 +43,12 @@ INITIAL_EXTENSIONS = [
     "Cogs.Nautilus",
     "Cogs.commands",
     "Cogs.flame_event"
-    "cogs.help",
-    "cogs.invite_track",
-    "cogs.join_left",
-    "cogs.regin",
-    "cogs.response",
-    "cogs.timetasks"
+    "Cogs.help",
+    "Cogs.invite_track",
+    "Cogs.join_left",
+    "Cogs.regin",
+    "Cogs.response",
+    "Cogs.timetasks"
 ]
 
 class Laplace(commands.Bot):
