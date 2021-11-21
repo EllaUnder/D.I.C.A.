@@ -12,17 +12,6 @@ import json
 import requests
 import math
 
-bot = commands.Bot(
-    command_prefix='#d',
-    strip_after_prefix = True,
-    help_command=None,
-    intents=discord.Intents().all(),
-    activity=discord.Game('D.I.C.A.管制補佐システム')
-)
-
-token = os.environ['DISCORD_BOT_TOKEN']
-
-
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
 Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
@@ -72,6 +61,16 @@ class Laplace(commands.Bot):
                 self.load_extension(cog)
             except Exception as e:
                 print(e)
+
+bot = Laplace(
+    command_prefix='#d',
+    strip_after_prefix = True,
+    help_command=None,
+    intents=discord.Intents().all(),
+    activity=discord.Game('D.I.C.A.管制補佐システム')
+)
+
+token = os.environ['DISCORD_BOT_TOKEN']
 
 if __name__ == "__main__":
     bot.run(token)
