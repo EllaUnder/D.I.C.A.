@@ -1,5 +1,9 @@
-bot.event
-async def on_member_join(member):
+class Join_Left(commands.Cog):
+    def __init__(self,bot):
+        self.bot = bot
+
+    @commands.Cog.listener(name='on_message')
+    async def on_member_join(member):
     g_id = member.guild.id
     if g_id == 864768192399278110:
         channel = bot.get_channel(864846240428457994) #ロビー
@@ -28,3 +32,10 @@ async def on_member_join(member):
             await channel.send('コンディション更新、カラーレッドです。')
         else:
             return
+
+bot.event
+async def on_member_remove(member):
+    g_id = member.guild.id
+    if g_id == 864768192399278110:
+        channel = bot.get_channel(864846240428457994) #ロビー
+        await channel.send(f'**{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
