@@ -141,3 +141,6 @@ class Nautilus(commands.Cog):
         await ctx.send('全工程オールクリア。')
         time.sleep(random.uniform(0.5,1.0))
         await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
+
+def setup(bot)
+    bot.add_cog(Nautilus(bot))
