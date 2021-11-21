@@ -55,7 +55,7 @@ class Laplace(commands.Bot):
 
     def __init__(self,command_prefix):
         super().__init__(command_prefix)
-
+        self.remove_command('help')
         for cog in INITIAL_EXTENSIONS:
             try:
                 self.load_extension(cog)
