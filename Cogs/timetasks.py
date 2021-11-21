@@ -1,6 +1,7 @@
 class TimeTasks(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.loop.start()
 
     @tasks.loop(seconds=60)
     async def timeloop(self):
@@ -11,3 +12,6 @@ class TimeTasks(commands.Cog):
         if now == '09:00':
             Today_tweet = random.choice(tweet_List)
             await channel.send(f'{Today_tweet}')
+
+def setup(bot)
+    bot.add_cog(TimeTasks(bot))
