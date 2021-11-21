@@ -19,4 +19,4 @@ class InviteTrack(commands.Cog):
             await channel.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(InviteTrack(bot))
+    return bot.add_cog(InviteTrack(bot))
