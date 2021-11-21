@@ -1,5 +1,8 @@
 from discord.ext import commands
 import discord
+import random
+import re
+import time
 
 class Commands(commands.Cog):
     def __init__(self,bot):
