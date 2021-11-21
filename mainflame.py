@@ -11,7 +11,6 @@ from datetime import timedelta,timezone
 import json
 import requests
 import math
-import psycopg2
 
 bot = commands.Bot(
     command_prefix='#d',
