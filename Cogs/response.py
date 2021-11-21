@@ -1,3 +1,27 @@
+def rps(hand, res_hand):
+    if hand == res_hand:
+        return "あいこです"
+
+    if hand == "✊":
+        if res_hand == "✌":
+            return "君の勝ち！"
+        elif res_hand == "🖐":
+            return "私の勝ち！"
+
+    if hand == "✌":
+        if res_hand == "✊":
+            return "私の勝ち！"
+        elif res_hand == "🖐":
+            return "君の勝ち！"
+
+    if hand == "🖐":
+        if res_hand == "✌":
+            return "私の勝ち！"
+        elif res_hand == "✊":
+            return "君の勝ち！"
+    else:
+        return "その手は無いよ！"
+
 class Response(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
