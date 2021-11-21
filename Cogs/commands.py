@@ -1,3 +1,4 @@
+#Embedリンク
 bot.command()
 @commands.has_any_role(865029743173828608,864846474399711253)
 async def Elink(ctx,arg1,arg2):
@@ -6,6 +7,7 @@ async def Elink(ctx,arg1,arg2):
 
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
 
+#検索
 @bot.command()
 async def search(ctx,arg): 
     if re.search('[a-zA-Z]',arg):
@@ -69,7 +71,7 @@ async def search(ctx,arg):
     else:
         return
 
-    #特定ユーザーのメッセージを削除
+#特定ユーザーのメッセージを削除
 @bot.command()
 @commands.has_any_role(864846474399711253,865029743173828608,899474219623129168)
 async def MsearchD(ctx,arg1,arg2):
@@ -80,4 +82,14 @@ async def MsearchD(ctx,arg1,arg2):
         if message.author.id == int(arg2):
             await message.delete() # 検索対象のIDと一緒ならの処理
     await ctx.send('悪いメッセージはドーン、ドン！💣💥')
+
+#タロット占い
+bot.command()
+async def tarot(ctx):
+    res_pic= random.choice(t_list)
+    res_mean = t_json[res_pic]
+    embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
+    embed.set_image(url=res_pic)
+    await ctx.send(embed=embed)
+    await ctx.send(f'{res_mean}')
 
