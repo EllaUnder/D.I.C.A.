@@ -91,26 +91,15 @@ with open("tarot.json",'r') as t:
 JST = timezone(timedelta(hours=+9),'JST')
 
 
-```py
-import discord
-from discord.ext import tasks, commands
-import os
-from os.path import join
-from discord.ext.commands import bot
-from dotenv import load_dotenv
-import asyncio
-import random
-
-
-def get_token():
-    load_dotenv(verbose = True)
-    dotenv_path = join("../", ".env")
-    load_dotenv(dotenv_path)
-    return os.environ.get("TOKEN")
-
 INITIAL_EXTENSIONS = [
-    "cogs.general",
-    "cogs.monitor"
+    "cogs.Nautilus",
+    "cogs.commands",
+    "cogs.help",
+    "cogs.invite_track",
+    "cogs.join_left",
+    "cogs.regin",
+    "cogs.response",
+    "cogs.timetasks"
 ]
 
 class Laplace(commands.Bot):
