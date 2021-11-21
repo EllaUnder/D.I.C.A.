@@ -22,3 +22,6 @@ class Flame_Event(commands.Cog):
         channel = self.bot.get_channel(Channel_ID1)
         await channel.send(error_msg)
         await ctx.send('コマンドエラーです。')
+
+def setup(bot)
+    bot.add_cog(Flame_Event(bot))
