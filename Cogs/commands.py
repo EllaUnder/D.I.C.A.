@@ -88,12 +88,12 @@ class Commands(commands.Cog):
         await ctx.send('悪いメッセージはドーン、ドン！💣💥')
 
     #タロット占い
-    @bot.command()
-async def tarot(ctx):
-    res_pic= random.choice(t_list)
-    res_mean = t_json[res_pic]
-    embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
-    embed.set_image(url=res_pic)
-    await ctx.send(embed=embed)
-    await ctx.send(f'{res_mean}')
+    @commands.command()
+    async def tarot(self,ctx):
+        res_pic= random.choice(t_list)
+        res_mean = t_json[res_pic]
+        embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
+        embed.set_image(url=res_pic)
+        await ctx.send(embed=embed)
+        await ctx.send(f'{res_mean}')
 
