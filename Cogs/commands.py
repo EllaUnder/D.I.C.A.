@@ -4,6 +4,10 @@ import random
 import re
 import time
 
+with open("tarot.json",'r') as t:
+    t_json = json.load(t)
+    t_list = list(t_json.keys())
+
 class Commands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
