@@ -32,7 +32,7 @@ class Response(commands.Cog):
 
     hand_list = ['✊','✌','🖐']
 
-    @commands.Cog.listener(name='on_message')
+    @commands.Cog.listener()
     async def message(self,message):
         if message.author.bot:
             return
@@ -66,8 +66,6 @@ class Response(commands.Cog):
                 await message.channel.send(f'{rps(hand,res_hand)}')
             elif hand in hand_list:
                 await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
-
-        await self.bot.process_commands(message)
 
 def setup(bot):
     return bot.add_cog(Response(bot))
