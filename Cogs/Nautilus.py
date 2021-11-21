@@ -143,4 +143,4 @@ class Nautilus(commands.Cog):
         await ctx.send('ギルド複製、完了を確認。\nお疲れ様でした。')
 
 def setup(bot):
-    bot.add_cog(Nautilus(bot))
+    return bot.add_cog(Nautilus(bot))
