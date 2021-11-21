@@ -37,3 +37,6 @@ class Regin(commands.Cog):
                 await channel.send(embed=embed)
         else:
             pass
+
+def setup(bot)
+    bot.add_cog(Regin(bot))
