@@ -188,7 +188,7 @@ async def on_member_remove(member):
     g_id = member.guild.id
     if g_id == 864768192399278110:
         channel = bot.get_channel(864846240428457994) #ロビー
-        await channel.send(f'*「{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
+        await channel.send(f'**{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
 
 #コマンド
     #Embed
