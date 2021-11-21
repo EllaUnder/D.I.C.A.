@@ -1,3 +1,6 @@
+from discord.ext import commands
+import discord
+
 class Regin(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
