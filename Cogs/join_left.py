@@ -40,5 +40,5 @@ class Join_Left(commands.Cog):
             channel = self.bot.get_channel(864846240428457994) #ロビー
             await channel.send(f'**{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
 
-def setup(bot)
+def setup(bot):
     bot.add_cog(Join_Left(bot))
