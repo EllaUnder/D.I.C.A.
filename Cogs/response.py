@@ -1,5 +1,6 @@
 from discord.ext import commands
 import discord
+import random
 
 def rps(hand, res_hand):
     if hand == res_hand:
@@ -66,7 +67,7 @@ class Response(commands.Cog):
             elif hand in hand_list:
                 await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
 
-        await bot.process_commands(message)
+        await self.bot.process_commands(message)
 
 def setup(bot):
     return bot.add_cog(Response(bot))
