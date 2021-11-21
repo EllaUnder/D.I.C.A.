@@ -22,46 +22,6 @@ bot = commands.Bot(
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
-#defs
-def Travel_overwrites(p_key, channel_permissions, roles_dict):
-    keys = list(p_key)
-    for key in keys: # keysをforで回す
-        try:
-            # まずpermissionオブジェクトを取り出す
-            permission = channel_permissions[key]
-
-            # overwritesに移行先のロールをkeyにしたpermissionを代入
-            channel_permissions[roles_dict[key]] = permission
-
-            # 移行元の権限の要素は消す
-            del channel_permissions[key]
-        except:
-            pass
-    return channel_permissions
-
-def rps(hand, res_hand):
-    if hand == res_hand:
-        return "あいこです"
-
-    if hand == "✊":
-        if res_hand == "✌":
-            return "君の勝ち！"
-        elif res_hand == "🖐":
-            return "私の勝ち！"
-
-    if hand == "✌":
-        if res_hand == "✊":
-            return "私の勝ち！"
-        elif res_hand == "🖐":
-            return "君の勝ち！"
-
-    if hand == "🖐":
-        if res_hand == "✌":
-            return "私の勝ち！"
-        elif res_hand == "✊":
-            return "君の勝ち！"
-    else:
-        return "その手は無いよ！"
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID2 = 867042310180962315 #注意ユーザーリスト
