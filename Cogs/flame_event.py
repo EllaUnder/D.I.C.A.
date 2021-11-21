@@ -1,6 +1,8 @@
 from discord.ext import commands
 import discord
 import traceback
+import random
+import time
 
 Channel_ID1 = 886972852979531786 #その他ログ
 
