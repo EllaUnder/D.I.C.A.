@@ -1,3 +1,6 @@
+from discord.ext import commands
+import discord
+
 def rps(hand, res_hand):
     if hand == res_hand:
         return "あいこです"
