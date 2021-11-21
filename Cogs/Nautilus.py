@@ -1,3 +1,20 @@
+def Travel_overwrites(p_key, channel_permissions, roles_dict):
+    keys = list(p_key)
+    for key in keys: # keysをforで回す
+        try:
+            # まずpermissionオブジェクトを取り出す
+            permission = channel_permissions[key]
+
+            # overwritesに移行先のロールをkeyにしたpermissionを代入
+            channel_permissions[roles_dict[key]] = permission
+
+            # 移行元の権限の要素は消す
+            del channel_permissions[key]
+        except:
+            pass
+    return channel_permissions
+
+
 class Nautilus(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
