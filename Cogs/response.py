@@ -40,3 +40,6 @@ class Response(commands.Cog):
                 await message.channel.send(f"ポン！{res_hand}\n{rps(hand, res_hand)}")
 
         await bot.process_commands(message)
+
+def setup(bot)
+    bot.add_cog(Response(bot))
