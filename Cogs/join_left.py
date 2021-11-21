@@ -33,9 +33,9 @@ class Join_Left(commands.Cog):
         else:
             return
 
-bot.event
-async def on_member_remove(member):
-    g_id = member.guild.id
-    if g_id == 864768192399278110:
-        channel = bot.get_channel(864846240428457994) #ロビー
-        await channel.send(f'**{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
+    @commands.Cog.listener(name='on_member_remove')
+    async def on_left(self,member):
+        g_id = member.guild.id
+        if g_id == 864768192399278110:
+            channel = self.bot.get_channel(864846240428457994) #ロビー
+            await channel.send(f'**{member.name}**様が退館しました。\nまたのご訪問お待ちしております。')
