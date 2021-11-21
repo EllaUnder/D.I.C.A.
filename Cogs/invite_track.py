@@ -17,3 +17,6 @@ class InviteTrack(commands.Cog):
             embed.add_field(name='__招待リンク__',value=f'{i_url}')
             channel = self.bot.get_channel(Channel_ID1)
             await channel.send(embed=embed)
+
+def setup(bot)
+    bot.add_cog(InviteTrack(bot))
