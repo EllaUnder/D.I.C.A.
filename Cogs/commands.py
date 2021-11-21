@@ -1,3 +1,6 @@
+class Commands(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
 #Embedリンク
 bot.command()
 @commands.has_any_role(865029743173828608,864846474399711253)
