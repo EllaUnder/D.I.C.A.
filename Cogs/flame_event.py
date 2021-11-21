@@ -1,6 +1,8 @@
 from discord.ext import commands
 import discord
 
+Channel_ID1 = 886972852979531786 #その他ログ
+
 class Flame_Event(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
