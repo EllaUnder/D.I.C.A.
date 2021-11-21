@@ -98,4 +98,4 @@ class Commands(commands.Cog):
         await ctx.send(f'{res_mean}')
 
 def setup(bot):
-    bot.add_cog(Commands(bot))
+    return bot.add_cog(Commands(bot))
