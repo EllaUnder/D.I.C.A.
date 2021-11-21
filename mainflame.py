@@ -94,6 +94,7 @@ JST = timezone(timedelta(hours=+9),'JST')
 INITIAL_EXTENSIONS = [
     "cogs.Nautilus",
     "cogs.commands",
+    "cogs.flame_event"
     "cogs.help",
     "cogs.invite_track",
     "cogs.join_left",
@@ -132,28 +133,6 @@ async def on_ready():
 
 if __name__ == "__main__":
     bot.run(get_token())
-
-
-@bot.event
-async def on_ready():
-    print('起動しました')
-    channel = bot.get_channel(Channel_ID1)
-    await channel.send('ブラックリストの読み込みが完了しました。')
-    time.sleep(random.uniform(0.5,1.5))
-    await channel.send('報告リストの読み込みが完了しました。')
-    time.sleep(random.uniform(0.5,1.5))
-    await channel.send('💚**System All Green**' if random.random() <= 0.1 else '🟢**System All Green**')
-    time.sleep(random.uniform(0.5,1.5))
-    await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
-    timeloop.start()
-
-@bot.event
-async def on_command_error(ctx,error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    channel = bot.get_channel(Channel_ID1)
-    await channel.send(error_msg)
-    await ctx.send('コマンドエラーです。')
 
 
 bot.run(token)
