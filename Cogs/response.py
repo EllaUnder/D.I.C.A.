@@ -41,5 +41,5 @@ class Response(commands.Cog):
 
         await bot.process_commands(message)
 
-def setup(bot)
+def setup(bot):
     bot.add_cog(Response(bot))
