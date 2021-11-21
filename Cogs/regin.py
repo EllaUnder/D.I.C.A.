@@ -38,5 +38,5 @@ class Regin(commands.Cog):
         else:
             pass
 
-def setup(bot)
+def setup(bot):
     bot.add_cog(Regin(bot))
