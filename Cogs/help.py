@@ -3,7 +3,7 @@ class help(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def help(ctx):
+    async def help(self,ctx):
         embed = discord.Embed(title='Laplaceのコマンド一覧',description='プレフィックスは`#d`です。\n引数`<>`は必須になります。引数`[]`はオプションです。',color=0x00ff8d)
         embed.add_field(name='__search <ユーザーID>__',value='報告リスト、ブラックリストに指定したユーザーが存在するかどうか検索します。')
         embed.add_field(name='__Elink <タイトル> <メッセージリンク>__',value='埋め込みメッセージを作成します。\n管理者専用です。')
