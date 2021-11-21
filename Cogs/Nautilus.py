@@ -1,5 +1,7 @@
 from discord.ext import commands
 import discord
+import time
+import requests
 
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
     keys = list(p_key)
