@@ -14,6 +14,7 @@ with open("tarot.json",'r') as t:
     t_list = list(t_json.keys())
 
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
+users_c = []
 
 class Commands(commands.Cog):
     def __init__(self,bot):
@@ -33,8 +34,6 @@ class Commands(commands.Cog):
             if arg not in s_class: # もし引数が予想以外なら警告で返す
                 await ctx.send(f"脅威クラス**{arg}**は存在しません。")
                 return
-
-            users_c = [] # クラスが一致した人の情報を入れておく
 
             for info in r_json:  
                 if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
