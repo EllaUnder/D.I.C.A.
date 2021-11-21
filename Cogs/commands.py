@@ -22,9 +22,8 @@ class Commands(commands.Cog):
 
     #検索
     @commands.command()
+    async def search(self,ctx,arg):
     s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
-
-    async def search(self,ctx,arg): 
         if re.search('[a-zA-Z]',arg):
             if arg not in s_class: # もし引数が予想以外なら警告で返す
                 await ctx.send(f"脅威クラス**{arg}**は存在しません。")
