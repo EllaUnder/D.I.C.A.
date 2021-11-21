@@ -1,4 +1,4 @@
-class help(commands.Cog):
+class Help(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
@@ -11,3 +11,6 @@ class help(commands.Cog):
         embed.add_field(name='__record <タイトル> <内容> [写真]__',value='荒らし対策の活動記録を残します。\nオフィサー専用です。')
         embed.add_field(name='__help__',value='コマンド一覧を表示します。')
         await ctx.send(embed=embed)
+
+def setup(bot)
+    bot.add_cog(Help(bot))
