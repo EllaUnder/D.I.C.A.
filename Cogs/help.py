@@ -12,5 +12,5 @@ class Help(commands.Cog):
         embed.add_field(name='__help__',value='コマンド一覧を表示します。')
         await ctx.send(embed=embed)
 
-def setup(bot)
+def setup(bot):
     bot.add_cog(Help(bot))
