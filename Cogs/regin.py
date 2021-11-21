@@ -4,9 +4,9 @@ class Regin(commands.Cog):
 
     @commands.command()
     @commands.has_role(864846474399711253)
-    async def regin(ctx):
+    async def regin(self,ctx):
         if ctx.channel.id == 864846769351294976:
-            channel =bot.get_channel(Channel_ID3)
+            channel = self.bot.get_channel(Channel_ID3)
             await channel.purge()
             embed = discord.Embed(title='報告ユーザーリスト',color=0xff0000)
             field_count = 0
