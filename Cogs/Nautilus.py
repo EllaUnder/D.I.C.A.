@@ -1,3 +1,6 @@
+from discord.ext import commands
+import discord
+
 def Travel_overwrites(p_key, channel_permissions, roles_dict):
     keys = list(p_key)
     for key in keys: # keysをforで回す
