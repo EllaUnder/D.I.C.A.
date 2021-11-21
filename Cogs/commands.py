@@ -97,5 +97,5 @@ class Commands(commands.Cog):
         await ctx.send(embed=embed)
         await ctx.send(f'{res_mean}')
 
-def setup(bot)
+def setup(bot):
     bot.add_cog(Commands(bot))
