@@ -7,7 +7,7 @@ class TimeTasks(commands.Cog):
         self.loop.start()
 
     @tasks.loop(seconds=60)
-    async def timeloop(self):
+    async def loop(self):
         channel = self.bot.get_channel(898235395203018752) #twitter2
         tweet_List = ['にゃるらさんありがとう','ふん…','オラの武器はでっかい岩塩さ','群馬の暴力型侵略装置','富士そばの裏メニューって知ってる？']
         JST = timezone(timedelta(hours=+9),'JST')
