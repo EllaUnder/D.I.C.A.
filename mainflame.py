@@ -115,4 +115,4 @@ class Laplace(commands.Bot):
 bot = Laplace(command_prefix="t.")
 
 if __name__ == "__main__":
-    bot.run(get_token())
+    bot.run(token)
