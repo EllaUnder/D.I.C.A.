@@ -112,7 +112,8 @@ class Laplace(commands.Bot):
                 self.load_extension(cog)
             except Exception as e:
                 print(e)
-bot = Laplace(command_prefix="t.")
+
+bot.load_extension('Cogs')
 
 if __name__ == "__main__":
     bot.run(token)
