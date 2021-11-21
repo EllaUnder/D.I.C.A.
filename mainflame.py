@@ -62,12 +62,7 @@ class Laplace(commands.Bot):
             except Exception as e:
                 print(e)
 
-bot = Laplace(
-    command_prefix='#d',
-    help_command=None,
-    intents=discord.Intents().all(),
-    activity=discord.Game('D.I.C.A.管制補佐システム')
-)
+bot = Laplace(command_prefix='#d')
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
