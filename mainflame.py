@@ -64,7 +64,6 @@ class Laplace(commands.Bot):
 
 bot = Laplace(
     command_prefix='#d',
-    strip_after_prefix = True,
     help_command=None,
     intents=discord.Intents().all(),
     activity=discord.Game('D.I.C.A.管制補佐システム')
