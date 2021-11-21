@@ -14,4 +14,4 @@ class TimeTasks(commands.Cog):
             await channel.send(f'{Today_tweet}')
 
 def setup(bot):
-    bot.add_cog(TimeTasks(bot))
+    return bot.add_cog(TimeTasks(bot))
