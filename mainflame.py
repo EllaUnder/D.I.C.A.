@@ -91,6 +91,60 @@ with open("tarot.json",'r') as t:
 JST = timezone(timedelta(hours=+9),'JST')
 
 
+```py
+import discord
+from discord.ext import tasks, commands
+import os
+from os.path import join
+from discord.ext.commands import bot
+from dotenv import load_dotenv
+import asyncio
+import random
+
+
+def get_token():
+    load_dotenv(verbose = True)
+    dotenv_path = join("../", ".env")
+    load_dotenv(dotenv_path)
+    return os.environ.get("TOKEN")
+
+INITIAL_EXTENSIONS = [
+    "cogs.general",
+    "cogs.monitor"
+]
+
+class Laplace(commands.Bot):
+
+    def __init__(self,command_prefix):
+        super().__init__(command_prefix)
+
+        for cog in INITIAL_EXTENSIONS:
+            try:
+                self.load_extension(cog)
+            except Exception as e:
+                print(e)
+bot = TaktBot(command_prefix="t.")
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(status=discord.Status.invisible)
+
+    """
+    status list:
+      online = green
+      offline = gray
+      idle = orange
+      dnd = red
+      do_not_disturb = red
+      invisible = hide online status
+    """
+
+    print("login")
+
+if __name__ == "__main__":
+    bot.run(get_token())
+
+
 @bot.event
 async def on_ready():
     print('起動しました')
