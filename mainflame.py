@@ -113,26 +113,7 @@ class Laplace(commands.Bot):
                 self.load_extension(cog)
             except Exception as e:
                 print(e)
-bot = TaktBot(command_prefix="t.")
-
-@bot.event
-async def on_ready():
-    await bot.change_presence(status=discord.Status.invisible)
-
-    """
-    status list:
-      online = green
-      offline = gray
-      idle = orange
-      dnd = red
-      do_not_disturb = red
-      invisible = hide online status
-    """
-
-    print("login")
+bot = Laplace(command_prefix="t.")
 
 if __name__ == "__main__":
     bot.run(get_token())
-
-
-bot.run(token)
