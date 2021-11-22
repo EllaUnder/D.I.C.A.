@@ -11,7 +11,7 @@ class Flame_Event(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def ready(self):
+    async def on_ready(self):
         print('起動しました')
         channel = self.bot.get_channel(Channel_ID1)
         await channel.send('ブラックリストの読み込みが完了しました。')
@@ -23,7 +23,7 @@ class Flame_Event(commands.Cog):
         await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
 
     @commands.Cog.listener()
-    async def command_error(self,ctx,error):
+    async def on_command_error(self,ctx,error):
         orig_error = getattr(error, "original", error)
         error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
         channel = self.bot.get_channel(Channel_ID1)
