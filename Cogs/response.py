@@ -56,9 +56,7 @@ class Response(commands.Cog):
     
         if message.content.startswith('Laplace') or message.content.startswith('ラプラス'):
             await message.channel.send('お呼びでしょうか？')
-            await bot.process_commands(message)
-            return
-
+            
         if message.content == 'じゃんけん✊' or message.content == 'じゃんけん✌️' or message.content == 'じゃんけん🖐':
             hand = message.content[5]
             res_hand = random.choice(hand_list)
