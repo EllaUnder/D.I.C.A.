@@ -9,10 +9,6 @@ with open("report.json",'r') as r:
     r_json = json.load(r)
     r_list_txt = r.read()
 
-with open("tarot.json",'r') as t:
-    t_json = json.load(t)
-    t_list = list(t_json.keys())
-
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
 users_c = []
 
@@ -100,16 +96,6 @@ class Commands(commands.Cog):
             if message.author.id == int(arg2):
                 await message.delete() # 検索対象のIDと一緒ならの処理
         await ctx.send('悪いメッセージはドーン、ドン！💣💥')
-
-    #タロット占い
-    @commands.command()
-    async def tarot(self,ctx):
-        res_pic= random.choice(t_list)
-        res_mean = t_json[res_pic]
-        embed = discord.Embed(title='ワンオラクル・引かれたカード',color=0x90ee90)
-        embed.set_image(url=res_pic)
-        await ctx.send(embed=embed)
-        await ctx.send(f'{res_mean}')
 
 def setup(bot):
     return bot.add_cog(Commands(bot))
