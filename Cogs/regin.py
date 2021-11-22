@@ -2,6 +2,8 @@ from discord.ext import commands
 import discord
 import json
 
+Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
+
 with open("report.json",'r') as r:
     r_json = json.load(r)
     r_list_txt = r.read()
