@@ -1,5 +1,10 @@
 from discord.ext import commands
 import discord
+import json
+
+with open("report.json",'r') as r:
+    r_json = json.load(r)
+    r_list_txt = r.read()
 
 class Regin(commands.Cog):
     def __init__(self,bot):
