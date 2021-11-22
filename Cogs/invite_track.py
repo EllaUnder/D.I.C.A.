@@ -5,8 +5,8 @@ class InviteTrack(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.Cog.listener(name='on_invite_create')
-    async def invite_create(self,invite):
+    @commands.Cog.listener()
+    async def on_invite_create(self,invite):
         g_id = invite.guild.id
         if g_id == 864768192399278110:
             i_creator = invite.inviter.id
