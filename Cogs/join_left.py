@@ -5,8 +5,8 @@ class Join_Left(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @commands.Cog.listener(name='on_member_join')
-    async def on_join(self,member):
+    @commands.Cog.listener()
+    async def on_member_join(self,member):
         g_id = member.guild.id
         if g_id == 864768192399278110:
             channel = self.bot.get_channel(864846240428457994) #ロビー
@@ -36,8 +36,8 @@ class Join_Left(commands.Cog):
             else:
                 return
 
-        @commands.Cog.listener(name='on_member_remove')
-        async def on_left(self,member):
+        @commands.Cog.listener()
+        async def on_member_remove(self,member):
             g_id = member.guild.id
             if g_id == 864768192399278110:
                 channel = self.bot.get_channel(864846240428457994) #ロビー
