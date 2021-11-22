@@ -2,6 +2,8 @@ from discord.ext import commands
 import discord
 import random
 
+hand_list = ['✊','✌','🖐']
+
 def rps(hand, res_hand):
     if hand == res_hand:
         return "あいこです"
@@ -30,10 +32,8 @@ class Response(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    hand_list = ['✊','✌','🖐']
-
     @commands.Cog.listener()
-    async def message(self,message):
+    async def on_message(self,message):
         if message.author.bot:
             return
 
