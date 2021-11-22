@@ -39,7 +39,7 @@ class Commands(commands.Cog):
                 if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
 
-            if users == []: # もし結果が空なら返す
+            if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
                 await ctx.send('該当するユーザーは見つかりませんでした。')
                 return
