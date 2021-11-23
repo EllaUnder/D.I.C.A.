@@ -45,7 +45,7 @@ class Laplace(commands.Bot):
             except Exception as e:
                 print(e)
 
-bot = Laplace(command_prefix='#d ')
+bot = Laplace(command_prefix='#d ',intents=discord.Intents.all())
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
