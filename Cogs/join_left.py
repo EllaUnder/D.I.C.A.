@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 import json
 import datetime
+from datetime import timedelta,timezone
 
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
