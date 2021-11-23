@@ -5,7 +5,7 @@ import json
 import re
 import time
 
-with open("report.json",'r') as r:
+with open("files/report.json",'r') as r:
     r_json = json.load(r)
     r_list_txt = r.read()
 
