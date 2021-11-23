@@ -42,8 +42,7 @@ INITIAL_EXTENSIONS = [
     "Cogs.help",
     "Cogs.invite_track",
     "Cogs.join_left",
-    "Cogs.regin",
-    "Cogs.response",
+    "Cogs.regin"
 ]
 
 class Laplace(commands.Bot):
