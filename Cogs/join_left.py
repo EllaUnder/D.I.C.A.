@@ -4,6 +4,8 @@ import json
 import datetime
 from datetime import timedelta,timezone
 
+Channel_ID1 = 886972852979531786 #その他ログ
+
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
     r_list_txt = r.read()
