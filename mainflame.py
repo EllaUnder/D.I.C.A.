@@ -37,7 +37,8 @@ INITIAL_EXTENSIONS = [
 class Laplace(commands.Bot):
 
     def __init__(self,command_prefix):
-        super().__init__(command_prefix)
+        super().__init__(command_prefix,
+                          intents=intents)
         self.remove_command('help')
         for cog in INITIAL_EXTENSIONS:
             try:
@@ -45,9 +46,9 @@ class Laplace(commands.Bot):
             except Exception as e:
                 print(e)
 
-bot = Laplace(command_prefix='#d ',intents=discord.Intents.all())
-
 token = os.environ['DISCORD_BOT_TOKEN']
 
 if __name__ == "__main__":
+    intents=discord.Intents.all())
+    bot = Laplace(command_prefix='#d ',intents=intents,help_command=None)
     bot.run(token)
