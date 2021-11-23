@@ -49,6 +49,6 @@ class Laplace(commands.Bot):
 token = os.environ['DISCORD_BOT_TOKEN']
 
 if __name__ == "__main__":
-    intents=discord.Intents.all())
+    intents=discord.Intents.all()
     bot = Laplace(command_prefix='#d',strip_after_prefix=True,intents=intents,help_command=None)
     bot.run(token)
