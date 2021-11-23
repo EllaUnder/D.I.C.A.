@@ -1,5 +1,11 @@
 from discord.ext import commands
 import discord
+import json
+import datetime
+
+with open("files/report.json",'r') as r:
+    r_json = json.load(r)
+    r_list_txt = r.read()
 
 class Join_Left(commands.Cog):
     def __init__(self,bot):
