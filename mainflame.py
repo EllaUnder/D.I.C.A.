@@ -36,7 +36,7 @@ INITIAL_EXTENSIONS = [
 
 class Laplace(commands.Bot):
 
-    def __init__(self,command_prefix):
+    def __init__(self,command_prefix,intents):
         super().__init__(command_prefix,
                           intents=intents)
         self.remove_command('help')
