@@ -19,18 +19,6 @@ Channel_ID4 = 871581378234433586 #IDコピー
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 Channel_ID6 = 899500385788624906 #活動記録
 
-#リスト系読み込み
-with open("files/list.txt",encoding="UTF-8") as f:
-    list_txt = f.read()
-    list_rtxt = list_txt.split('\n')
-
-with open("blacklist.json",encoding="UTF-8") as b:
-    b_list_txt = b.read()
-
-with open("report.json",'r') as r:
-    r_json = json.load(r)
-    r_list_txt = r.read()
-
 #タイムゾーン設定
 JST = timezone(timedelta(hours=+9),'JST')
 
