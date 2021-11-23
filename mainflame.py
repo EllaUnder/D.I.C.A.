@@ -20,7 +20,7 @@ Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 Channel_ID6 = 899500385788624906 #活動記録
 
 #リスト系読み込み
-with open("list.txt",encoding="UTF-8") as f:
+with open("files/list.txt",encoding="UTF-8") as f:
     list_txt = f.read()
     list_rtxt = list_txt.split('\n')
 
