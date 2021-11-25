@@ -7,7 +7,7 @@ Channel_ID3 = 864846769351294976 #警戒ユーザーリスト
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
-with open("files/Trolling_way.json",'r') as t:
+with open("files/trolling_way.json",'r') as t:
     t_json = json.load(t)
 
 class Regin(commands.Cog):
@@ -51,8 +51,14 @@ class Regin(commands.Cog):
             channel = self.bot.get_channel(913253599994339358)
             await channel.purge()
             
+            count = 0
             for t_info in t_json:
-            embed = discord.Embed(title=)
+                count += 1
+                way_info = str(t_info["case"])
+                picture = str(t_info["pic"])
+                embed = discord.Embed(title=f'Case{count}',description=f'{way_info}',color=0x18ff3a)
+                embed.set_image(url=picture)
+                await channel.send(embed=embed)
         else:
             pass
 
