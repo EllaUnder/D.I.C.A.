@@ -14,4 +14,8 @@ class SSecurity(commands.Cog):
         m_ = message.content
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             await message.delete()
+
+def setup(bot):
+    return bot.add_cog(SSecurity(bot))
+
     
