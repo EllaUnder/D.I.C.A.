@@ -21,7 +21,7 @@ def searcharg(args):
             if arg not in s_class:
                 return await ctx.send(f'脅威クラス{arg}は存在しません。')
             elif re.search('[0-9]',arg): #評価値アバウト
-                return
+                return tag = process1
             elif len(arg) == 18: #ID報告書あり
                 return
 
