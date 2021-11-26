@@ -2,8 +2,8 @@ from discord.ext import commands
 import discord
 import re
 
-pattern1 = "[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
-pattern2 = "mfa\.[\w-]{84}"
+pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
+pattern2 = r"mfa\.[\w-]{84}"
 
 class SSecurity(commands.Cog):
     def __init__(self,bot):
