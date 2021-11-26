@@ -25,6 +25,18 @@ def searcharg(args):
             elif len(arg) == 18: #ID報告書あり
                 return
 
+    if factor_len == 2:
+        arg1 = ','.join(args)[0]
+        arg2 = ','.join(args)[1]
+        if arg1 != ["just","j","existence","e"] or arg2 != ["just","j","existence","e"]: 
+            return await ctx.send('想定されていない引数です。')
+        elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2): 
+            if arg1 = ["just","j"] or arg2 = ["just","j"]: #評価値ピッタリ
+                return
+        elif len(arg1) == 18 or len(arg2) == 18:
+            if arg1 = ["existence","e"] or arg2 = ["existence","e"]: #ID存在のみ
+                return
+
 class Commands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
