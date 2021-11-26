@@ -95,40 +95,6 @@ class Commands(commands.Cog):
         elif tag == "process3":
             
 
-
-
-    @commands.command()
-    async def search(self,ctx,arg):
-        if re.search('[a-zA-Z]',arg):
-            if arg not in s_class: # もし引数が予想以外なら警告で返す
-                await ctx.send(f"脅威クラス**{arg}**は存在しません。")
-                return
-
-           
-    
-        elif re.search('[0-9]',arg):
-            arg_digits = len(str(arg))
-            if 1 <= arg_digits <= 3:
-                users_d_value = []
-            
-        elif arg in r_list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('該当IDは報告リストに存在します。')
-    
-        elif arg in b_list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('該当IDはブラックリストに存在します。')
-
-        elif not arg in r_list_txt and not arg in b_list_txt:
-            await ctx.send('ちょっと待ってくださいね…')
-            time.sleep(random.uniform(0.5,1.5))
-            await ctx.send('該当IDは報告リスト・ブラックリストに存在しません。')
-
-        else:
-            return
-
     #特定ユーザーのメッセージを削除
     @commands.command()
     @commands.has_any_role(864846474399711253,865029743173828608,899474219623129168)
