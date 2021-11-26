@@ -25,6 +25,7 @@ JST = timezone(timedelta(hours=+9),'JST')
 
 INITIAL_EXTENSIONS = [
     "Cogs.Nautilus",
+    "Cogs.Server_security"
     "Cogs.commands",
     "Cogs.flame_event",
     "Cogs.help",
