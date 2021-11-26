@@ -4,7 +4,7 @@ import time
 import requests
 import math
 
-def Travel_overwrites(p_key, channel_permissions, roles_dict):
+def Travel_overwrites(p_key,channel_permissions, roles_dict):
     keys = list(p_key)
     for key in keys: # keysをforで回す
         try:
@@ -22,7 +22,7 @@ def Travel_overwrites(p_key, channel_permissions, roles_dict):
 
 
 class Nautilus(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self,bot):
         self.bot = bot
 
     @commands.command()
