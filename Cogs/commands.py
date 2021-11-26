@@ -19,23 +19,23 @@ def searcharg(args):
         arg = ','.join(args)[0]
         if re.search('[a-zA-Z]',arg):
             if arg not in s_class:
-                return await ctx.send(f'脅威クラス{arg}は存在しません。')
+                return "process1" #脅威クラスは存在しません
             elif re.search('[0-9]',arg): #評価値アバウト
-                return tag = process1
+                return "process2"
             elif len(arg) == 18: #ID報告書あり
-                return
+                return "process3"
 
     if factor_len == 2:
         arg1 = ','.join(args)[0]
         arg2 = ','.join(args)[1]
         if arg1 != ["just","j","existence","e"] or arg2 != ["just","j","existence","e"]: 
-            return await ctx.send('想定されていない引数です。')
+            return "process4" #想定されていない引数
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2): 
             if arg1 = ["just","j"] or arg2 = ["just","j"]: #評価値ピッタリ
-                return
+                return "process5"
         elif len(arg1) == 18 or len(arg2) == 18:
             if arg1 = ["existence","e"] or arg2 = ["existence","e"]: #ID存在のみ
-                return
+                return "process6"
 
 class Commands(commands.Cog):
     def __init__(self,bot):
@@ -49,6 +49,12 @@ class Commands(commands.Cog):
         await ctx.send(embed=embed)
 
     #検索
+    @commands.command()
+    async def search(self,ctx,*arg):
+        tag = searcharg()
+        if tag == "process1":
+            await ctx.send(f'脅威クラス{arg}は存在しません。')
+        elif tag == "process2"
     @commands.command()
     async def search(self,ctx,arg):
         if re.search('[a-zA-Z]',arg):
