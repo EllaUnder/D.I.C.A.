@@ -12,6 +12,19 @@ with open("files/report.json",'r') as r:
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
 users_c = []
 
+def searcharg(args):
+    factor_len = len(args)
+
+    if factor_len == 1:
+        arg = ','.join(args)[0]
+        if re.search('[a-zA-Z]',arg):
+            if arg not in s_class:
+                return await ctx.send(f'脅威クラス{arg}は存在しません。')
+            elif re.search('[0-9]',arg): #評価値アバウト
+                return
+            elif len(arg) == 18: #ID報告書あり
+                return
+
 class Commands(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
