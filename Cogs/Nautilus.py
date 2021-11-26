@@ -45,7 +45,7 @@ class Nautilus(commands.Cog):
                     return True
             return False
         try:
-            reply = await bot.wait_for("message", check=rep_check, timeout=3600.0)
+            reply = await bot.wait_for("message", check=rep_check)
         except:
             await ctx.send('タイムアウトによりリクエストを棄却しました。')
             return
