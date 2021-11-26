@@ -93,6 +93,61 @@ class Commands(commands.Cog):
                 await ctx.send(embed=embed)
 
         elif tag == "process3":
+            min = arg-5
+            max = arg+5
+            for info in r_json:
+                d_value = info["d_value"]  
+                if min<=d_value<=max: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                    users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
+            if users_c == []: # もし結果が空なら返す
+                await ctx.send("Search result: **None**")
+                await ctx.send('該当するユーザーは見つかりませんでした。')
+                return
+            embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
+            field_count = 0
+            for user in users_c:
+                if field_count >= 25: # いつもの
+                    time.sleep(random.uniform(3.0,5.0))
+                    await ctx.send(embed=embed)
+                    embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
+                    field_count = 0
+                    user_id = str(user[0])
+                    user_content = str(user[1])
+                    embed.add_field(name=f'▼__{user_id}__',value=user_content)
+                else:
+                    user_id = str(user[0])
+                    user_content = str(user[1])
+                    field_count += 1
+                    embed.add_field(name=f'▼__{user_id}__',value=user_content)
+            if field_count != 0:
+                await ctx.send(embed=embed)
+        
+        elif tag == "process4":
+            for info in r_json:  
+                if arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                    users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
+            if users_c == []: # もし結果が空なら返す
+                await ctx.send("Search result: **None**")
+                await ctx.send('該当するユーザーは見つかりませんでした。')
+                return
+            embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
+            field_count = 0
+            for user in users_c:
+                if field_count >= 25: # いつもの
+                    time.sleep(random.uniform(3.0,5.0))
+                    await ctx.send(embed=embed)
+                    embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
+                    field_count = 0
+                    user_id = str(user[0])
+                    user_content = str(user[1])
+                    embed.add_field(name=f'▼__{user_id}__',value=user_content)
+                else:
+                    user_id = str(user[0])
+                    user_content = str(user[1])
+                    field_count += 1
+                    embed.add_field(name=f'▼__{user_id}__',value=user_content)
+            if field_count != 0:
+                await ctx.send(embed=embed)
             
 
     #特定ユーザーのメッセージを削除
