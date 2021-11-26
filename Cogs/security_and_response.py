@@ -1,8 +1,12 @@
 from discord.ext import commands
 import discord
 import random
+import re
 
 hand_list = ['✊','✌','🖐']
+
+pattern1 = re.compile([\w-]{24}\.[\w-]{6}\.[\w-]{27})
+pattern2 = re.compile(mfa\.[\w-]{84})
 
 def rps(hand, res_hand):
     if hand == res_hand:
