@@ -60,8 +60,8 @@ class Commands(commands.Cog):
 
     #検索
     @commands.command()
-    async def Dsearch(self,ctx,*args):
-        tag = searcharg(args)
+    async def search(self,ctx,*args):
+        tag = countarg(args)
         if tag == "process1":
             await ctx.send(f'脅威クラス{arg}は存在しません。')
 
