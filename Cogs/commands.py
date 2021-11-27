@@ -39,10 +39,10 @@ def searcharg(args):
         if arg1 != ["just","j","existence","e"] or arg2 != ["just","j","existence","e"]: 
             return "process5" #想定されていない引数
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2): 
-            if arg1 = ["just","j"] or arg2 = ["just","j"]: #評価値ピッタリ
+            if arg1 == ["just","j"] or arg2 == ["just","j"]: #評価値ピッタリ
                 return "process6"
         elif len(arg1) == 18 or len(arg2) == 18:
-            if arg1 = ["existence","e"] or arg2 = ["existence","e"]: #ID存在のみ
+            if arg1 == ["existence","e"] or arg2 == ["existence","e"]: #ID存在のみ
                 return "process7"
         else:
             return "process5"
