@@ -12,7 +12,7 @@ with open("files/report.json",'r') as r:
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
 users_c = []
 
-def searcharg(args):
+def countarg(args):
     factor_len = len(args)
 
     if factor_len == 1:
