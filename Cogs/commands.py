@@ -66,6 +66,7 @@ class Commands(commands.Cog):
             await ctx.send(f'脅威クラス{arg}は存在しません。')
 
         elif tag == "process2":
+            arg = ','.join(args)[0]
             for info in r_json:  
                 if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
