@@ -16,7 +16,8 @@ def countarg(args):
     factor_len = len(args)
 
     if factor_len == 1:
-        global arg = ','.join(args)[0]
+        arg = ','.join(args)[0]
+        global arg
         if re.search('[a-zA-Z]',arg):
             if arg not in s_class:
                 return "process1" #脅威クラスは存在しません
@@ -34,8 +35,10 @@ def countarg(args):
             return "process5"
 
     if factor_len == 2:
-        global arg1 = ','.join(args)[0]
-        global arg2 = ','.join(args)[1]
+        arg1 = ','.join(args)[0]
+        arg2 = ','.join(args)[1]
+        global arg1
+        global arg2
         if arg1 != ["just","j","existence","e"] or arg2 != ["just","j","existence","e"]: 
             return "process5" #想定されていない引数
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2): 
