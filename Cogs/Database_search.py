@@ -57,7 +57,7 @@ class Datasearch(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def Search(self,ctx,*args):
+    async def search(self,ctx,*args):
         tag = countarg(args)
         if tag == "process1":
             await ctx.send(f'脅威クラス{arg}は存在しません。')
