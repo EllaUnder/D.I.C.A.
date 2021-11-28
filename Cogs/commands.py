@@ -17,7 +17,6 @@ def countarg(args):
 
     if factor_len == 1:
         arg = ','.join(args)[0]
-        global arg
         if re.search('[a-zA-Z]',arg):
             if arg not in s_class:
                 return "process1" #脅威クラスは存在しません
@@ -37,8 +36,6 @@ def countarg(args):
     if factor_len == 2:
         arg1 = ','.join(args)[0]
         arg2 = ','.join(args)[1]
-        global arg1
-        global arg2
         if arg1 != ["just","j","existence","e"] or arg2 != ["just","j","existence","e"]: 
             return "process5" #想定されていない引数
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2): 
@@ -69,6 +66,7 @@ class Commands(commands.Cog):
             await ctx.send(f'脅威クラス{arg}は存在しません。')
 
         elif tag == "process2":
+            arg = ','.join(args)[0]
             for info in r_json:  
                 if arg in info["class"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
@@ -96,6 +94,7 @@ class Commands(commands.Cog):
                 await ctx.send(embed=embed)
 
         elif tag == "process3":
+            arg = ','.join(args)[0]
             min = arg-5
             max = arg+5
             for info in r_json:
@@ -126,6 +125,7 @@ class Commands(commands.Cog):
                 await ctx.send(embed=embed)
         
         elif tag == "process4":
+            arg = ','.join(args)[0]
             for info in r_json:  
                 if arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
