@@ -52,3 +52,6 @@ def countarg(args):
         else:
             return "process5"
 
+class Datasearch(commands.Cog):
+    def __init__(self,bot):
+        self.bot = bot
