@@ -28,8 +28,8 @@ def countarg(args):
                 return "process5"
             elif 1<=digits<=3:
                 return "process3"
-        elif len(arg) == 18: #ID報告書あり
-            return "process4"
+            elif len(arg) == 18: #ID報告書あり
+                return "process4"
         else:
             return "process5"
 
