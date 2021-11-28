@@ -8,7 +8,6 @@ with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
 s_class = 'E','E-','E+','D','D-','D+','C','C-','C+','B','B-','B+','A','A-','A+','S','S-','S+'
-users_c = []
 
 def countarg(args):
     factor_len = len(args)
@@ -58,6 +57,7 @@ class Datasearch(commands.Cog):
 
     @commands.command()
     async def search(self,ctx,*args):
+        users_c = []
         tag = countarg(args)
         if tag == "process1":
             await ctx.send(f'脅威クラス{arg}は存在しません。')
