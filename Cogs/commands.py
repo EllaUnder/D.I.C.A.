@@ -102,11 +102,11 @@ class Commands(commands.Cog):
 
         elif tag == "process3":
             arg = int(','.join(args)[0])
-            min = arg-5
-            max = arg+5
+            min = int(arg-5)
+            max = int(arg+5)
             for info in r_json:
                 d_value = info["d_value"]  
-                if min<=d_value<=max: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                if min<=d_value<=max:
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
