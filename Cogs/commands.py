@@ -105,7 +105,7 @@ class Commands(commands.Cog):
             min = int(arg-5)
             max = int(arg+5)
             for info in r_json:
-                d_value = info["d_value"]  
+                d_value = int(info["d_value"])
                 if min<=d_value<=max:
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
