@@ -186,6 +186,11 @@ class Datasearch(commands.Cog):
 
         elif tag == "process7":
             arg1 = args[0]
+            arg2 = args[1]
+            if len(arg1) == 18:
+                arg = arg1
+            elif len(arg2) == 18:
+                arg = arg2
             for info in r_json:  
                 if arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
