@@ -174,16 +174,18 @@ class Datasearch(commands.Cog):
                 await ctx.send(embed=embed)
         
         elif tag == "process6":
-            arg = args[0]
+            if arg1 in ["just","j","existence","e"]:
+                s_arg = args[1]
+            elif arg2 in ["just","j","existence","e"]:
+                s_arg = args[0]
             for info in r_json:
                 d_value = int(info["d_value"])
-                if arg == d_value:
+                if s_arg == d_value:
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
-                await ctx.send('該当するユーザーは見つかりませんでした。')
-                return
-            embed = discord.Embed(title=f'評価値**{min}~{max}**の報告書リスト',color=0xff0000) # 初期Embed
+                await ctx.send('検索された評価値は見つかりませんでした。')
+            embed = discord.Embed(title=f'評価値**{s_arg}**の報告書リスト',color=0xff0000) # 初期Embed
             field_count = 0
             for user in users_c:
                 if field_count >= 25: # いつもの
@@ -203,14 +205,12 @@ class Datasearch(commands.Cog):
                 await ctx.send(embed=embed)
 
         elif tag == "process7":
-            arg1 = args[0]
-            arg2 = args[1]
-            if len(arg1) == 18:
-                arg = arg1
-            elif len(arg2) == 18:
-                arg = arg2
+            if arg1 in ["just","j","existence","e"]:
+                s_arg = args[1]
+            elif arg2 in ["just","j","existence","e"]:
+                s_arg = args[0]
             for info in r_json:  
-                if arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                if s_arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
