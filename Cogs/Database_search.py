@@ -190,7 +190,7 @@ class Datasearch(commands.Cog):
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
                 await ctx.send('検索されたユーザーはデータベースに報告書が存在しませんでした。')
-            elif users_c !== []:
+            elif not users_c == []:
                 await ctx.send('検索されたユーザーは報告書が存在します。')
             
 def setup(bot):
