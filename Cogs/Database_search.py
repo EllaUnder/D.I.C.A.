@@ -15,7 +15,7 @@ def countarg(args):
     if factor_len == 1:
         arg = args[0]
         if re.search('[a-zA-Z]',arg):
-            if arg not in s_class:
+            if not arg in s_class:
                 return "process1" #脅威クラスは存在しません
             elif arg in s_class:
                 return "process2"
@@ -81,6 +81,7 @@ class Datasearch(commands.Cog):
         users_c = []
         tag = countarg(args)
         if tag == "process1":
+            arg = args[0]
             await ctx.send(f'脅威クラス{arg}は存在しません。')
 
         elif tag == "process5":
