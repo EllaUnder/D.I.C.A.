@@ -22,7 +22,7 @@ def countarg(args):
         elif re.search('[0-9]',arg): #評価値アバウト
             digits = len(arg)
             i_arg = int(arg)
-            elif 0<=i_arg<=100:
+            if 0<=i_arg<=100:
                 return "process3"
             elif digits == 18: #ID報告書あり
                 return "process4"
@@ -58,7 +58,6 @@ class Datasearch(commands.Cog):
 
     @commands.command()
     async def search(self,ctx,*args):
-        print(args)
         users_c = []
         tag = countarg(args)
         if tag == "process1":
