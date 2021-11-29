@@ -53,5 +53,5 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 if __name__ == "__main__":
     intents=discord.Intents.all()
-    bot = Laplace(command_prefix='#d',intents=intents,help_command=None,strip_after_prefix=True)
+    bot = Laplace(command_prefix='#l',intents=intents,help_command=None,strip_after_prefix=True)
     bot.run(token)
