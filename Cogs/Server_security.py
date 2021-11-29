@@ -1,6 +1,9 @@
 from discord.ext import commands
 import discord
 import re
+import time
+
+Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
 pattern2 = r"mfa\.[\w-]{84}"
