@@ -34,23 +34,41 @@ def countarg(args):
     if factor_len == 2:
         arg1 = args[0]
         arg2 = args[1]
-        if not arg1 in ["just","j","existence","e"] or not arg2 in ["just","j","existence","e"]: 
-            return "process5" #想定されていない引数
-        elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2):
-            digits1 = len(arg1)
-            digits2 = len(arg2)
-            i_arg1 = int(arg1)
-            i_arg2 = int(arg2)
-            if 0<=i_arg1<=100 or 0<=i_arg2<=100: #評価値ピッタリ
-                if arg1 in ["just","j"] or arg2 in ["just","j"]:
-                    return "process6"
-                else:
-                    return "process5"
-            elif digits1 == 18 or digits2 == 18:
-                if arg1 in ["existence","e"] or arg2 in ["existence","e"]: #ID存在のみ
-                    return "process7"
-                else:
-                    return "process5"
+        if arg1 in ["just","j","existence","e"]:
+            s_arg = arg2
+            if re.search('[0-9]',s_arg):
+                digits = len(s_arg)
+                i_s_arg = int(s_arg)
+                if 1<=i_s_arg<=100:
+                    if arg1 in ["just","j"]:
+                        return "process6"
+                    else:
+                        return "process5"
+                if digits == 18:
+                    if arg1 in ["existence","e"]:
+                        return "process7"
+                    else:
+                        return "process5"
+            else:
+                return "process5"
+        if arg2 in ["just","j","existence","e"]:
+            s_arg = arg1
+            if re.search('[0-9]',s_arg):
+                digits = len(s_arg)
+                i_s_arg = int(s_arg)
+                if 1<=i_s_arg<=100:
+                    if arg2 in ["just","j"]:
+                        return "process6"
+                    else:
+                        return "process5"
+                if digits == 18:
+                    if arg2 in ["existence","e"]:
+                        return "process7"
+                    else:
+                        return "process5"
+            else:
+                return "process5"
+       
         else:
             return "process5"
 
