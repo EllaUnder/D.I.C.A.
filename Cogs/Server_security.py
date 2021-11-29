@@ -14,7 +14,7 @@ class SSecurity(commands.Cog):
         m_ = message.content
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             await message.delete()
-        if message.content in 'https://imgur.com/ehxMcVy':
+        if message.content in 'https://imgur.com/ehxMcVy' or message.content in 'https://imgur.com/ehxMcVy?nocache=true':
             await message.delete()
 
 def setup(bot):
