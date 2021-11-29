@@ -1,13 +1,5 @@
 from discord.ext import commands
 import discord
-import json
-import datetime
-from datetime import timedelta,timezone
-
-Channel_ID1 = 886972852979531786 #その他ログ
-
-with open("files/report.json",'r') as r:
-    r_json = json.load(r)
 
 class Join_Left(commands.Cog):
     def __init__(self,bot):
