@@ -153,7 +153,7 @@ class Datasearch(commands.Cog):
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
-                await ctx.send('検索されたユーザーは見つかりませんでした。')
+                await ctx.send('検索されたユーザーはデータベースに報告書が存在しませんでした。')
                 return
             embed = discord.Embed(title=f'<@{arg}>の報告書',color=0xff0000) # 初期Embed
             field_count = 0
