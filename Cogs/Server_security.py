@@ -1,9 +1,13 @@
 from discord.ext import commands
 import discord
 import re
+import json
 import time
 import datetime
 from datetime import timedelta,timezone
+
+with open("files/report.json",'r') as r:
+    r_json = json.load(r)
 
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
