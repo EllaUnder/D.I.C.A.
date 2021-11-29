@@ -94,7 +94,7 @@ class Datasearch(commands.Cog):
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
-                await ctx.send('該当するユーザーは見つかりませんでした。')
+                await ctx.send(f'脅威クラス{arg}の報告書は見つかりませんでした。')
                 return
             embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
             field_count = 0
