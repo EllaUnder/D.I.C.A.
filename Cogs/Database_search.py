@@ -42,12 +42,12 @@ def countarg(args):
             i_arg1 = int(arg1)
             i_arg2 = int(arg2)
             if 0<=i_arg1<=100 or 0<=i_arg2<=100: #評価値ピッタリ
-                if arg1 == ["just","j"] or arg2 == ["just","j"]:
+                if arg1 in ["just","j"] or arg2 in ["just","j"]:
                     return "process6"
                 else:
                     return "process5"
             elif digits1 == 18 or digits2 == 18:
-                if arg1 == ["existence","e"] or arg2 == ["existence","e"]: #ID存在のみ
+                if arg1 in ["existence","e"] or arg2 in ["existence","e"]: #ID存在のみ
                     return "process7"
                 else:
                     return "process5"
