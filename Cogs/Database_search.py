@@ -57,6 +57,7 @@ class Datasearch(commands.Cog):
 
     @commands.command()
     async def search(self,ctx,*args):
+        print(args)
         users_c = []
         tag = countarg(args)
         if tag == "process1":
