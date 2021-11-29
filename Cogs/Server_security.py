@@ -5,6 +5,7 @@ import time
 import datetime
 from datetime import timedelta,timezone
 
+Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
