@@ -21,12 +21,13 @@ def countarg(args):
                 return "process2"
         elif re.search('[0-9]',arg): #評価値アバウト
             digits = len(arg)
-            if not 1<=digits<=3:
-                return "process5"
-            elif 1<=digits<=3:
+            i_arg = int(arg)
+            elif 0<=i_arg<=100:
                 return "process3"
             elif digits == 18: #ID報告書あり
                 return "process4"
+            else:
+                return "process5"
         else:
             return "process5"
 
