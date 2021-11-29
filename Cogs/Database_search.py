@@ -63,6 +63,9 @@ class Datasearch(commands.Cog):
         if tag == "process1":
             await ctx.send(f'脅威クラス{arg}は存在しません。')
 
+        elif tag == "process5":
+            await ctx.send('想定されていない引数です。')
+
         elif tag == "process2":
             arg = ','.join(args)[0]
             for info in r_json:  
@@ -149,6 +152,9 @@ class Datasearch(commands.Cog):
                     embed.add_field(name=f'▼__{user_id}__',value=user_content)
             if field_count != 0:
                 await ctx.send(embed=embed)
+        
+        elif tag == "process6":
+            
 
 def setup(bot):
     return bot.add_cog(Datasearch(bot))
