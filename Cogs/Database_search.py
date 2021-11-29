@@ -102,13 +102,13 @@ class Datasearch(commands.Cog):
                 await ctx.send("Search result: **None**")
                 await ctx.send('該当するユーザーは見つかりませんでした。')
                 return
-            embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
+            embed = discord.Embed(title=f'評価値**{min}~{max}**の報告書リスト',color=0xff0000) # 初期Embed
             field_count = 0
             for user in users_c:
                 if field_count >= 25: # いつもの
                     time.sleep(random.uniform(3.0,5.0))
                     await ctx.send(embed=embed)
-                    embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
+                    embed = discord.Embed(title=f'評価値**{min}~{max}**の報告書リスト',color=0xff0000)
                     field_count = 0
                     user_id = str(user[0])
                     user_content = str(user[1])
@@ -130,13 +130,13 @@ class Datasearch(commands.Cog):
                 await ctx.send("Search result: **None**")
                 await ctx.send('該当するユーザーは見つかりませんでした。')
                 return
-            embed = discord.Embed(title=f'脅威クラス**{arg}**の報告リスト',color=0xff0000) # 初期Embed
+            embed = discord.Embed(title=f'<@{arg}>の報告書',color=0xff0000) # 初期Embed
             field_count = 0
             for user in users_c:
                 if field_count >= 25: # いつもの
                     time.sleep(random.uniform(3.0,5.0))
                     await ctx.send(embed=embed)
-                    embed = discord.Embed(title=f'驚異クラス"{arg}"の報告リスト',color=0xff0000)
+                    embed = discord.Embed(title=f'<@{arg}>の報告書',color=0xff0000)
                     field_count = 0
                     user_id = str(user[0])
                     user_content = str(user[1])
