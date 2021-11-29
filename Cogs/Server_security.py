@@ -2,6 +2,8 @@ from discord.ext import commands
 import discord
 import re
 import time
+import datetime
+from datetime import timedelta,timezone
 
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
