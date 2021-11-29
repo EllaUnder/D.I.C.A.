@@ -182,5 +182,16 @@ class Datasearch(commands.Cog):
             if field_count != 0:
                 await ctx.send(embed=embed)
 
+        elif tag == "process7":
+            arg = args[0]
+            for info in r_json:  
+                if arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
+                    users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
+            if users_c == []: # もし結果が空なら返す
+                await ctx.send("Search result: **None**")
+                await ctx.send('検索されたユーザーはデータベースに報告書が存在しませんでした。')
+            elif users_c !== []:
+                await ctx.send('検索されたユーザーは報告書が存在します。')
+            
 def setup(bot):
     return bot.add_cog(Datasearch(bot))
