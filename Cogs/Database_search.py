@@ -174,10 +174,12 @@ class Datasearch(commands.Cog):
                 await ctx.send(embed=embed)
         
         elif tag == "process6":
+            arg1 = args[0]
+            arg2 = args[1]
             if arg1 in ["just","j","existence","e"]:
-                s_arg = args[1]
+                s_arg = arg2
             elif arg2 in ["just","j","existence","e"]:
-                s_arg = args[0]
+                s_arg = arg1
             for info in r_json:
                 d_value = int(info["d_value"])
                 if s_arg == d_value:
@@ -205,10 +207,12 @@ class Datasearch(commands.Cog):
                 await ctx.send(embed=embed)
 
         elif tag == "process7":
+            arg1 = args[0]
+            arg2 = args[1]
             if arg1 in ["just","j","existence","e"]:
-                s_arg = args[1]
+                s_arg = arg2
             elif arg2 in ["just","j","existence","e"]:
-                s_arg = args[0]
+                s_arg = arg1
             for info in r_json:  
                 if s_arg in info["id"]: # 正規表現じゃなくてinにすればEならEとE-,E+も入るし、E+ならE+だけが入る
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
