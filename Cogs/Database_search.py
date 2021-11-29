@@ -181,7 +181,7 @@ class Datasearch(commands.Cog):
             elif arg2 in ["just","j","existence","e"]:
                 s_arg = arg1
             for info in r_json:
-                d_value = int(info["d_value"])
+                d_value = info["d_value"]
                 if s_arg == d_value:
                     users_c.append([info["id"], info["value"]]) # usersに情報を一旦保管
             if users_c == []: # もし結果が空なら返す
