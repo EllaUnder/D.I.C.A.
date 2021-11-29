@@ -187,6 +187,7 @@ class Datasearch(commands.Cog):
             if users_c == []: # もし結果が空なら返す
                 await ctx.send("Search result: **None**")
                 await ctx.send('検索された評価値は見つかりませんでした。')
+                return
             embed = discord.Embed(title=f'評価値**{s_arg}**の報告書リスト',color=0xff0000) # 初期Embed
             field_count = 0
             for user in users_c:
