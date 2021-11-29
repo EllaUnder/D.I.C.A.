@@ -39,7 +39,9 @@ def countarg(args):
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2):
             digits1 = len(arg1)
             digits2 = len(arg2)
-            if 1<=digits1<=3 or 1<=digits2<=3: #評価値ピッタリ
+            i_arg1 = int(arg1)
+            i_arg2 = int(arg2)
+            if 0<=i_arg1<=100 or 0<=i_arg2<=100: #評価値ピッタリ
                 if arg1 == ["just","j"] or arg2 == ["just","j"]:
                     return "process6"
                 else:
