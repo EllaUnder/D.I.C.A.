@@ -34,7 +34,7 @@ def countarg(args):
     if factor_len == 2:
         arg1 = args[0]
         arg2 = args[1]
-        if not arg1 == ["just","j","existence","e"] or not arg2 == ["just","j","existence","e"]: 
+        if not arg1 in ["just","j","existence","e"] or not arg2 in ["just","j","existence","e"]: 
             return "process5" #想定されていない引数
         elif re.search('[0-9]',arg1) or re.search('[0-9]',arg2):
             digits1 = len(arg1)
