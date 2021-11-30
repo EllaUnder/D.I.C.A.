@@ -14,5 +14,10 @@ class Status(commands.Cog):
                 Gname = info.name
                 await ctx.send(f'**{Gname}**(id:**{Gid}**)')
 
+    @commands.command()
+    async def leave(self,ctx,arg):
+        if ctx.author.id == 854331482444267550:
+        await self.bot.leave_guild(arg)
+            
 def setup(bot):
     return bot.add_cog(Status(bot))
