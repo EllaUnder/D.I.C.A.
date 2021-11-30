@@ -11,7 +11,7 @@ class Status(commands.Cog):
         Gname = guild.name
         Gid = guild.id
         Gicon_url = guild.icon_url
-        embed = discord.Embed(title='Botが以下のサーバーに招待されました。',color=0x00ff8d))
+        embed = discord.Embed(title='Botが以下のサーバーに招待されました。',color=0x00ff8d)
         embed.add_field(name=f'サーバー名:{Gname}',value=f'サーバーID:**{Gid}**')
         embed.set_image(url=Gicon_url)
         await channel.send(embed=embed)
