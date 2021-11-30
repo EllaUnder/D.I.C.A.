@@ -5,6 +5,9 @@ class Status(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
+    @commands.Cog.listener()
+    async def on_guild_join(self,guild):
+
     @commands.command()
     async def Gcheck(self,ctx):
         if ctx.author.id == 854331482444267550:
