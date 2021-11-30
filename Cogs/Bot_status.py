@@ -10,7 +10,7 @@ class Status(commands.Cog):
         channel = self.bot.get_channel(886972852979531786) #その他ログ
         Gname = guild.name
         Gid = guild.id
-        Gicon_url = guild.icon.url
+        Gicon_url = guild.icon_url
         embed = discord.Embed(title='Botが以下のサーバーに招待されました。',color=0xff0000)
         embed.add_field(name=f'サーバー名:{Gname}',value=f'サーバーID:**{Gid}**')
         embed.set_image(url=Gicon_url)
