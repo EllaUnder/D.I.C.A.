@@ -17,7 +17,8 @@ class Status(commands.Cog):
     @commands.command()
     async def leave(self,ctx,arg):
         if ctx.author.id == 854331482444267550:
-            await self.bot.leave_guild(arg)
+            guild = self.bot.get_guild(arg)
+            await guild.leave()
             
 def setup(bot):
     return bot.add_cog(Status(bot))
