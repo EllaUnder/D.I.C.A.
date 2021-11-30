@@ -47,6 +47,7 @@ class Regin(commands.Cog):
 
             if field_count != 0:
                 await channel.send(embed=embed)
+
         elif ctx.channel.id == 913253599994339358:
             channel = self.bot.get_channel(913253599994339358)
             await channel.purge()
@@ -55,8 +56,10 @@ class Regin(commands.Cog):
             for t_info in t_json:
                 count += 1
                 way_info = str(t_info["case"])
+                counter_info = str(t_info["counter"])
                 picture = str(t_info["pic"])
-                embed = discord.Embed(title=f'Case{count}',description=f'{way_info}',color=0x18ff3a)
+                embed = discord.Embed(title=f'**Case{count}**',description=f'{way_info}',color=0x18ff3a)
+                embed.add_field(name='__【対処法】__',value=f'{counter_info}')
                 embed.set_image(url=picture)
                 await channel.send(embed=embed)
         else:
