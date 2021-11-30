@@ -10,7 +10,9 @@ class Status(commands.Cog):
         if ctx.author.id == 854331482444267550:
             g_list = self.bot.guilds
             for info in g_list:
-                await ctx.send(f'{info}')
+                Gid = info.id
+                Gname = info.name
+                await ctx.send(f'**{Gname}**(id:**{Gid}**)')
 
 def setup(bot):
     return bot.add_cog(Status(bot))
