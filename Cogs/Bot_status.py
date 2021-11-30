@@ -9,7 +9,10 @@ class Status(commands.Cog):
     async def Gcheck(self,ctx):
         if ctx.author.id == 854331482444267550:
             g_list = self.bot.guilds
-            await ctx.send(g_list)
+            for info in g_list:
+                Gid = info[0]
+                Gname = info[1]
+                await ctx.send(f'**{Gname}**\n(id:**{Gid}**)')
 
 def setup(bot):
     return bot.add_cog(Status(bot))
