@@ -39,7 +39,7 @@ INITIAL_EXTENSIONS = [
 
 class Laplace(commands.Bot):
 
-    def __init__(self,command_prefix,intents,help_command,strip_after_prefix):
+    def __init__(self,bot,command_prefix,intents,help_command,strip_after_prefix):
         super().__init__(command_prefix,
                           intents=intents,
                           strip_after_prefix=True)
