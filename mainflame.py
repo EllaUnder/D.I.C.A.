@@ -43,6 +43,7 @@ class Laplace(commands.Bot):
         super().__init__(command_prefix,
                           intents=intents,
                           strip_after_prefix=True)
+        self.bot = bot
         self.remove_command('help')
         for cog in INITIAL_EXTENSIONS:
             try:
