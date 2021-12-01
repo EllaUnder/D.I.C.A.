@@ -20,7 +20,7 @@ class Status(commands.Cog):
     async def Gcheck(self,ctx):
         if ctx.author.id == 854331482444267550:
             g_list = self.bot.guilds
-            for info in g_list
+            for info in g_list:
                 Gid = info.id
                 Gname = info.name
                 await ctx.send(f'{Gname}(id:**{Gid}**)')
