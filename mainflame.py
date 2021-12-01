@@ -48,7 +48,8 @@ class Laplace(commands.Bot):
             try:
                 self.load_extension(cog)
             except Exception as e:
-                print(e)
+                channel = self.bot.get_channel(915410788641042483)
+                await channel.send(f'{cog}のローディングにエラーが発生しました。\n該当区画の機能を一時停止します。')
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
