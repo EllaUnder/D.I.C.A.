@@ -39,18 +39,16 @@ INITIAL_EXTENSIONS = [
 
 class Laplace(commands.Bot):
 
-    def __init__(self,bot,command_prefix,intents,help_command,strip_after_prefix):
+    def __init__(self,command_prefix,intents,help_command,strip_after_prefix):
         super().__init__(command_prefix,
                           intents=intents,
                           strip_after_prefix=True)
-        self.bot = bot
         self.remove_command('help')
         for cog in INITIAL_EXTENSIONS:
             try:
                 self.load_extension(cog)
             except Exception as e:
-                channel = self.bot.get_channel(915410788641042483)
-                channel.send(f'{cog}のローディングにエラーが発生しました。\n該当区画の機能を一時停止します。')
+                print(e)
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
