@@ -4,7 +4,7 @@ import traceback
 import random
 import time
 
-Channel_ID1 = 886972852979531786 #その他ログ
+Channel_ID1 = 915410788641042483 #ラプラス・takt専用ログ
 
 class Flame_Event(commands.Cog):
     def __init__(self, bot):
@@ -13,7 +13,7 @@ class Flame_Event(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print('起動しました')
-        channel = self.bot.get_channel(Channel_ID1)
+        channel = self.bot.get_channel(Channel_ID1
         await channel.send('ブラックリストの読み込みが完了しました。')
         time.sleep(random.uniform(0.5,1.5))
         await channel.send('報告リストの読み込みが完了しました。')
