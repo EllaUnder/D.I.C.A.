@@ -85,6 +85,7 @@ class SSecurity(commands.Cog):
         if now == '21:00':
             for category in sg_categories:
                 if category.id in secure_categories:
+                    channel_overwrites =
         
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
