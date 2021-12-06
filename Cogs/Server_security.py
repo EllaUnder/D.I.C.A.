@@ -9,6 +9,18 @@ from datetime import timedelta,timezone
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
+#辞書
+moderater_members = {
+    854331482444267550,
+    791171026238308352,
+    689349292879642684,
+    567332302544306207,
+    720917729376337970,
+    422004181625339904,
+    745816395530633248,
+    890987400204017705
+}
+
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
@@ -46,6 +58,7 @@ class SSecurity(commands.Cog):
             else:
                 return
 
+    #トークン自動削除
     @commands.Cog.listener()
     async def on_message(self,message):
         m_ = message.content
@@ -53,6 +66,10 @@ class SSecurity(commands.Cog):
             await message.delete()
         if 'https://imgur.com/ehxMcVy' in message.content:
             await message.delete()
+
+    #チャンネルロック
+    @commands.Cog.listener()
+    async def on_member_update(befoer,after):
 
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
