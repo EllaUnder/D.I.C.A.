@@ -6,6 +6,8 @@ import time
 import datetime
 from datetime import timedelta,timezone
 
+JST = timezone(timedelta(hours=+9),'JST')
+
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
@@ -78,9 +80,8 @@ class SSecurity(commands.Cog):
     #チャンネルロック
     @tasks.loop(seconds=60)
     async def timeloop():
-    JST = timezone(timedelta(hours=+9),'JST')
-    now = datetime.datetime.now(JST).strftime('%H:%M')
-    if now == '09:00':
+        now = datetime.datetime.now(JST).strftime('%H:%M')
+        if now == '09:00':
         
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
