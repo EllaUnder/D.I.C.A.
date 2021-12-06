@@ -23,14 +23,13 @@ moderater_members = {
     890987400204017705
 }
 
-secure_categorys = {
+secure_categories = {
     864768192399278111, #HOME
     903529125619335208, #SECURITY
     864846038799351828, #INFORMATION
     864855318437298176 #BOT CHANNEL
 }
     
-
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
@@ -81,9 +80,11 @@ class SSecurity(commands.Cog):
     @tasks.loop(seconds=60)
     async def timeloop():
         now = datetime.datetime.now(JST).strftime('%H:%M')
+        s_guild = bot.get_guild(864768192399278110)
+        sg_categorys = s_guild.categories
         if now == '21:00':
-            for category in secure_categorys:
-                
+            for category in sg_categories:
+                if category.id in secure_categories:
         
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
