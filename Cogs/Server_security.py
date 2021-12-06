@@ -81,7 +81,9 @@ class SSecurity(commands.Cog):
     @tasks.loop(seconds=60)
     async def timeloop():
         now = datetime.datetime.now(JST).strftime('%H:%M')
-        if now == '09:00':
+        if now == '21:00':
+            for category in secure_categorys:
+                
         
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
