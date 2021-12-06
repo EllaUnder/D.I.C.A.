@@ -68,6 +68,12 @@ class SSecurity(commands.Cog):
             await message.delete()
 
     #チャンネルロック
+    @tasks.loop(seconds=60)
+    async def timeloop():
+    JST = timezone(timedelta(hours=+9),'JST')
+    now = datetime.datetime.now(JST).strftime('%H:%M')
+    if now == '09:00':
+        
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
 
