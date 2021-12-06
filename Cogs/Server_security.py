@@ -21,6 +21,9 @@ moderater_members = {
     890987400204017705
 }
 
+secure_categorys = {
+    
+
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
