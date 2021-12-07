@@ -39,6 +39,7 @@ pattern2 = r"mfa\.[\w-]{84}"
 class SSecurity(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
+        self.loop.start()
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
@@ -91,9 +92,6 @@ class SSecurity(commands.Cog):
                         permission = role.permissions
                         permission.send_message = False
                         await role.edit(permissions=permissions)
-
-    @commands.Cog.listener()
-    async def on_member_update(befoer,after):
 
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
