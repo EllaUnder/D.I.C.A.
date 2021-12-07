@@ -82,11 +82,16 @@ class SSecurity(commands.Cog):
         now = datetime.datetime.now(JST).strftime('%H:%M')
         s_guild = bot.get_guild(864768192399278110)
         sg_categorys = s_guild.categories
-        if now == '21:00':
+        role = s_guild.get_role(881160817104547910) #利用者カード発行済
+        if now == '23:45':
             for category in sg_categories:
                 if category.id in secure_categories:
-                    channel_overwrites =
-        
+                    channels = category.channels
+                    for channel in channels:
+                        permission = role.permissions
+                        permission.send_message = False
+                        await role.edit(permissions=permissions)
+
     @commands.Cog.listener()
     async def on_member_update(befoer,after):
 
