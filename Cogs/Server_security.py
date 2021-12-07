@@ -79,9 +79,9 @@ class SSecurity(commands.Cog):
 
     #チャンネルロック
     @tasks.loop(seconds=60)
-    async def timeloop():
+    async def timeloop(self):
         now = datetime.datetime.now(JST).strftime('%H:%M')
-        s_guild = bot.get_guild(864768192399278110)
+        s_guild = self.bot.get_guild(864768192399278110)
         sg_categorys = s_guild.categories
         role = s_guild.get_role(881160817104547910) #利用者カード発行済
         if now == '23:45':
