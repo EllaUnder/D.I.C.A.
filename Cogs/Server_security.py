@@ -41,6 +41,9 @@ class SSecurity(commands.Cog):
         self.bot = bot
         self.loop.start()
 
+    def cog_unload(self,bot):
+        self.loop.cancel() 
+
     @commands.Cog.listener()
     async def on_member_join(self,member):
         g_id = member.guild.id
