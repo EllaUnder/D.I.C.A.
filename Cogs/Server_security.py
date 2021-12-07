@@ -12,7 +12,7 @@ with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
 #辞書
-moderater_members = {
+moderater_status = {
     854331482444267550:0,
     791171026238308352:0,
     689349292879642684:0,
@@ -92,6 +92,14 @@ class SSecurity(commands.Cog):
                         permission = role.permissions
                         permission.send_message = False
                         await role.edit(permissions=permissions)
+
+    @commands.Cog.listener()
+    async def on_member_update(self,befoer,after):
+        if after.id in moderator_status:
+            if after.status is discord.Status.online:
+                moderater_status[after.id] = 1
+            if after.status is discord.Status.offline:
+                moderator_status[after.id] = 0
 
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
