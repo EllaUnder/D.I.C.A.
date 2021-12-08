@@ -39,7 +39,7 @@ pattern2 = r"mfa\.[\w-]{84}"
 class SSecurity(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
-        self.loop.start()
+        self.timeloop.start()
 
     def cog_unload(self,bot):
         self.loop.cancel() 
