@@ -84,7 +84,8 @@ class SSecurity(commands.Cog):
     @tasks.loop(seconds=60)
     async def timeloop(self):
         now = datetime.datetime.now(JST).strftime('%H:%M')
-        s_guild = self.bot.get_guild(864768192399278110)
+        id_ = int(864768192399278110)
+        s_guild = self.bot.get_guild(id_)
         sg_categorys = s_guild.categories
         role = s_guild.get_role(881160817104547910) #利用者カード発行済
         if now == '23:45':
