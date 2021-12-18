@@ -68,7 +68,7 @@ class SSecurity(commands.Cog):
         m_author = befoer.author.id
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             channel = self.bot.get_channel(915410788641042483) #専用ログ
-            await message.delete()
+            await after.delete()
             await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
             
 def setup(bot):
