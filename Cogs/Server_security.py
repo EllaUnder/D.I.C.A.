@@ -16,8 +16,8 @@ Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
 pattern2 = r"mfa\.[\w-]{84}"
-pattern3 = r"^[a-zA-Z0-9]{0,15}"
-pattern4 = r"[a-zA-Z0-9]{0,15}$"
+pattern3 = r"^[a-zA-Z0-9]{15}"
+pattern4 = r"[a-zA-Z0-9]{15}$"
 
 class SSecurity(commands.Cog):
     def __init__(self,bot):
