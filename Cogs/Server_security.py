@@ -16,8 +16,7 @@ Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
 pattern2 = r"mfa\.[\w-]{84}"
-pattern3 = r"^[a-zA-Z0-9]{15}"
-pattern4 = r"[a-zA-Z0-9]{15}$"
+pattern3 = r"[a-zA-Z0-9]{15}"
 
 class SSecurity(commands.Cog):
     def __init__(self,bot):
@@ -54,11 +53,12 @@ class SSecurity(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self,message):
         m_ = message.content
+        md_ = len(m_)
         if re.search(pattern1,m_) or re.search(pattern2,m_): #トークン文字列
             await message.delete()
         if 'https://imgur.com/ehxMcVy' in message.content: #白GIF
             await message.delete()
-        if re.search(pattern3,m_) or re.search(pattern4,m_): #スパム回避
+        if re.search(pattern3,m_) and md_ == 15: #スパム回避
             await message.delete()
 
     #時間経過 メッセージ編集トークン化対策
