@@ -61,7 +61,15 @@ class SSecurity(commands.Cog):
         if re.search(pattern3,m_) or re.search(pattern4,m_): #スパム回避
             await message.delete()
 
+    #時間経過 メッセージ編集トークン化対策
+    @commands.Cog.listener()
+    async def on_message_edit(self,message):
+        m_ = message.content
+        m_author = message.author.id
+        if re.search(pattern1,m_) or re.search(pattern2,m_):
+            channel = self.bot.get_channel(915410788641042483) #専用ログ
+            await message.delete()
+            await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
+            
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
-
-    
