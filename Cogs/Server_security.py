@@ -64,8 +64,8 @@ class SSecurity(commands.Cog):
     #時間経過 メッセージ編集トークン化対策
     @commands.Cog.listener()
     async def on_message_edit(self,befoer,after):
-        m_ = after.message.content
-        m_author = befoer.message.author.id
+        m_ = after.content
+        m_author = befoer.author.id
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             channel = self.bot.get_channel(915410788641042483) #専用ログ
             await message.delete()
