@@ -11,24 +11,6 @@ JST = timezone(timedelta(hours=+9),'JST')
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
 
-#辞書
-moderator_status = {
-    854331482444267550:0,
-    791171026238308352:0,
-    689349292879642684:0,
-    567332302544306207:0,
-    720917729376337970:0,
-    422004181625339904:0,
-    745816395530633248:0,
-    890987400204017705:0
-}
-
-secure_categories = {
-    864768192399278111, #HOME
-    903529125619335208, #SECURITY
-    864846038799351828, #INFORMATION
-    864855318437298176 #BOT CHANNEL
-}
     
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
@@ -79,31 +61,6 @@ class SSecurity(commands.Cog):
             await message.delete()
         if 'https://imgur.com/ehxMcVy' in message.content:
             await message.delete()
-
-    #チャンネルロック
-    @tasks.loop(seconds=60)
-    async def timeloop(self):
-        now = datetime.datetime.now(JST).strftime('%H:%M')
-        id_ = int(864768192399278110)
-        s_guild = self.bot.get_guild(id_)
-        sg_categorys = s_guild.categories
-        role = s_guild.get_role(881160817104547910) #利用者カード発行済
-        if now == '23:45':
-            for category in sg_categories:
-                if category.id in secure_categories:
-                    channels = category.channels
-                    for channel in channels:
-                        permission = role.permissions
-                        permission.send_message = False
-                        await role.edit(permissions=permissions)
-
-    @commands.Cog.listener()
-    async def on_member_update(self,befoer,after):
-        if after.id in moderator_status:
-            if after.status is discord.Status.online:
-                moderator_status[after.id] = 1
-            if after.status is discord.Status.offline:
-                moderator_status[after.id] = 0
 
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
