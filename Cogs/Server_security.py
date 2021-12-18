@@ -1,4 +1,4 @@
-from discord.ext import commands,tasks
+from discord.ext import commands
 import discord
 import re
 import json
@@ -10,7 +10,6 @@ JST = timezone(timedelta(hours=+9),'JST')
 
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
-
     
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
@@ -21,10 +20,6 @@ pattern2 = r"mfa\.[\w-]{84}"
 class SSecurity(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
-        self.timeloop.start()
-
-    def cog_unload(self,bot):
-        self.loop.cancel() 
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
