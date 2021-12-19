@@ -31,7 +31,9 @@ class Commands(commands.Cog):
     #invite
     @commands.command()
     async def invite(self,ctx):
-        embed = discord.Embed(title='招待リンク一覧')
+        embed = discord.Embed(title='招待リンク一覧',color=0x00ff8d)
+        embed.add_field(name='Laplace',value='[招待リンク](https://discord.com/api/oauth2/authorize?client_id=865086071636623370&permissions=124928&scope=bot)')
+        embed.add_field(name='Discord安全情報機関 D.I.C.A.',value='[招待リンク](https://discord.gg/7HrFYFQR6p)')
 
 def setup(bot):
     return bot.add_cog(Commands(bot))
