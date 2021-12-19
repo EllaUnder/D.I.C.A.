@@ -14,6 +14,7 @@ class Help(commands.Cog):
         embed.add_field(name='__Elink <タイトル> <メッセージリンク>__',value='埋め込みメッセージを作成します。\n管理者専用です。')
         embed.add_field(name='__MsearchD <検索範囲> <ユーザーID>__',value='検索範囲の中に指定したユーザーのメッセージがあった場合全て削除します。\n課長・副課長専用です。')
         embed.add_field(name='__help__',value='コマンド一覧を表示します。')
+        embed.set_footer(text='その他、お問い合わせは[D.I.C.A.サーバー](https://discord.gg/7HrFYFQR6p)まで')
         await ctx.send(embed=embed)
 
 def setup(bot):
