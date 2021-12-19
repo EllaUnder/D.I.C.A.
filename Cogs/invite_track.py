@@ -1,6 +1,8 @@
 from discord.ext import commands
 import discord
 
+Channel_ID1 = 915410788641042483 #ラプラス・takt専用ログ
+
 class InviteTrack(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
