@@ -7,7 +7,7 @@ class Status(commands.Cog):
 
     @commands.Cog.listener()
     async def on_guild_join(self,guild):
-        channel = self.bot.get_channel(886972852979531786) #その他ログ
+        channel = self.bot.get_channel(915410788641042483) #専用ログ
         Gname = guild.name
         Gid = guild.id
         Gicon_url = guild.icon_url
