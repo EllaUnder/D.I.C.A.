@@ -66,10 +66,13 @@ class SSecurity(commands.Cog):
     async def on_message_edit(self,befoer,after):
         m_ = after.content
         m_author = befoer.author.id
+        mg_ = befoer.guild.id
+        mg_n = befoer.guild.name
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             channel = self.bot.get_channel(915410788641042483) #専用ログ
             await after.delete()
             await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
+            await channel.send(f'発生場所:{mg_n}(id:{mg_})')
             
 def setup(bot):
     return bot.add_cog(SSecurity(bot))
