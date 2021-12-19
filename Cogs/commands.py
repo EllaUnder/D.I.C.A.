@@ -28,5 +28,10 @@ class Commands(commands.Cog):
                 await message.delete() # 検索対象のIDと一緒ならの処理
         await ctx.send('悪いメッセージはドーン、ドン！💣💥')
 
+    #invite
+    @commands.command()
+    async def invite(self,ctx):
+        embed = discord.Embed(title='招待リンク一覧')
+
 def setup(bot):
     return bot.add_cog(Commands(bot))
