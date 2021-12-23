@@ -27,8 +27,11 @@ class Flame_Event(commands.Cog):
         orig_error = getattr(error, "original", error)
         error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
         channel = self.bot.get_channel(Channel_ID1)
+        g_id = ctx.guild.id
+        g_name = ctx.guild.name
         await channel.send(error_msg)
-        await ctx.send('コマンドエラーです。')
+        await channel.send(f'サーバー名:{g_name}(id:{g_id})\n上記のサーバーでコマンドエラーが発生しました。')
+        await ctx.send(f'コマンドエラーです。')
 
 def setup(bot):
     return bot.add_cog(Flame_Event(bot))
