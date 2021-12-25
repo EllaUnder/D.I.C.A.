@@ -14,9 +14,10 @@ class Status(commands.Cog):
         Gname = guild.name
         Gid = guild.id
         Gicon_url = guild.icon_url
-        if Gid in ibs_txt:
+
+        if str(Gid) in ibs_txt:
             await guild.leave()
-            await ctx.send(f'禁止指定サーバーに招待されたため自動退去しました。\n【D座標】\nサーバー名:{Gname}\nID:{Gid}')
+            await channel.send(f'禁止指定サーバーに招待されたため自動退去しました。\n【D座標】\nサーバー名:{Gname}\nID:{Gid}')
         
         embed = discord.Embed(title='Botが以下のサーバーに招待されました。',color=0x00ff8d)
         embed.add_field(name=f'サーバー名:{Gname}',value=f'サーバーID:**{Gid}**')
