@@ -23,7 +23,7 @@ class Status(commands.Cog):
 
         if str(Gid) in ibs_txt:
             await guild.leave()
-            await channel.send(f'禁止指定サーバーに招待されたため自動退去しました。\n【D座標】\nサーバー名:{Gname}\nID:{Gid}')
+            await channel.send(f'__禁止指定サーバーに招待されたため自動退去しました。__\n【D座標】\nサーバー名:{Gname}\nID:{Gid}')
 
     @commands.command()
     async def Gcheck(self,ctx):
