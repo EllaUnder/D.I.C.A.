@@ -28,11 +28,31 @@ class Status(commands.Cog):
     @commands.command()
     async def Gcheck(self,ctx):
         if ctx.author.id == 854331482444267550:
+            embed = discord.Embed(title='現在Laplaceが導入されているサーバー',color=0x00ff8d)
             g_list = self.bot.guilds
+            field_count,total_str = 0,21
+
             for info in g_list:
                 Gid = info.id
                 Gname = info.name
-                await ctx.send(f'{Gname}(id:**{Gid}**)')
+                total_str += len(Gid) + len(Gname)
+
+                if field_count >= 25 or total_str >= 6000:
+                    await ctx.send(embed=embed)
+
+                    field_count, total_str = 0,21
+                    embed = discord.Embed(title='現在Laplaceが導入されているサーバー',color=0x00ff8d)
+                    embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
+
+                    total_str += len(Gid) + len(Gname)
+
+                elif:
+                    total_str += len(Gid) + len(Gname)
+                    embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
+                    field_count += 1
+
+            if field_count != 0:
+                await ctx.send(embed=embed)
 
     @commands.command()
     async def leave(self,ctx,arg):
