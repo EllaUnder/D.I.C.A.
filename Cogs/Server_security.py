@@ -53,7 +53,7 @@ class SSecurity(commands.Cog):
                 return
 
         elif user_id in TTA_txt:
-            await member.ban()
+            await member.kick()
 
     #荒らし文字列削除アルゴリズム
     @commands.Cog.listener()
