@@ -10,6 +10,9 @@ JST = timezone(timedelta(hours=+9),'JST')
 
 with open("files/report.json",'r') as r:
     r_json = json.load(r)
+
+with open("files/TTA.txt",encoding="UTF-8") as t:
+    TTA_txt = t.read()
     
 Channel_ID1 = 886972852979531786 #その他ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
@@ -25,8 +28,8 @@ class SSecurity(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self,member):
         g_id = member.guild.id
+        user_id = str(member.id)
         if g_id == 864768192399278110:
-            user_id = str(member.id)
             for join in r_json:
                 if user_id in join["id"]:
                     await member.ban()
@@ -48,6 +51,9 @@ class SSecurity(commands.Cog):
                 await channel.send('コンディション更新、カラーレッドです。')
             else:
                 return
+
+        elif user_id in TTA_txt:
+            await member.ban()
 
     #荒らし文字列削除アルゴリズム
     @commands.Cog.listener()
