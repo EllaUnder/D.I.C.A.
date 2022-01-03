@@ -14,7 +14,7 @@ with open("files/report.json",'r') as r:
 with open("files/TTA.txt",encoding="UTF-8") as t:
     TTA_txt = t.read()
     
-Channel_ID1 = 886972852979531786 #その他ログ
+Channel_ID1 = 915410788641042483 #専用ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
 pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
@@ -28,6 +28,7 @@ class SSecurity(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self,member):
         g_id = member.guild.id
+        g_name = member.guild.name
         user_id = str(member.id)
         if g_id == 864768192399278110:
             for join in r_json:
@@ -53,7 +54,11 @@ class SSecurity(commands.Cog):
                 return
 
         elif user_id in TTA_txt:
+            channel = self.bot.get_channel(Channel_ID1)
             await member.kick()
+            await channel.send(f'TTAによるサーバーへの参加が確認された為、該当アカウントを自動kickしました。\n発生場所:{g_name}(id:{g_id})')
+            
+            
 
     #荒らし文字列削除アルゴリズム
     @commands.Cog.listener()
