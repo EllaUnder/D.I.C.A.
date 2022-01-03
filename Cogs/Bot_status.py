@@ -46,7 +46,7 @@ class Status(commands.Cog):
 
                     total_str += len(Gid) + len(Gname)
 
-                elif:
+                eles:
                     total_str += len(Gid) + len(Gname)
                     embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
                     field_count += 1
