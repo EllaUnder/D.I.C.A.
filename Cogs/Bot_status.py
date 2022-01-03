@@ -30,6 +30,7 @@ class Status(commands.Cog):
         if ctx.author.id == 854331482444267550:
             embed = discord.Embed(title='現在Laplaceが導入されているサーバー',color=0x00ff8d)
             g_list = self.bot.guilds
+            gd_ = len(g_list)
             field_count,total_str = 0,21
 
             for info in g_list:
@@ -42,17 +43,19 @@ class Status(commands.Cog):
 
                     field_count, total_str = 0,21
                     embed = discord.Embed(title='現在Laplaceが導入されているサーバー',color=0x00ff8d)
-                    embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
+                    embed.add_field(name=f'サーバー名:{Gname}',value=f'(id:{Gid})')
 
                     total_str += len(str(Gid)) + len(Gname)
 
                 else:
                     total_str += len(str(Gid)) + len(Gname)
-                    embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
+                    embed.add_field(name=f'サーバー名:{Gname}',value=f'(id:{Gid})')
                     field_count += 1
 
             if field_count != 0:
                 await ctx.send(embed=embed)
+
+            await ctx.send(f'合計{gd_}サーバーに導入されています。')
 
     @commands.command()
     async def leave(self,ctx,arg):
