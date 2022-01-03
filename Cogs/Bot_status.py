@@ -35,7 +35,7 @@ class Status(commands.Cog):
             for info in g_list:
                 Gid = info.id
                 Gname = info.name
-                total_str += len(Gid) + len(Gname)
+                total_str += len(str(Gid)) + len(Gname)
 
                 if field_count >= 25 or total_str >= 6000:
                     await ctx.send(embed=embed)
@@ -44,10 +44,10 @@ class Status(commands.Cog):
                     embed = discord.Embed(title='現在Laplaceが導入されているサーバー',color=0x00ff8d)
                     embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
 
-                    total_str += len(Gid) + len(Gname)
+                    total_str += len(str(Gid)) + len(Gname)
 
                 else:
-                    total_str += len(Gid) + len(Gname)
+                    total_str += len(str(Gid)) + len(Gname)
                     embed.add_field(name=f'__サーバー名__:{Gname}',value=f'(__id__:{Gid})')
                     field_count += 1
 
