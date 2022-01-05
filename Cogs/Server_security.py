@@ -13,6 +13,9 @@ with open("files/report.json",'r') as r:
 
 with open("files/TTA.txt",encoding="UTF-8") as t:
     TTA_txt = t.read()
+
+with open("files/kick.txt",encoding="UTF-8") as k:
+    kick_txt = k.read()
     
 Channel_ID1 = 915410788641042483 #専用ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
@@ -58,7 +61,10 @@ class SSecurity(commands.Cog):
             await member.kick()
             await channel.send(f'TTAによるサーバーへの参加が確認された為、該当アカウントを自動kickしました。\n発生場所:{g_name}(id:{g_id})')
             
-            
+        elif user_id in kick_txt:
+            channel = self.bot.get_channel(Channel_ID1)
+            await member.kick()
+            await channel.send(f'D.I.C.A.に危険人物と認定されたユーザーのサーバーへの参加が確認された為、該当アカウントを自動kickしました。\n発生場所:{g_name}(id:{g_id})')
 
     #荒らし文字列削除アルゴリズム
     @commands.Cog.listener()
