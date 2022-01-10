@@ -71,7 +71,10 @@ class SSecurity(commands.Cog):
     async def on_message(self,message):
         m_ = message.content
         md_ = len(m_)
-        if re.search(pattern1,m_) or re.search(pattern2,m_): #トークン文字列
+        c_ = re.findall(r'[^|~*`]',m_)
+        c = "".join(c)
+
+        if re.search(pattern1,c) or re.search(pattern2,c): #トークン文字列
             await message.delete()
         if 'https://imgur.com/ehxMcVy' in message.content: #白GIF
             await message.delete()
