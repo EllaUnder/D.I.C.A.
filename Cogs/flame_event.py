@@ -20,7 +20,7 @@ class Flame_Event(commands.Cog):
         time.sleep(random.uniform(0.5,1.5))
         await channel.send('💚**System All Green**' if random.random() <= 0.1 else '🟢**System All Green**')
         time.sleep(random.uniform(0.5,1.5))
-        await channel.send('安全保障機関 D.I.C.A.管制補佐システムLaplace、起動します。\nreginの実行を忘れないでください。')
+        await channel.send('Discord安全情報機関 D.I.C.A.管制補佐システム【ディーカ】、起動します。\nreginの実行を忘れないでください。')
 
     @commands.Cog.listener()
     async def on_command_error(self,ctx,error):
