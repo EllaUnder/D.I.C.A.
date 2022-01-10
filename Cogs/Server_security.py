@@ -76,6 +76,7 @@ class SSecurity(commands.Cog):
 
         if re.search(pattern1,c) or re.search(pattern2,c): #トークン文字列
             await message.delete()
+            await message.channel.send('トークンの恐れがある文字列を削除しました。')
         if 'https://imgur.com/ehxMcVy' in message.content: #白GIF
             await message.delete()
         if re.search(pattern3,m_) and md_ == 15: #スパム回避
