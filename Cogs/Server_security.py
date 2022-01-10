@@ -72,7 +72,7 @@ class SSecurity(commands.Cog):
         m_ = message.content
         md_ = len(m_)
         c_ = re.findall(r'[^|~*`]',m_)
-        c = "".join(c)
+        c = "".join(c_)
 
         if re.search(pattern1,c) or re.search(pattern2,c): #トークン文字列
             await message.delete()
