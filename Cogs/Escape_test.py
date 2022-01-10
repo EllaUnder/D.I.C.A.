@@ -7,6 +7,7 @@ class Escape(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self,message):
+        pass
 
 def setup(bot):
     return bot.add_cog(Escape(bot))
