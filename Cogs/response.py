@@ -37,6 +37,9 @@ class Response(commands.Cog):
         if message.author.bot:
             return
 
+        if not message.guild.id == 864768192399278110:
+            return
+
         if message.content == 'おはよう' or message.content == 'オハヨウ' or 'おは' in message.content or 'オハヨー' in message.content:
             if not message.channel.id == 898360112824066079:
                 luck = random.random()
