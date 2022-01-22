@@ -59,7 +59,7 @@ class Status(commands.Cog):
 
     @commands.command()
     async def leave(self,ctx,arg):
-        if ctx.author.id == 854331482444267550:
+        if ctx.author.id == 854331482444267550 or ctx.author.id == 791171026238308352:
             guild = self.bot.get_guild(int(arg))
             await guild.leave()
             await ctx.send(f'{guild.name}(id:**{guild.id}**)を去りました。')
