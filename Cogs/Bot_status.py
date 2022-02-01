@@ -25,6 +25,19 @@ class Status(commands.Cog):
             await guild.leave()
             await channel.send(f'__禁止指定サーバーに招待されたため自動退去しました。__\n【D座標】\nサーバー名:{Gname}\nID:{Gid}')
 
+    @commands.Cog.listener()
+    async def on_guild_remove(self,guild):
+        channel = self.bot.get_channel(915410788641042483) #専用ログ
+        Gname = guild.name
+        Gid = guild.id
+        Gicon_url = guild.icon_url
+
+        embed = discord.Embed(title='Botが以下のサーバーから権利者の要請により退去しました',color=0x00ff8d)
+        embed.add_field(name=f'サーバー名:{Gname}',value=f'サーバーID:**{Gid}**')
+        embed.set_image(url=Gicon_url)
+        await channel.send('<@854331482444267550>')
+        await channel.send(embed=embed)
+
     @commands.command()
     async def Gcheck(self,ctx):
         if ctx.author.id == 854331482444267550:
