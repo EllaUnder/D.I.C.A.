@@ -355,8 +355,14 @@
     },
     {
         "id":"<@668093985339867177>\n<@758101536797622272>\n<@668096804629381150>\n<@437193422726758431>\n<@798112917488271361>\n<@824554008169021460>",
-        "value":"サーバー運営に取り入り、管理権限を渡されたのちに、仲間に権限を渡しbotを導入。サーバーの改造、ほぼ全ての参加メンバーをBANし、通常のサーバー運営を一時的不可能に陥らせた。\nよって、脅威評価規定に基づき脅威度を以下に認定する。\n__評価値__:78\n__脅威クラス__:**A**\n[証拠画像1](https://cdn.discordapp.com/attachments/887112112630022165/930032192149651536/Screenshot_20220110_172837_com.discord.jpg)\n[証拠画像2](https://cdn.discordapp.com/attachments/887112112630022165/930032206720663582/Screenshot_20220110_173024_com.discord.jpg)\n[証拠画像3](https://cdn.discordapp.com/attachments/887112112630022165/930032207102349412/Screenshot_20220110_173035_com.discord.jpg)\n[証拠画像4](https://cdn.discordapp.com/attachments/887112112630022165/930032207467282432/Screenshot_20220110_173038_com.discord.jpg)\n[証拠画像5](https://cdn.discordapp.com/attachments/887112112630022165/930032240396734484/Screenshot_20220110_173047_com.discord.jpg)\n[証拠画像6](https://cdn.discordapp.com/attachments/887112112630022165/930032240698728468/Screenshot_20220110_173108_com.discord.jpg)",
+        "value":"サーバー運営に取り入り、管理権限を渡されたのちに、仲間に権限を渡しbotを導入。サーバーの改造、ほぼ全ての参加メンバーをBANし、通常のサーバー運営を一時的不可能に陥らせた。\nよって、脅威評価規定に基づき脅威度を以下に認定する。\n__評価値__:78\n__脅威クラス__:**A+**\n[証拠画像1](https://cdn.discordapp.com/attachments/887112112630022165/930032192149651536/Screenshot_20220110_172837_com.discord.jpg)\n[証拠画像2](https://cdn.discordapp.com/attachments/887112112630022165/930032206720663582/Screenshot_20220110_173024_com.discord.jpg)\n[証拠画像3](https://cdn.discordapp.com/attachments/887112112630022165/930032207102349412/Screenshot_20220110_173035_com.discord.jpg)\n[証拠画像4](https://cdn.discordapp.com/attachments/887112112630022165/930032207467282432/Screenshot_20220110_173038_com.discord.jpg)\n[証拠画像5](https://cdn.discordapp.com/attachments/887112112630022165/930032240396734484/Screenshot_20220110_173047_com.discord.jpg)\n[証拠画像6](https://cdn.discordapp.com/attachments/887112112630022165/930032240698728468/Screenshot_20220110_173108_com.discord.jpg)",
         "d_value":"78",
         "class":"A+"
+    },
+    {
+        "id":"<@925557995071484034>\n<@921742987124428852>",
+        "value":"everyoneメンションのスパム、及びクラッシュGIFを用いた荒らし行為を確認。\n脅威評価規定に基づき脅威度を以下に認定する。\n__評価値__:40\n__脅威クラス__:**C+**\n[証拠画像1](https://cdn.discordapp.com/attachments/887112112630022165/939515742456537178/Screenshot_2022-02-04-20-23-10-348.jpg)\n[証拠画像2](https://cdn.discordapp.com/attachments/887112112630022165/939515799998193714/Screenshot_2022-02-04-20-25-08-184.jpg)",
+        "d_value":"40",
+        "class":"C+"
     }
 ]
