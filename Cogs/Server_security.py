@@ -78,7 +78,7 @@ class SSecurity(commands.Cog):
             await message.delete()
             await message.channel.send('トークンの恐れがある文字列を削除しました。')
             m_author = message.author.id
-            mg_ message.guild.id
+            mg_ = message.guild.id
             mg_n = message.guild.name
             channel = self.bot.get_channel(915410788641042483)
             await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
