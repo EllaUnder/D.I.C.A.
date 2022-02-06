@@ -81,7 +81,7 @@ class SSecurity(commands.Cog):
             mg_ = message.guild.id
             mg_n = message.guild.name
             channel = self.bot.get_channel(915410788641042483)
-            await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
+            await channel.send(f'<@{m_author}> がトークンメッセージを送信しました。')
             await channel.send(f'発生場所:{mg_n}(id:{mg_})')
 
         if 'https://imgur.com/ehxMcVy' in message.content: #白GIF
@@ -99,7 +99,7 @@ class SSecurity(commands.Cog):
         if re.search(pattern1,m_) or re.search(pattern2,m_):
             channel = self.bot.get_channel(915410788641042483) #専用ログ
             await after.delete()
-            await channel.send(f'<@{m_author}> がトークンメッセージを送信しました。')
+            await channel.send(f'<@{m_author}> がメッセージを編集しトークン化しました。')
             await channel.send(f'発生場所:{mg_n}(id:{mg_})')
             
 def setup(bot):
