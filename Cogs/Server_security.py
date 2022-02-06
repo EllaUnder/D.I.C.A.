@@ -20,8 +20,8 @@ with open("files/kick.txt",encoding="UTF-8") as k:
 Channel_ID1 = 915410788641042483 #専用ログ
 Channel_ID5 = 886972769340903424 #ユーザー更新ログ
 
-pattern1 = r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}"
-pattern2 = r"mfa\.[\w-]{84}"
+pattern1 = r"[\w-]{20,28}\.[\w-]{3,10}\.[\w-]{22,30}"
+pattern2 = r"mfa\.[\w-]{80,90}"
 pattern3 = r"[a-zA-Z0-9]{15}"
 
 class SSecurity(commands.Cog):
