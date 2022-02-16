@@ -37,7 +37,7 @@ class SSecurity(commands.Cog):
             for join in r_json:
                 if user_id in join["id"]:
                     await member.ban()
-                    channel = self.bot.get_channel(Channel_ID5)
+                    channel = self.bot.get_channel(Channel_ID1)
                     await channel.send('報告リストに情報のあるユーザーをBANしました')
                     return
 
