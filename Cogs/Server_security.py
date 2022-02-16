@@ -38,7 +38,7 @@ class SSecurity(commands.Cog):
                 if user_id in join["id"]:
                     await member.ban()
                     channel = self.bot.get_channel(Channel_ID5)
-                    await channel.send('BANしました')
+                    await channel.send('報告リストに情報のあるユーザーをBANしました')
                     return
 
             #コンディションシステム
