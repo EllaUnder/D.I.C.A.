@@ -29,8 +29,9 @@ class Flame_Event(commands.Cog):
         channel = self.bot.get_channel(Channel_ID1)
         g_id = ctx.guild.id
         g_name = ctx.guild.name
+        w_id = ctx.author.id
         await channel.send(error_msg)
-        await channel.send(f'サーバー名:{g_name}(id:{g_id})\n上記のサーバーでコマンドエラーが発生しました。')
+        await channel.send(f'サーバー名:{g_name}(id:{g_id})\n実行者:<@{w_id}>\n上記のサーバーでコマンドエラーが発生しました。')
         await ctx.send(f'コマンドエラーです。')
 
 def setup(bot):
