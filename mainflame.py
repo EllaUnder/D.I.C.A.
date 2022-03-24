@@ -39,11 +39,10 @@ INITIAL_EXTENSIONS = [
 
 class Laplace(commands.Bot):
 
-    def __init__(self,command_prefix,intents,help_command,strip_after_prefix,description):
+    def __init__(self,command_prefix,intents,help_command,strip_after_prefix):
         super().__init__(command_prefix,
                           intents=intents,
-                          strip_after_prefix=True
-                          description = description)
+                          strip_after_prefix=True)
         self.remove_command('help')
         for cog in INITIAL_EXTENSIONS:
             try:
@@ -55,5 +54,5 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 if __name__ == "__main__":
     intents=discord.Intents.all()
-    bot = Laplace(command_prefix='#d',intents=intents,help_command=None,strip_after_prefix=True,description = '#d helpでコマンド一覧を表示します。')
+    bot = Laplace(command_prefix='#d',intents=intents,help_command=None,strip_after_prefix=True)
     bot.run(token)
