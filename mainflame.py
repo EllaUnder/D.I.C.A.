@@ -35,7 +35,8 @@ INITIAL_EXTENSIONS = [
     "Cogs.janometalk",
     "Cogs.join_left",
     "Cogs.regin",
-    "Cogs.response"
+    "Cogs.response",
+    "Cogs.settings"
 ]
 
 class Laplace(commands.Bot):
