@@ -32,7 +32,6 @@ INITIAL_EXTENSIONS = [
     "Cogs.flame_event",
     "Cogs.help",
     "Cogs.invite_track",
-    "Cogs.janometalk",
     "Cogs.join_left",
     "Cogs.regin",
     "Cogs.response",
